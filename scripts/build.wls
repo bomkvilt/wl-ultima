@@ -4,7 +4,6 @@
 ultima`installer`packages = {
 	  {type -> "paclet", name -> "paclet"}
 	, {type -> "plane" , name -> "wl-utiles"}
-	, {type -> "plane" , name -> "wl-style"}
 	, {type -> "pack"  , name -> "wl-grid"}
 };
 ultima`installer`buildPath    = FileNameJoin[{Directory[], "build"}];
