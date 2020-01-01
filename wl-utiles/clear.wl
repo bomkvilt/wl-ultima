@@ -1,5 +1,12 @@
 (* ::Package:: *)
 
-(** Common part with all utility functions *)
-Remove[Evaluate[Context[] <> "*"]]
-ClearSystemCache[]
+Package["ultima`"]
+PackageScope["clear"]
+
+
+PackageExport["clear"]
+
+clear[] := Module[{},
+	Remove[Evaluate[Context[] <> "*"]];
+	ClearSystemCache[];
+]
