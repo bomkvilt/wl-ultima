@@ -1,13 +1,15 @@
 (* ::Package:: *)
 
 Paclet[
-	Name 	-> "libs",
+	Name    -> "ultima",
 	Version -> "0.0.0",
 	Creator -> "",
-	Description	-> "",
+	Description -> "",
 	MathematicaVersion -> "10.0+",
-	Extensions -> 
+	Extensions -> {
 		{
-			{"Kernel", Root -> ".", Context -> "libs`"}
+			"Kernel", Root -> "kernel", HiddenImport -> True
+			, Context -> {"ultima`"}
 		}
+	}
 ]

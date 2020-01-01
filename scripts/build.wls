@@ -1,47 +1,74 @@
 #!/usr/bin/env wolframscript
 (* ::Package:: *)
 
-libs`Installer`packages = {
-	  {name -> "paclet", type -> "plane"}
-	, {name -> "common", type -> "plane"}
-	, {name -> "style" , type -> "plane"}
-	, {name -> "grid"  , type -> "pack" }
+ultima`installer`packages = {
+	  {type -> "paclet", name -> "paclet"}
+	, {type -> "plane" , name -> "wl-utiles"}
+	, {type -> "plane" , name -> "wl-style"}
+	, {type -> "pack"  , name -> "wl-grid"}
 };
-libs`Installer`buildPath = FileNameJoin[{Directory[], "build"}];
+ultima`installer`buildPath    = FileNameJoin[{Directory[], "build"}];
+ultima`installer`buildSrcPath = FileNameJoin[{Directory[], "build", "src"}];
 
 
-libs`Installer`build[pack_] := Module[{
-	path = FileNameJoin[{Directory[], name /. pack}]
-}, 
+ultima`installer`copy[pack_] := Module[{},
+	packName = name /. pack;
+	basePath = FileNameJoin[{Directory[], packName}];
+	destPath = ultima`installer`buildSrcPath;
+	
 	Switch[type /. pack
-	, "pack",
-		out  = RunProcess[{"./pack.bat", libs`Installer`buildPath}, ProcessDirectory -> path];
-		code = "ExitCode" /. out;
-		If [code != 0, 
-			Throw @ StringForm["cannot build the pack: ``: ``", pack, out]
-		];
-	, _, 
-		out  = RunProcess[{"xcopy", path, libs`Installer`buildPath, "/e"}, ProcessDirectory -> path];
-		code = "ExitCode" /. out;
-		If [code != 0, 
-			Throw @ StringForm["cannot build the pack: ``: ``", pack, out]
-		];
+	, "paclet", ultima`installer`copyPaclet[basePath, destPath];
+	, "plane" , ultima`installer`copyPlane [basePath, destPath, packName];
+	, "pack"  , ultima`installer`copyPack  [basePath, destPath, packName];
 	];
 	StringForm["package processed: ``", (name /. pack)] // ToString // Print;
 ]
 
-DeleteDirectory[libs`Installer`buildPath, DeleteContents->True];
-CreateDirectory[libs`Installer`buildPath];
+ultima`installer`copyPaclet[basePath_, destPath_] := Module[{},
+	ultima`installer`copyFiles[basePath, destPath];
+]
 
-libs`Installer`build /@ libs`Installer`packages;
+ultima`installer`copyPlane[basePath_, destPath_, packName_] := Module[{},
+	ultima`installer`copyFiles[basePath, FileNameJoin[{destPath, packName}]];
+]
+
+ultima`installer`copyPack[basePath_, destPath_, packName_] := Module[{},
+	out  = RunProcess[{"./control.bat", "pack", FileNameJoin[{destPath, packName}]}
+		, ProcessDirectory->basePath
+	];
+	code = "ExitCode" /. out;
+	If [code != 0, Throw @ StringForm["cannot copy files: ``: ``", pack, out]];
+]
+
+ultima`installer`copyFiles[basePath_, destPath_] := Module[{},
+	ultima`installer`refreshDirectory[destPath];
+	out  = RunProcess[{"xcopy", basePath, destPath, "/e"}, ProcessDirectory->Directory[]];
+	code = "ExitCode" /. out;
+	If [code != 0, Throw @ StringForm["cannot copy files: ``: ``", pack, out]];
+]
+
+ultima`installer`refreshDirectory[path_] := Module[{},
+	If [FileExistsQ[path], 
+		DeleteDirectory[path, DeleteContents->True];
+	];
+	CreateDirectory[path];
+]
 
 
-packlet = PackPaclet[libs`Installer`buildPath];
-StringForm["parclet: ``", packlet] // ToString // Print;
-
-PacletUninstall["libs"];
-PacletInstall[packlet] // Print;
-PacletFind["libs"] // Print;
+ultima`installer`refreshDirectory[ultima`installer`buildPath];
+ultima`installer`copy /@ ultima`installer`packages;
 
 
-Pause[4];
+SetDirectory[ultima`installer`buildPath];
+
+(* build paclet *)
+paclet = PackPaclet[ultima`installer`buildSrcPath];
+StringForm["paclet: ``", paclet] // ToString // Print;
+
+(* re-install the paclet *)
+PacletUninstall["ultima"];
+pacletInfo = PacletInstall[paclet];
+StringForm["paclet: ``", pacletInfo] // ToString // Print;
+
+
+Quit[];
