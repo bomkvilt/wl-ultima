@@ -7,9 +7,14 @@ Paclet[
 	Description -> "",
 	MathematicaVersion -> "10.0+",
 	Extensions -> {
-		{
-			"Kernel", Root -> "kernel", HiddenImport -> True
+		{"Kernel"
+			, Root -> "kernel"
+			, HiddenImport -> True
 			, Context -> {"ultima`"}
+		},
+		{ "FrontEnd"
+			, Root -> "frontend"
+			, Prepend -> True
 		}
 	}
 ]

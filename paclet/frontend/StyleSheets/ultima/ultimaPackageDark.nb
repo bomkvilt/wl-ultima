@@ -9,16 +9,12 @@
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
-NotebookDataPosition[       158,          7]
-NotebookDataLength[      7160,        162]
-NotebookOptionsPosition[      6501,        144]
-NotebookOutlinePosition[      7051,        163]
-CellTagsIndexPosition[      7008,        160]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell[StyleData[StyleDefinitions -> "ReverseColorPackage.nb"],ExpressionUUID->"18cb39a8-377b-475e-901f-e0d16da07e13"],
+Cell[StyleData[StyleDefinitions -> FrontEnd`FileName[{"ultima", "ultimaReverseColor.nb"}]], 
+  ExpressionUUID->"18cb39a8-377b-475e-901f-e0d16da07e13"],
 
 Cell[StyleData["Notebook"],
  NotebookEventActions->{{"KeyDown", "\t"} :> 
