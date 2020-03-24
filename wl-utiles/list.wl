@@ -4,6 +4,12 @@ Package["ultima`"]
 PackageScope["list"]
 
 
+PackageExport["seq2list"]
+
+SetAttributes[seq2list, HoldAll];
+seq2list[v___] := Flatten[{v}, 1]
+
+
 PackageExport["ForEach"]
 
 SetAttributes[ForEach, HoldAll];
@@ -19,12 +25,12 @@ ForEach[list`patt_/; FreeQ[list`patt, Pattern], list`list_, list`expr_, list`lev
 
 PackageExport["replaceFunction"]
 
-replaceFunction[list`expr_, list`list_] := Module[{arg}, 
-	list`result = list`expr;
-	ForEach[{list`f, list`g}, list`list, 
-		list`result = replaceFunctionEntery[list`result, list`f, list`g]
+replaceFunction[expr_, list_] := Module[{arg}, 
+	result = expr;
+	ForEach[{f, g}, list, 
+		result = replaceFunctionEntery[result, f, g]
 	];
-	list`result
+	Return[result];
 ];
 
 replaceFunctionEntery[expr_, f_, g_] := Module[{arg}, 
@@ -39,20 +45,20 @@ replaceFunctionEntery[expr_, f_, g_] := Module[{arg},
 
 PackageExport["collectCoeffs"]
 
-collectCoeffs[list`equations_, list`symbols_] := Module[{},
-	list`expr[list`v_String] := list`v // ToExpression;
-	list`expr[list`v_      ] := list`v;
-	Table[Coefficient[row, var // list`expr]
-		, {row, list`equations}
-		, {var, list`symbols}
+collectCoeffs[equations_, symbols_] := Module[{},
+	expr[v_String] := v // ToExpression;
+	expr[v_      ] := v;
+	Table[Coefficient[row, var // expr]
+		, {row, equations}
+		, {var, symbols}
 	]
 ]
 
 
 PackageExport["parallelSimplify"]
 
-parallelSimplify[list`l_    , list`hints_:{}] := FullSimplify[l, hints]
-parallelSimplify[list`l_List, list`hints_:{}] := ParallelMap[FullSimplify[#, hints]&, l]
+parallelSimplify[l_    , hints_:{}] := FullSimplify[l, hints]
+parallelSimplify[l_List, hints_:{}] := ParallelMap[FullSimplify[#, hints]&, l]
 
 
 PackageExport["modify"]
@@ -60,20 +66,27 @@ PackageExport["join"]
 PackageExport["substitute"]
 PackageExport["collectCoeffs"]
 PackageExport["replaceFunction"]
+PackageExport["setTo"]
 
-Options[modify] = {
-	  bPrint -> True
-	, bSimpl -> False
-};
-
-modify[list`clb_, OptionsPattern[modify]] := Return[Block[{list`v = #}, 
+modify[list`clb_] := Return[Block[{list`v = #}, 
 	list`res = list`clb[list`v];
-	If [OptionValue[bSimpl], list`res = list`res // FullSimplify];
-	If [OptionValue[bPrint], list`res // MatrixForm // Print];
+	list`res // printm;
 	list`res
 ]&];
 
-substitute     [list`args_, opts:OptionsPattern[modify]] := modify[# /. list`args&, opts]
-join           [list`args_, opts:OptionsPattern[modify]] := modify[Join           [#, list`args]&, opts]
-collectCoeffs  [list`args_, opts:OptionsPattern[modify]] := modify[collectCoeffs  [#, list`args]&, opts]
-replaceFunction[list`args_, opts:OptionsPattern[modify]] := modify[replaceFunction[#, list`args]&, opts]
+substitute     [args__] := modify[                #/.seq2list[args] &]
+join           [args__] := modify[Join           [#, seq2list[args]]&]
+collectCoeffs  [args__] := modify[collectCoeffs  [#, seq2list[args]]&]
+replaceFunction[args__] := modify[replaceFunction[#, seq2list[args]]&]
+
+SetAttributes[setTo, HoldAll];
+setTo[var_] := Return[Block[{val = #},
+	var = val
+]&]
+
+
+PackageExport["flatJoin"]
+flatJoin[args__] := Flatten[{#}& /@ seq2list[args]]
+
+
+

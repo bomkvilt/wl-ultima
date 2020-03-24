@@ -12,12 +12,20 @@ norm  [common`v_] := Sqrt[Sum[p^2, {p, common`v}]];
 
 
 PackageExport["printm"]
+PackageExport["printt"]
 PackageExport["printp"]
 PackageExport["scalep"]
 
 printm[common`v_] := (
+	Print [""];
 	Print [common`v // MatrixForm];
 	Return[common`v];
+)
+
+printt[v_] := (
+	Print [""];
+	Print [TableForm[v, TableSpacing->{0, 3}]];
+	Return[v];
 )
 
 printp[common`pp_ ] := (

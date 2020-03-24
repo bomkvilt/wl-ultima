@@ -6,7 +6,8 @@ PackageScope["clear"]
 
 PackageExport["clear"]
 
-clear[] := Module[{},
-	Remove[Evaluate[Context[] <> "*"]];
+clear[] := Module[{names},
+	names = Names[Context[] <> "*"];
+	Remove[Context[] <> #]& /@ names // Quiet;
 	ClearSystemCache[];
 ]
