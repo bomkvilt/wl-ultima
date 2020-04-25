@@ -8,6 +8,6 @@ PackageExport["clear"]
 
 clear[] := Module[{names},
 	names = Names[Context[] <> "*"];
-	Remove[Context[] <> #]& /@ names // Quiet;
+	Remove[#]& /@ names // Quiet;
 	ClearSystemCache[];
 ]

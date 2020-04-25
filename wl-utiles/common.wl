@@ -11,38 +11,49 @@ vector[common`v_] := common`v[[All, 1]];
 norm  [common`v_] := Sqrt[Sum[p^2, {p, common`v}]];
 
 
+PackageExport["block"]
 PackageExport["printm"]
 PackageExport["printt"]
 PackageExport["printp"]
 PackageExport["scalep"]
 
-printm[common`v_] := (
-	Print [""];
-	Print [common`v // MatrixForm];
-	Return[common`v];
+block[c_] := (
+	Print[Row @ {">> ", c, ":"}];
+)
+
+printm[v_] := (
+	Print [v // MatrixForm];
+	Return[v];
 )
 
 printt[v_] := (
-	Print [""];
 	Print [TableForm[v, TableSpacing->{0, 3}]];
 	Return[v];
 )
 
-printp[common`pp_ ] := (
-	Print[#]& /@ common`pp
+printp[pp_ ] := (
+	Print[#]& /@ pp
 )
 
-scalep[common`p_, common`ratio_:1] := (
-	common`range = First /@ Differences /@ (PlotRange /. Options[common`p]);
-	Show[common`p
-		, AspectRatio->(Last[common`range]/First[common`range]/common`ratio)
-	]
+scalep[p_, ratio_:1] := (
+	range = First /@ Differences /@ (PlotRange /. Options[p]);
+	Show[p, AspectRatio->(Last[range]/First[range]/ratio)]
 )
+
+
+PackageExport["stopIntegration"]
+
+HoldAll[stopIntegration];
+stopIntegration[event_, action_] := Method -> {
+	"EventLocator"
+	, "Event" :> event
+	, "EventAction" :> Throw[action[], "StopIntegration"]
+}
 
 
 PackageExport["addModule"]
 
-addModule[common`path_] := NotebookEvaluate[
-	  NotebookDirectory[] <> common`path
+addModule[path_] := NotebookEvaluate[
+	  NotebookDirectory[] <> path
 	, InsertResults->True
 ];

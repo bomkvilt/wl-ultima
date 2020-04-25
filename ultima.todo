@@ -1,0 +1,8 @@
+features to add:
+    :modify: function:
+        ☐ make it HoldAll to allow use functions with no '&' teminator
+        ☐ make it backward compatibile to use functions with '&'
+    ☐ add a function will convert lists of rules to tables
+    ☐ add a function will convert table of {{symbol, value}} to {{symbol -> value, ...}, ...}
+    ☐ add a remark / comment function for chains
+    
