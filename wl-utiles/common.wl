@@ -15,7 +15,6 @@ PackageExport["block"]
 PackageExport["printm"]
 PackageExport["printt"]
 PackageExport["printp"]
-PackageExport["scalep"]
 
 block[c_] := (
 	Print[Row @ {">> ", c, ":"}];
@@ -33,11 +32,6 @@ printt[v_] := (
 
 printp[pp_ ] := (
 	Print[#]& /@ pp
-)
-
-scalep[p_, ratio_:1] := (
-	range = First /@ Differences /@ (PlotRange /. Options[p]);
-	Show[p, AspectRatio->(Last[range]/First[range]/ratio)]
 )
 
 

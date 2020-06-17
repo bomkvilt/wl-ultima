@@ -70,28 +70,30 @@ PackageExport["collectCoeffs"]
 PackageExport["replaceFunction"]
 PackageExport["separate"]
 PackageExport["simplify"]
+PackageExport["plypend"]
 PackageExport["chop"]
 
 modify[list`clb_] := Return[Block[{list`v = #}, 
-	list`res = list`clb[list`v];
+	list`res = list`clb[list`v] // ReleaseHold;
 	list`res // printm;
 	list`res
 ]&];
 
-substitute     [args__ ] := modify[                #/.seq2list[args] &]
-join           [args__ ] := modify[Join           [#, seq2list[args]]&]
-slice          [args__ ] := modify[               (#[[args]])        &]
-collect        [args__ ] := modify[Collect        [#, seq2list[args]]&]
-collectCoeffs  [args__ ] := modify[collectCoeffs  [#, seq2list[args]]&]
+slice          [args__ ] := modify[#[[args]]&]
+substitute     [args__ ] := modify[# /.seq2list[args] &]
+join           [args__ ] := modify[Join[Flatten[{#}, 1], seq2list[args]]&]
+collect        [args__ ] := modify[Collect[#, seq2list[args]]&]
+collectCoeffs  [args__ ] := modify[collectCoeffs[#, seq2list[args]]&]
 replaceFunction[args__ ] := modify[replaceFunction[#, seq2list[args]]&]
-separate       [args__ ] := modify[separate       [#, seq2list[args]]&]
-simplify       [args___] := modify[Simplify       [#, seq2list[args]]&]
+separate       [args__ ] := modify[separate[#, seq2list[args]]&]
+simplify       [args___] := modify[Simplify[#, seq2list[args]]&]
 chop           [args___] := modify[Chop[#, args]&]
 
+plypend[l_, r_List] := Join[Flatten[{l}, 1] //. r, #[[1]] -> (#[[2]] //. r)& /@ r]
+plypend[r___      ] := modify[plypend[#, seq2list[r]]&]
+
 separate[v_, rules_] := Block[{exp = v},
-	(
-		exp = exp /. #;
-		exp = Append[Flatten[{exp}, 1], #[[2]] == #[[1]]];
+	( exp = Append[Flatten[{exp /. #}, 1], #[[2]] == #[[1]]];
 	)& /@ rules;
 	Return[exp];
 ]
@@ -107,3 +109,14 @@ normalize[v_] := Return[v / norm[v]]
 
 PackageExport["flatJoin"]
 flatJoin[args__] := Flatten[{#}& /@ seq2list[args]]
+
+
+PackageExport["toRules"]
+toRules[list_:MatrixQ] := Module[{data = seq2list[list], n, m},
+	{n, m} = Dimensions[data];
+	Assert[m >= 2];
+	
+	data = MapIndexed[data[[First@#2, 1]] -> #1&, data[[All, 2;;]], {2}];
+	data = Transpose[data];
+	Return[data];
+]
