@@ -52,9 +52,9 @@ $contexts = {"System`", "Developer`", "Internal`", "GeneralUtilities`"
 };
 
 Block[{$ContextPath = $contexts},
-	primer = "(* ::Package:: *)\n\nPackage['ultima`']\n";
-	dropSize = StringLength[primer];
-	primer = StringReplace[primer, {"'" -> "\""}, \[Infinity]];
+	primer   = "(* ::Package:: *)\n\nPackage['ultima`'];";
+	dropSize = StringLength [primer];
+	primer   = StringReplace[primer, {"'" -> "\""}, \[Infinity]];
 
 	loadFile[file_] := Block[{
 		  $Context = "ultima`Private`" <> FileBaseName[file] <> "`"
