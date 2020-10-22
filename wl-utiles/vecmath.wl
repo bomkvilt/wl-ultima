@@ -26,7 +26,7 @@ PackageExport["normalize"]
 normalize[v_] := Return[v / norm[v]]
 
 
-PackageExport["vecjoin"]
+PackageExport["vecJoin"]
 vecJoin[l_List, r_List, command_:Equal] := Replace[
 	{l, r}\[Transpose], List -> command, {2}, Heads->True
 ];

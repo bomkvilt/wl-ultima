@@ -5,12 +5,15 @@ Package["ultima`"]; PackageScope["postfix"]
 
 PackageExport["modify"]
 modify[clb_] := Return @ Function[{v},
-	Return[clb[v] // ReleaseHold]
+	clb[v] // ReleaseHold
 ]
 
 
 PackageExport["map"]
-map[clb_] := modify[clb /@ #&]
+map[clb_] := modify[p`map[clb, #]&]
+
+p`map[clb_, target_List] := clb /@ target
+p`map[clb_, target_    ] := clb[target]
 
 
 PackageExport["show"]
@@ -20,7 +23,7 @@ show[clb_] := modify[(clb[#] // printm)&]
 PackageExport["rem"]
 rem[msg_] := Return @ Function[{v},
 	Print[Row @ {"\t", msg, ":"}];
-	Return @ v;
+	v
 ]
 
 
@@ -28,8 +31,8 @@ PackageExport["relink"]
 relink[rule_] := map[rule[#[[1]], #[[2]]]&]
 
 
-PackageExport["revealIdentity"]
-revealToZero[bRight_:True] := modify[
+PackageExport["equateToZero"]
+equateToZero[bRight_:True] := relink[
 	If[bRight, #1 - #2, #2 - #1]&
 ]
 
@@ -75,7 +78,7 @@ vectorize[peqs_, psyms_] := Module[{isFlat, depth, result, ione, vone, delta
 		result = (Insert[result\[Transpose], vone, ione])\[Transpose];
 	];
 	If [delta = eqs - result.rsyms // Simplify; norm[delta] =!= 0, 
-		Message[vectorize::invalid, delta // MatrixForm]; Abort[];
+		Message[vectorize::invalid, delta // TableForm]; Abort[];
 	];
 	If [depth < 2, result = Flatten[result, 1]];
 	If [depth < 1, result = First @ result];
@@ -83,7 +86,7 @@ vectorize[peqs_, psyms_] := Module[{isFlat, depth, result, ione, vone, delta
 ]
 
 vectorize::invalid = "Passed equations cannot be correctly decomposed on given axes. 
-Delta of passed and vectorised forms is: `1`";
+Delta of passed and vectorised forms is: |`1`|";
 
 
 PackageExport["separate"]
@@ -100,6 +103,10 @@ PackageExport["simplify"]
 simplify[args___] := modify[Simplify[#, seq2list[args]]&]
 
 
+PackageExport["simppand"]
+simppand[args___] := modify[Expand@Simplify[#, seq2list[args]]&]
+
+
 PackageExport["chop"]
 chop[args___] := modify[Chop[#, args]&]
 
@@ -112,7 +119,7 @@ setTo[var_] := Return @ Function[{val}, var = val]
 PackageExport["plypend"]
 plypend[r___] := modify[plypend[#, seq2list[r]]&]
 
-plypend[l_, r_List] := Join[ seq2list[l] //. r, r // relink[#1 -> (#2 //. r)&] ]
+plypend[l_, r_List] := Module[{v = Join[l, r]}, apply[v, v]]
 
 
 PackageExport["sub"]
