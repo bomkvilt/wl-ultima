@@ -1,0 +1,77 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+  Cell[StyleData[StyleDefinitions -> FrontEnd`FileName[{"ultima", "ultimaReverseColor.nb"}]]], 
+  Cell[StyleData["Notebook"], DockedCells->{
+    Cell[
+      DynamicBox[
+        GridBox[
+          {{
+            TemplateBox[{ }, "RowWithSeparator"], 
+            TemplateBox[{
+              TemplateBox[{2}, "Spacer1"],
+              (* Run All Code *)
+              ButtonBox[
+                TemplateBox[{ "  ", "\"  \"",
+                  PaneBox[
+                    StyleBox[
+                      DynamicBox[FEPrivate`ImportImage[FrontEnd`FileName[{"Toolbars", "Package"}, "RunIcon.png"]]]
+                      , Magnification -> 0.3
+                    ]
+                    , BaselinePosition -> Scaled[0.1]
+                  ],
+                  StyleBox["Run All Code"
+                    , FontSize -> 10
+                  ]
+                }, "RowWithSeparators"]
+                , BaseStyle       -> "ControlStyleLightBold"
+                , ButtonFunction  :> FrontEnd`FrontEndToken[FrontEnd`ButtonNotebook[], "EvaluateInitialization"]
+                , Appearance      -> FEPrivate`FrontEndResource["MUnitExpressions", "ButtonAppearances"]
+                , Enabled         -> Dynamic[FEPrivate`UnsameQ[FEPrivate`$LicenseType, "Player"]]
+                , ImageSize       -> {Automatic, 18}
+                , FrameMargins    -> {{10, 10}, {0, 0}}
+              ],
+              (* Quit Kenel *)
+              ButtonBox[
+                TemplateBox[{ "  ", "\"  \"",
+                  StyleBox["Quit"
+                    , FontSize -> 10
+                  ]
+                }, "RowWithSeparators"]
+                , BaseStyle       -> "ControlStyleLightBold"
+                , ButtonFunction  :> FrontEnd`FrontEndToken[FrontEnd`ButtonNotebook[], "EvaluatorQuit"]
+                , Appearance      -> FEPrivate`FrontEndResource["MUnitExpressions", "ButtonAppearances"]
+                , ImageSize       -> {Automatic, 18}
+                , FrameMargins    -> {{10, 10}, {0, 0}}
+              ],
+              TemplateBox[{2}, "Spacer1"]
+            }, "RowWithSeparator"]
+          }}
+          , GridBoxAlignment -> { "Columns"-> {Left, Right} , "Rows"->{{Baseline }} }
+          , GridBoxItemSize  -> { "Columns"->{{Scaled[0.5]}}, "Rows"->{{Automatic}} }
+          , Appearance   -> FEPrivate`FrontEndResource["MUnitExpressions", "StaticToolbarNinePatch"]
+          , AutoDelete   -> False
+          , ImageSize    -> {Automatic, 20}
+          , FrameMargins -> {{12, 12}, {8, 10}}
+          , ImageMargins -> -1
+        ]
+      ]
+      , "SystemDockedCell"
+      , CellFrame->{{0, 0}, {0, 0}}
+      , CellFrameMargins->0
+    ]
+  }]
+}]
+(* End of Notebook Content *)
