@@ -2,4 +2,4 @@
 *.sh        text eol=lf
 *.yaml      text eof=lf
 *.wl        text eof=lf
-*.nb        text eof=lf
+*.nb        text eof=lf filter=dropoutput_nb

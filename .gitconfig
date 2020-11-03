@@ -1,0 +1,4 @@
+[filter "dropoutput_nb"]
+    required = true
+    clean    = mathematica-notebook-filter
+    smudge   = cat
