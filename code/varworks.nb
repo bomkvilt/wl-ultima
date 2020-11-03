@@ -1,0 +1,122 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uNewVars\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"uNewVars", "[", "vars___", "]"}], " ", ":=", " ",
+  RowBox[{"uVarworksWrap", "[",
+   RowBox[{"Function", "[",
+    RowBox[{
+     RowBox[{"{", "vals", "}"}], ",", " ", "\n", "\t",
+     RowBox[{
+      RowBox[{"uSeqply", "[",
+       RowBox[{"uRuleCast", "[",
+        RowBox[{"vals", ",", " ", "Rule"}], "]"}], "]"}], " ", "//", " ",
+      RowBox[{"vApply", "[", "vars", "]"}]}], "\n", "\t", ",", " ",
+     "HoldAll"}], "\n", "]"}], "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uAddNewVars\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"uAddNewVars", "[",
+   RowBox[{"var_", ",", " ", "vars___"}], "]"}], " ", ":=", " ",
+  RowBox[{"uVarworksWrap", "[",
+   RowBox[{"Function", "[",
+    RowBox[{
+     RowBox[{"{", "vals", "}"}], ",", " ", "\n", "\t",
+     RowBox[{"var", " ", "//", " ",
+      RowBox[{"vJoin", "[",
+       RowBox[{"uApply", "[",
+        RowBox[{
+         RowBox[{
+          RowBox[{"uNewVars", "[", "var", "]"}], " ", "@", " ", "vals"}], ",",
+          " ",
+         RowBox[{"vars", " ", "//", " ", "seq2list"}]}], "]"}], "]"}]}], "\n",
+      "\t", ",", " ", "HoldAll"}], "\n", "]"}], "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uPushNewVars\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"SetAttributes", "[",
+   RowBox[{"uPushNewVars", ",", " ", "HoldAll"}], "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"uPushNewVars", "[",
+   RowBox[{"var_", ",", " ", "vars___"}], "]"}], " ", ":=", " ",
+  RowBox[{"uVarworksWrap", "[",
+   RowBox[{"Function", "[",
+    RowBox[{
+     RowBox[{"{", "vals", "}"}], ",", " ", "\n", "\t",
+     RowBox[{"var", " ", "=", " ",
+      RowBox[{
+       RowBox[{"uAddNewVars", "[",
+        RowBox[{"var", ",", " ", "vars"}], "]"}], " ", "@", " ", "vals"}]}]}],
+     "\n", "]"}], "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uVarworksWrap\>\"", "  ", "]"}],
+  ";"}], "\n",
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uVarworksWraper\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{
+   RowBox[{"uVarworksWrap", "[", "clb_", "]"}], " ", ":=", " ",
+   RowBox[{"Function", "[",
+    RowBox[{
+     RowBox[{"{", "vals", "}"}], ",", "\n", "\t",
+     RowBox[{"With", "[",
+      RowBox[{
+       RowBox[{"{",
+        RowBox[{"args", " ", "=", " ",
+         RowBox[{"Hold", "[", "vals", "]"}]}], "}"}], ",", "\n", "\t\t",
+       RowBox[{"If", " ", "[",
+        RowBox[{
+         RowBox[{
+          RowBox[{"args", "\[LeftDoubleBracket]",
+           RowBox[{"1", ",", "0"}], "\[RightDoubleBracket]"}], " ", "===",
+          " ", "Symbol"}], "\n", "\t\t", ",", " ",
+         RowBox[{"uVarworksWraper", "[",
+          RowBox[{"args", ",", " ", "clb"}], "]"}], "\n", "\t\t", ",", " ",
+         RowBox[{"clb", "[", "args", "]"}]}], "\n", "\t\t", "]"}]}], "\n",
+      "\t", "]"}], "\n", "\t", ",", " ", "HoldAll"}], "\n", "]"}]}],
+  "\n"}], "\n",
+ RowBox[{
+  RowBox[{"Unprotect", "[", "uVarworksWraper", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"uVarworksWraper", " ", "=", " ", "uVarworksWraper"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{
+   RowBox[{"Protect", "[", "uVarworksWraper", "]"}], ";"}], "\n"}], "\n",
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uVarworksWraperQ\>\"", "]"}],
+  ";"}], "\n",
+ RowBox[{
+  RowBox[{
+   RowBox[{"uVarworksWraperQ", "[", "a_", "]"}], " ", ":=", " ",
+   RowBox[{
+    RowBox[{"a", "[",
+     RowBox[{"[", "0", "]"}], "]"}], " ", "===", " ", "uVarworksWrap"}]}],
+  "\n"}], "\n",
+ RowBox[{
+  RowBox[{"Unprotect", "[", "Rule", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"Rule", "[",
+   RowBox[{
+    RowBox[{"a_", "?", "uVarworksWraperQ"}], ",", " ", "b_"}], "]"}], " ", ":=",
+   " ",
+  RowBox[{
+   RowBox[{"a", "[",
+    RowBox[{"[", "2", "]"}], "]"}], "[", " ",
+   RowBox[{
+    RowBox[{"a", "[",
+     RowBox[{"[", "1", "]"}], "]"}], " ", "->", " ", "b"}], " ",
+   "]"}]}], "\n",
+ RowBox[{
+  RowBox[{"Protect", "[", "Rule", "]"}], ";"}]}], "Code"]
+}]
+(* End of Notebook Content *)

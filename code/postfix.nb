@@ -1,0 +1,508 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<vModify\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"vModify", "[", "clb_", "]"}], " ", ":=", " ",
+  RowBox[{"Function", "[",
+   RowBox[{
+    RowBox[{"{", "v", "}"}], ",", " ",
+    RowBox[{"clb", "[", "v", "]"}]}], "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<vMap\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{
+   RowBox[{"vMap", "[", "clb_", "]"}], " ", ":=", " ",
+   RowBox[{"vModify", "[",
+    RowBox[{
+     RowBox[{"p`vMap", "[",
+      RowBox[{"clb", ",", " ", "#"}], "]"}], "&"}], "]"}]}], "\n"}], "\n",
+ RowBox[{
+  RowBox[{"p`vMap", "[",
+   RowBox[{"clb_", ",", " ", "target_List"}], "]"}], " ", ":=", " ",
+  RowBox[{"clb", " ", "/@", " ", "target"}]}], "\n",
+ RowBox[{
+  RowBox[{"p`vMap", "[",
+   RowBox[{"clb_", ",", " ", "target_"}], "    ", "]"}], " ", ":=", " ",
+  RowBox[{"clb", "[", "target", "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<vShow\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"vShow", "[", "clb_", "]"}], " ", ":=", " ",
+  RowBox[{"vModify", "[",
+   RowBox[{
+    RowBox[{"(",
+     RowBox[{
+      RowBox[{"clb", "[", "#", "]"}], " ", "//", " ", "printm"}], ")"}],
+    "&"}], "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<vRem\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"vRem", "[", "msg_", "]"}], " ", ":=", " ",
+  RowBox[{"Function", "[",
+   RowBox[{
+    RowBox[{"{", "v", "}"}], ",", " ",
+    RowBox[{
+     RowBox[{"Print", "[",
+      RowBox[{"Row", " ", "@", " ",
+       RowBox[{"{",
+        RowBox[{"\"\<\\t\>\"", ",", " ", "msg", ",", " ", "\"\<:\>\""}],
+        "}"}]}], "]"}], ";", " ", "v"}]}], "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<vRelink\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"vRelink", "[", "rule_", "]"}], " ", ":=", " ",
+  RowBox[{"vMap", "[",
+   RowBox[{
+    RowBox[{"rule", "[",
+     RowBox[{
+      RowBox[{"#", "[",
+       RowBox[{"[", "1", "]"}], "]"}], ",", " ",
+      RowBox[{"#", "[",
+       RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "&"}], "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<vToOneSide\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"vToOneSide", "[",
+   RowBox[{"bRight_:", "True"}], "]"}], " ", ":=", " ",
+  RowBox[{"relink", "[", "\n", "\t",
+   RowBox[{
+    RowBox[{"If", "[",
+     RowBox[{"bRight", ",", " ",
+      RowBox[{"#1", " ", "-", " ", "#2"}], ",", " ",
+      RowBox[{"#2", " ", "-", " ", "#1"}]}], "]"}], "&"}], "\n",
+   "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<vPairDiv\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<vScalDiv\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"vPairDiv", "[", "var__", "]"}], " ", ":=", " ",
+  RowBox[{"vMap", "[",
+   RowBox[{
+    RowBox[{
+     RowBox[{"#", "[",
+      RowBox[{"[", "0", "]"}], "]"}], "[",
+     RowBox[{
+      RowBox[{
+       SubscriptBox["\[PartialD]", "var"],
+       RowBox[{"#", "[",
+        RowBox[{"[", "1", "]"}], "]"}]}], ",", " ",
+      RowBox[{
+       SubscriptBox["\[PartialD]", "var"],
+       RowBox[{"#", "[",
+        RowBox[{"[", "2", "]"}], "]"}]}]}], "]"}], "&"}], "]"}]}], "\n",
+ RowBox[{
+  RowBox[{"vScalDiv", "[", "var__", "]"}], " ", ":=", " ",
+  RowBox[{"vMap", "[",
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[PartialD]", "var"], "#"}], "&"}], "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<vSlice\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"vSlice", "[", "args__", "]"}], " ", ":=", " ",
+  RowBox[{"vModify", "[",
+   RowBox[{
+    RowBox[{"#", "[",
+     RowBox[{"[", "args", "]"}], "]"}], "&"}], "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<vJoin\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"vJoin", "[", "args__", "]"}], " ", ":=", " ",
+  RowBox[{"vModify", "[",
+   RowBox[{
+    RowBox[{"Join", "[",
+     RowBox[{
+      RowBox[{"seq2list", "[", "#", "]"}], ",", " ",
+      RowBox[{"seq2list", "[", "args", "]"}]}], "]"}], "&"}],
+   "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<vCollect\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"vCollect", "[", "args__", "]"}], " ", ":=", " ",
+  RowBox[{"vModify", "[",
+   RowBox[{
+    RowBox[{"Collect", "[",
+     RowBox[{"#", ",", " ",
+      RowBox[{"seq2list", "[", "args", "]"}]}], "]"}], "&"}],
+   "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<vVectorize\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uVectorize\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{
+   RowBox[{"vVectorize", "[", "args__", "]"}], " ", ":=", " ",
+   RowBox[{"vModify", "[",
+    RowBox[{
+     RowBox[{"uVectorize", "[",
+      RowBox[{"#", ",", " ",
+       RowBox[{"seq2list", "[", "args", "]"}]}], "]"}], "&"}], "]"}]}],
+  "\n"}], "\n",
+ RowBox[{
+  RowBox[{
+   RowBox[{"uVectorize", "[",
+    RowBox[{"peqs_", ",", " ", "psyms_"}], "]"}], " ", ":=", " ",
+   RowBox[{"Module", "[",
+    RowBox[{
+     RowBox[{"{",
+      RowBox[{
+      "isFlat", ",", " ", "depth", ",", " ", "result", ",", " ", "ione", ",",
+       " ", "vone", ",", " ", "delta", "\n", "\t", ",", " ",
+       RowBox[{"eqs", "   ", "=", " ",
+        RowBox[{"seq2list", "[", "peqs", " ", "]"}]}], "\n", "\t", ",", " ",
+       RowBox[{"rsyms", " ", "=", " ",
+        RowBox[{"seq2list", "[", "psyms", "]"}]}], "\n", "\t", ",", " ",
+       "syms"}], "\n", "}"}], ",", "\t\t", "\n", "\t",
+     RowBox[{
+      RowBox[{
+       RowBox[{"isFlat", "[", "v_List", "]"}], " ", ":=", " ",
+       RowBox[{"Clip", "[",
+        RowBox[{
+         RowBox[{"Length", "[", "v", "]"}], " ", "-", " ", "1"}], "]"}]}],
+      ";", "\n", "\t",
+      RowBox[{"syms", "   ", "=", " ",
+       RowBox[{"Select", "[",
+        RowBox[{"rsyms", ",", " ",
+         RowBox[{
+          RowBox[{"#", " ", "=!=", " ", "1"}], "&"}]}], "]"}]}], ";", "\n",
+      "\t",
+      RowBox[{"depth", "  ", "=", " ",
+       RowBox[{
+        RowBox[{"isFlat", "[", "eqs", "]"}], " ", "+", " ",
+        RowBox[{"isFlat", "[", "rsyms", "]"}]}]}], ";", "\n", "\t",
+      RowBox[{"result", " ", "=", " ",
+       RowBox[{"Table", "[",
+        RowBox[{
+         RowBox[{"Coefficient", "[",
+          RowBox[{"row", ",", " ", "var"}], "]"}], "\n", "\t\t", ",", " ",
+         RowBox[{"{",
+          RowBox[{"row", ",", " ", "eqs"}], " ", "}"}], "\n", "\t\t", ",",
+         " ",
+         RowBox[{"{",
+          RowBox[{"var", ",", " ", "syms"}], "}"}]}], "\n", "\t", "]"}]}],
+      ";", "\n", "\t",
+      RowBox[{"If", " ", "[",
+       RowBox[{
+        RowBox[{
+         RowBox[{"ione", " ", "=", " ",
+          RowBox[{"Position", "[",
+           RowBox[{"rsyms", ",", " ", "1"}], "]"}]}], ";", " ",
+         RowBox[{"ione", " ", "!=", " ",
+          RowBox[{"{", "}"}]}]}], ",", "\n", "\t\t",
+        RowBox[{
+         RowBox[{"vone", " ", "=", " ",
+          RowBox[{"eqs", " ", "/.", " ",
+           RowBox[{"(",
+            RowBox[{
+             RowBox[{
+              RowBox[{"#", " ", "->", " ", "0"}], "&"}], " ", "/@", " ",
+             "syms"}], ")"}]}]}], ";", "\n", "\t\t",
+         RowBox[{"result", " ", "=", " ",
+          RowBox[{
+           RowBox[{"(",
+            RowBox[{"Insert", "[",
+             RowBox[{
+              RowBox[{"result", "\[Transpose]"}], ",", " ", "vone", ",", " ",
+              "ione"}], "]"}], ")"}], "\[Transpose]"}]}], ";"}]}], "\n", "\t",
+        "]"}], ";", "\n", "\t",
+      RowBox[{"If", " ", "[",
+       RowBox[{
+        RowBox[{
+         RowBox[{"delta", " ", "=", " ",
+          RowBox[{
+           RowBox[{"eqs", " ", "-", " ",
+            RowBox[{"result", ".", "rsyms"}]}], " ", "//", " ",
+           "Simplify"}]}], ";", " ",
+         RowBox[{
+          RowBox[{"norm", "[", "delta", "]"}], " ", "=!=", " ", "0"}]}], ",",
+        " ", "\n", "\t\t",
+        RowBox[{
+         RowBox[{"Message", "[",
+          RowBox[{
+           RowBox[{"vectorize", "::", "invalid"}], ",", " ",
+           RowBox[{"delta", " ", "//", " ", "TableForm"}]}], "]"}], ";", " ",
+         RowBox[{"Abort", "[", "]"}], ";"}]}], "\n", "\t", "]"}], ";", "\n",
+      "\t",
+      RowBox[{"If", " ", "[",
+       RowBox[{
+        RowBox[{"depth", " ", "<", " ", "2"}], ",", " ",
+        RowBox[{"result", " ", "=", " ",
+         RowBox[{"Flatten", "[",
+          RowBox[{"result", ",", " ", "1"}], "]"}]}]}], "]"}], ";", "\n",
+      "\t",
+      RowBox[{"If", " ", "[",
+       RowBox[{
+        RowBox[{"depth", " ", "<", " ", "1"}], ",", " ",
+        RowBox[{"result", " ", "=", " ",
+         RowBox[{"First", " ", "@", " ", "result"}]}]}], "]"}], ";", "\n",
+      "\t",
+      RowBox[{"Return", " ", "@", " ", "result"}], ";"}]}], "\n", "]"}]}],
+  "\n"}], "\n",
+ RowBox[{
+  RowBox[{
+   RowBox[{"vectorize", "::", "invalid"}], " ", "=", " ",
+   "\"\<Passed equations cannot be correctly decomposed on given axes. \n\
+Delta of passed and vectorised forms is: |`1`|\>\""}], ";"}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uSeparate\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<vSeparate\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{
+   RowBox[{"vSeparate", "[", "args__", "]"}], " ", ":=", " ",
+   RowBox[{"vModify", "[",
+    RowBox[{
+     RowBox[{"uSeparate", "[",
+      RowBox[{"#", ",", " ",
+       RowBox[{"seq2list", "[", "args", "]"}]}], "]"}], "&"}], "]"}]}],
+  "\n"}], "\n",
+ RowBox[{
+  RowBox[{"uSeparate", "[",
+   RowBox[{"v_", ",", " ", "rules_", ",", " ",
+    RowBox[{"joint_:", "Equal"}]}], "]"}], " ", ":=", " ",
+  RowBox[{"Module", "[",
+   RowBox[{
+    RowBox[{"{",
+     RowBox[{"exp", " ", "=", " ", "v"}], "}"}], ",", "\n", "\t",
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", " ",
+        RowBox[{
+         RowBox[{"exp", " ", "=", " ",
+          RowBox[{"Append", "[", " ",
+           RowBox[{
+            RowBox[{"seq2list", "[",
+             RowBox[{"exp", " ", "/.", " ", "#"}], "]"}], ",", " ",
+            RowBox[{"joint", "[",
+             RowBox[{
+              RowBox[{"#", "[",
+               RowBox[{"[", "2", "]"}], "]"}], ",", " ",
+              RowBox[{"#", "[",
+               RowBox[{"[", "1", "]"}], "]"}]}], "]"}]}], " ", "]"}]}], ";"}],
+         "\n", "\t", ")"}], "&"}], " ", "/@", " ", "rules"}], ";", "\n", "\t",
+     RowBox[{"Return", "[", "exp", "]"}], ";"}]}], "\n", "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<vSimplify\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"vSimplify", "[", "args___", "]"}], " ", ":=", " ",
+  RowBox[{"vModify", "[",
+   RowBox[{
+    RowBox[{"Simplify", "[",
+     RowBox[{"#", ",", " ",
+      RowBox[{"seq2list", "[", "args", "]"}]}], "]"}], "&"}],
+   "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<vSimpexpand\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"vSimpexpand", "[", "args___", "]"}], " ", ":=", " ",
+  RowBox[{"vModify", "[",
+   RowBox[{
+    RowBox[{"Expand", "@",
+     RowBox[{"Simplify", "[",
+      RowBox[{"#", ",", " ",
+       RowBox[{"seq2list", "[", "args", "]"}]}], "]"}]}], "&"}],
+   "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<vChop\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"vChop", "[", "args___", "]"}], " ", ":=", " ",
+  RowBox[{"vModify", "[",
+   RowBox[{
+    RowBox[{"Chop", "[",
+     RowBox[{"#", ",", " ", "args"}], "]"}], "&"}], "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<vSet\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"SetAttributes", "[",
+   RowBox[{"vSet", ",", " ", "HoldAll"}], "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"vSet", "[", "var_", "]"}], " ", ":=", " ",
+  RowBox[{"Function", "[",
+   RowBox[{
+    RowBox[{"{", "val", "}"}], ",", " ",
+    RowBox[{"var", " ", "=", " ", "val"}]}], "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<vApply\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"vApply", "[", "r___", "]"}], " ", ":=", " ",
+  RowBox[{"vModify", "[",
+   RowBox[{
+    RowBox[{"uApply", "[",
+     RowBox[{"#", ",", " ",
+      RowBox[{"seq2list", "[", "r", "]"}]}], "]"}], "&"}], "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<vPlypend\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"vPlypend", "[", "r___", "]"}], " ", ":=", " ",
+  RowBox[{"vModify", "[",
+   RowBox[{
+    RowBox[{"uPlypend", "[",
+     RowBox[{"#", ",", " ",
+      RowBox[{"seq2list", "[", "r", "]"}]}], "]"}], "&"}], "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<vSeqply\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"vSeqply", "[", "r___", "]"}], " ", ":=", " ",
+  RowBox[{"vModify", "[",
+   RowBox[{
+    RowBox[{"uSeqply", "[",
+     RowBox[{"#", ",", " ",
+      RowBox[{"seq2list", "[", "r", "]"}]}], "]"}], "&"}], "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<vSub\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"vSub", "[", "args__", "]"}], " ", ":=", " ",
+  RowBox[{"vModify", "[",
+   RowBox[{
+    RowBox[{"#", " ", "/.",
+     RowBox[{"seq2list", "[", "args", "]"}]}], "&"}], "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uSuf\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<vSuf\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{
+   RowBox[{"vSuf", "[", "args__", "]"}], " ", ":=", " ",
+   RowBox[{"vModify", "[",
+    RowBox[{
+     RowBox[{"uSuf", "[",
+      RowBox[{"#", ",", " ",
+       RowBox[{"seq2list", "[", "args", "]"}]}], "]"}], "&"}], "]"}]}],
+  "\n"}], "\n",
+ RowBox[{
+  RowBox[{
+   RowBox[{"uSuf", "[",
+    RowBox[{"expr_", ",", " ", "list_List"}], "]"}], " ", ":=", " ",
+   RowBox[{"Module", "[",
+    RowBox[{
+     RowBox[{"{",
+      RowBox[{
+       RowBox[{"result", " ", "=", " ", "expr"}], ",", " ", "args", ",", " ",
+       "funcRepl"}], "}"}], ",", " ", "\n", "\t",
+     RowBox[{
+      RowBox[{"funcRepl", " ", "=", " ",
+       RowBox[{"Function", "[",
+        RowBox[{
+         RowBox[{"{",
+          RowBox[{"f", ",", " ", "g"}], "}"}], ",", " ", "\n", "\t\t",
+         RowBox[{
+          RowBox[{"Function", "[", "g", "]"}], " ", "/.", " ",
+          RowBox[{
+           RowBox[{"args", "[",
+            RowBox[{"[",
+             RowBox[{"1", ",", " ", "1"}], "]"}], "]"}], " ", "->", " ",
+           "#"}]}]}], "\n", "\t", "]"}]}], ";", "\n", "\t", "\n", "\t",
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"Function", "[",
+          RowBox[{
+           RowBox[{"{",
+            RowBox[{"f", ",", " ", "g"}], "}"}], ",", " ", "\n", "\t\t",
+           RowBox[{
+            RowBox[{"args", " ", "=", " ",
+             RowBox[{"Cases", "[",
+              RowBox[{"result", "\n", "\t\t\t", ",", " ",
+               RowBox[{
+                RowBox[{"(",
+                 RowBox[{
+                  RowBox[{"f", "[", "args___", "]"}], " ", "|", " ",
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{"Derivative", "[", "___", "]"}], "[", "f", "]"}],
+                   "[", "args___", "]"}]}], ")"}], " ", ":>", " ",
+                RowBox[{"{", "args", "}"}]}], "\n", "\t\t\t", ",", " ",
+               RowBox[{"{",
+                RowBox[{"0", ",", " ", "Infinity"}], "}"}], "\n", "\t\t\t",
+               ",", " ",
+               RowBox[{"Heads", " ", "->", " ", "True"}]}], "\n", "\t\t",
+              "]"}]}], ";", "\n", "\t\t",
+            RowBox[{"If", " ", "[",
+             RowBox[{
+              RowBox[{"args", " ", "=!=", " ",
+               RowBox[{"{", "}"}]}], "\n", "\t\t", ",", " ",
+              RowBox[{
+               RowBox[{"result", " ", "=", " ",
+                RowBox[{"result", " ", "/.", " ",
+                 RowBox[{"f", " ", "->", " ",
+                  RowBox[{"funcRepl", "[",
+                   RowBox[{"f", ",", " ", "g"}], "]"}]}]}]}], ";"}], "\n",
+              "\t\t", ",", " ",
+              RowBox[{
+               RowBox[{"result", " ", "=", " ",
+                RowBox[{"result", " ", "/.", " ",
+                 RowBox[{"f", " ", "->", " ", "g"}]}]}], ";"}]}], "\n",
+             "\t\t", "]"}], ";"}]}], "\n", "\t", "]"}], "[",
+         RowBox[{"args2seq", " ", "@", " ", "#"}], "]"}], "&"}], " ", "/@",
+       " ", "list"}], ";", "\n", "\t", "\n", "\t",
+      RowBox[{"Return", " ", "@", " ", "result"}], ";"}]}], "\n", "]"}]}],
+  ";"}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uDropHold\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<vDropHold\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{
+   RowBox[{"vDropHold", "[", "]"}], " ", ":=", " ",
+   RowBox[{"vModify", "[", "uDropHold", "]"}]}], "\n"}], "\n",
+ RowBox[{
+  RowBox[{"uDropHold", "[", "a_", "]"}], " ", ":=", " ",
+  RowBox[{"a", " ", "/.", " ",
+   RowBox[{"(", " ",
+    RowBox[{
+     RowBox[{
+      RowBox[{"#", " ", "\[Rule]", " ", "Identity"}], "&"}], " ", "/@", " ",
+     RowBox[{"{",
+      RowBox[{
+      "Hold", ",", " ", "HoldForm", ",", " ", "HoldComplete", ",", " ",
+       "HoldAllComplete"}], "}"}]}], ")"}]}]}]}], "Code"]
+}]
+(* End of Notebook Content *)

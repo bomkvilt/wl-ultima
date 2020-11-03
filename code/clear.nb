@@ -1,0 +1,28 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uClear\>\"", "]"}], ";"}]], "Code"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"uClear", "[", "]"}], " ", ":=", " ",
+  RowBox[{"Block", "[",
+   RowBox[{
+    RowBox[{"{", "names", "}"}], ",", "\n", "\t",
+    RowBox[{
+     RowBox[{"names", " ", "=", " ",
+      RowBox[{"Names", "[",
+       RowBox[{
+        RowBox[{"Context", "[", "]"}], " ", "<>", " ", "\"\<*\>\""}], "]"}]}],
+      ";", "\n", "\t",
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"Remove", "[", "#", "]"}], "&"}], " ", "/@", " ", "names"}],
+      " ", "//", " ", "Quiet"}], ";", "\n", "\t",
+     RowBox[{"ClearSystemCache", "[", "]"}], ";"}]}], "\n", "]"}]}]], "Code"]
+}]
+(* End of Notebook Content *)

@@ -1,0 +1,55 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uBlock\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"uBlock", "[", "c_", "]"}], " ", ":=", " ",
+  RowBox[{"Print", "[",
+   RowBox[{"Row", " ", "@", " ",
+    RowBox[{"{",
+     RowBox[{"\"\<>> \>\"", ",", " ", "c", ",", " ", "\"\<:\>\""}], "}"}]}],
+   "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<printm\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<printt\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{
+   RowBox[{"PackageExport", "[", "\"\<printp\>\"", "]"}], ";"}], "\n"}], "\n",
+ RowBox[{
+  RowBox[{
+   RowBox[{"uPrintBase", "[",
+    RowBox[{"v_", ",", " ", "clb_"}], "]"}], " ", ":=", " ",
+   RowBox[{"(", "\n", "\t",
+    RowBox[{
+     RowBox[{"Print", "[",
+      RowBox[{"clb", " ", "@", " ", "v"}], "]"}], ";", "\n", "\t",
+     RowBox[{"Return", " ", "@", " ", "v"}], ";"}], "\n", ")"}]}],
+  "\n"}], "\n",
+ RowBox[{
+  RowBox[{"printm", "[", "v_", "]"}], " ", ":=", " ",
+  RowBox[{"uPrintBase", "[",
+   RowBox[{"v", ",", " ", "MatrixForm"}], "]"}]}], "\n",
+ RowBox[{
+  RowBox[{"printt", "[", "v_", "]"}], " ", ":=", " ",
+  RowBox[{"uPrintBase", "[",
+   RowBox[{"v", ",", " ",
+    RowBox[{
+     RowBox[{"TableForm", "[",
+      RowBox[{"#", ",", " ",
+       RowBox[{"TableSpacing", "->",
+        RowBox[{"{",
+         RowBox[{"0", ",", "3"}], "}"}]}]}], "]"}], "&"}]}], "]"}]}], "\n",
+ RowBox[{
+  RowBox[{"printp", "[", "pp__", "]"}], " ", ":=", " ",
+  RowBox[{
+   RowBox[{
+    RowBox[{"Print", "[", "#", "]"}], "&"}], " ", "/@", " ",
+   RowBox[{"seq2list", "[", "pp", "]"}]}]}]}], "Code"]
+}]
+(* End of Notebook Content *)

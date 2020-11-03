@@ -1,0 +1,22 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uAddModule\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{
+   RowBox[{"uAddModule", "[", "path__", "]"}], " ", ":=", " ",
+   RowBox[{
+    RowBox[{
+     RowBox[{"NotebookEvaluate", "[", "\n", "\t  ",
+      RowBox[{
+       RowBox[{
+        RowBox[{"NotebookDirectory", "[", "]"}], " ", "<>", " ", "path"}],
+       "\n", "\t", ",", " ",
+       RowBox[{"InsertResults", " ", "\[Rule]", " ", "True"}]}], "\n", "]"}],
+     "&"}], " ", "/@", " ",
+    RowBox[{"seq2list", "[", "path", "]"}]}]}], ";"}]}], "Code"]
+}]
+(* End of Notebook Content *)

@@ -1,0 +1,915 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uFlatJoin\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"uFlatJoin", "[", "args__", "]"}], " ", ":=", " ",
+  RowBox[{"Flatten", "[",
+   RowBox[{"seq2list", "[", "args", "]"}], "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uToRules\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"uToRules", "[",
+   RowBox[{"table_:", "MatrixQ"}], "]"}], " ", ":=", " ",
+  RowBox[{"Module", "[",
+   RowBox[{
+    RowBox[{"{",
+     RowBox[{"data", ",", " ", "n", ",", " ", "m"}], "}"}], ",", "\n", "\t",
+    RowBox[{
+     RowBox[{
+      RowBox[{"{",
+       RowBox[{"n", ",", " ", "m"}], "}"}], " ", "=", " ",
+      RowBox[{"Dimensions", "[", "table", "]"}]}], ";", " ",
+     RowBox[{"Assert", "[",
+      RowBox[{"m", " ", "\[GreaterEqual]", " ", "2"}], "]"}], ";", "\t", "\n",
+      "\t", "\n", "\t",
+     RowBox[{"data", " ", ":=", " ",
+      RowBox[{
+       RowBox[{"MapIndexed", "[",
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"table", "\[LeftDoubleBracket]",
+            RowBox[{
+             RowBox[{"First", "@", "#2"}], ",", " ", "1"}],
+            "\[RightDoubleBracket]"}], " ", "\[Rule]", " ", "#1"}], "&"}],
+         ",", " ",
+         RowBox[{"table", "\[LeftDoubleBracket]",
+          RowBox[{"All", ",", " ",
+           RowBox[{"2", ";;"}]}], "\[RightDoubleBracket]"}], ",", " ",
+         RowBox[{"{", "2", "}"}]}], "]"}], "\[Transpose]"}]}], ";", "\n",
+     "\t",
+     RowBox[{"Return", " ", "@", " ",
+      TagBox[GridBox[{
+         {"\[Piecewise]", GridBox[{
+            {
+             RowBox[{"data", " ", "//", " ", "First"}],
+             RowBox[{"m", " ", ">", " ", "2"}]},
+            {"data", "True"}
+           },
+           AllowedDimensions->{2, Automatic},
+           Editable->True,
+
+           GridBoxAlignment->{
+            "Columns" -> {{Left}}, "ColumnsIndexed" -> {},
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {},
+             "Rows" -> {{1.}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.84]},
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]},
+               Offset[0.2]}, "RowsIndexed" -> {}},
+           Selectable->True]}
+        },
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {},
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}},
+           "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.35]},
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]},
+            Offset[0.2]}, "RowsIndexed" -> {}}],
+       "Piecewise",
+       DeleteWithContents->True,
+       Editable->False,
+       SelectWithContents->True,
+       Selectable->False,
+       StripWrapperBoxes->True]}]}]}], "\n", "]"}]}]}], "Code"],
+
+Cell[TextData[{
+ "{ ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "1"], TraditionalForm]],ExpressionUUID->
+  "fb337e76-9a6e-4894-8c64-cb432ccc7f33"],
+ " \[Rule] ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["a", "1"], TraditionalForm]],ExpressionUUID->
+  "dd471978-24af-416e-a9c4-54acd765b7ed"],
+ "[ ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "4"], TraditionalForm]],ExpressionUUID->
+  "2d02331f-39a1-4a17-aedf-364b6d0c457d"],
+ " ], ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "2"], TraditionalForm]],ExpressionUUID->
+  "82497ca2-e800-4e32-a90d-1277493213a3"],
+ " \[Rule] ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["a", "2"], TraditionalForm]],ExpressionUUID->
+  "9e86ed00-21f6-4746-865c-b489b8b1daf6"],
+ "[ ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "3"], TraditionalForm]],ExpressionUUID->
+  "165a2420-6ac3-4a2f-9f61-cc8851a214a6"],
+ " ] }  /. ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{",
+    SubscriptBox["v", "3"]}], TraditionalForm]],ExpressionUUID->
+  "cbdeaaf1-0abf-44e4-8a70-4f489ccc7918"],
+ " \[Rule] ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["a", "3"], TraditionalForm]],ExpressionUUID->
+  "a18b9ed1-0be2-4f3f-8bf0-75d869765f95"],
+ "[ ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "1"], TraditionalForm]],ExpressionUUID->
+  "af61cff3-eb98-464d-89d3-9efe4c5a45d8"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "4"], TraditionalForm]],ExpressionUUID->
+  "ddb395bf-dd64-45a8-8d0c-9ad60a96b2df"],
+ " ] , ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "4"], TraditionalForm]],ExpressionUUID->
+  "ab52479d-8104-4996-af6e-b4f2e02d0932"],
+ " \[Rule] ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["a", "4"], TraditionalForm]],ExpressionUUID->
+  "f2b85206-d128-4bbc-8ccc-dcf1d3304d74"],
+ "[ ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "2"], TraditionalForm]],ExpressionUUID->
+  "e5687773-b8da-42d5-8543-b0ebb6b34d94"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "3"], TraditionalForm]],ExpressionUUID->
+  "d82a482b-5826-41bb-a52f-fdc7844af004"],
+ " ]} --> \n{ ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "1"], TraditionalForm]],ExpressionUUID->
+  "bc79b450-7012-453c-a23e-1f5c0a3e8f98"],
+ " \[Rule] ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["b", "1"], TraditionalForm]],ExpressionUUID->
+  "51aee764-91d9-4db6-ab3b-2823fdcd02a8"],
+ "       , ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "2"], TraditionalForm]],ExpressionUUID->
+  "8e507142-5ecf-4682-9287-55d82c864960"],
+ " \[Rule] ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["b", "2"], TraditionalForm]],ExpressionUUID->
+  "90be1b64-54f3-4fbf-a3d7-4bab1926285e"],
+ "         }"
+}], "Text"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uApply\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"uApply", "[",
+   RowBox[{"l_", ",", " ", "r_List"}], "]"}], " ", ":=", " ",
+  RowBox[{"With", "[",
+   RowBox[{
+    RowBox[{"{",
+     RowBox[{"rhs", " ", "=", " ", "\n", "\t",
+      RowBox[{"Map", "[",
+       RowBox[{
+        RowBox[{
+         TagBox[GridBox[{
+            {"\[Piecewise]", GridBox[{
+               {
+                RowBox[{
+                 RowBox[{
+                 "#", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}],
+                 " ", "\[Rule]", " ",
+                 RowBox[{"(",
+                  RowBox[{
+                   RowBox[{
+                   "#", "\[LeftDoubleBracket]", "2",
+                    "\[RightDoubleBracket]"}], " ", "//.", " ", "l"}], "  ",
+                  ")"}]}],
+                RowBox[{
+                 RowBox[{"Head", "@", "#"}], " ", "===", " ", "Rule"}]},
+               {
+                RowBox[{"#", " ", "//.", " ", "l"}], "True"}
+              },
+              AllowedDimensions->{2, Automatic},
+              Editable->True,
+
+              GridBoxAlignment->{
+               "Columns" -> {{Left}}, "ColumnsIndexed" -> {},
+                "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+
+              GridBoxItemSize->{
+               "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {},
+                "Rows" -> {{1.}}, "RowsIndexed" -> {}},
+              GridBoxSpacings->{"Columns" -> {
+                  Offset[0.27999999999999997`], {
+                   Offset[0.84]},
+                  Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {},
+                "Rows" -> {
+                  Offset[0.2], {
+                   Offset[0.4]},
+                  Offset[0.2]}, "RowsIndexed" -> {}},
+              Selectable->True]}
+           },
+
+           GridBoxAlignment->{
+            "Columns" -> {{Left}}, "ColumnsIndexed" -> {},
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {},
+             "Rows" -> {{1.}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.35]},
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]},
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          "Piecewise",
+          DeleteWithContents->True,
+          Editable->False,
+          SelectWithContents->True,
+          Selectable->False,
+          StripWrapperBoxes->True], "&"}], ",", " ", "r", ",", " ",
+        RowBox[{"{", "1", "}"}]}], "]"}]}], "\n", "}"}], ",", "  ",
+    RowBox[{"Map", "[",
+     RowBox[{
+      RowBox[{
+       TagBox[GridBox[{
+          {"\[Piecewise]", GridBox[{
+             {
+              RowBox[{
+               RowBox[{
+               "#", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}],
+               " ", "\[Rule]", " ",
+               RowBox[{"(",
+                RowBox[{
+                 RowBox[{
+                 "#", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}],
+                 " ", "//.", " ", "rhs"}], ")"}]}],
+              RowBox[{
+               RowBox[{"Head", "@", "#"}], " ", "===", " ", "Rule"}]},
+             {
+              RowBox[{"#", " ", "//.", " ", "rhs"}], "True"}
+            },
+            AllowedDimensions->{2, Automatic},
+            Editable->True,
+
+            GridBoxAlignment->{
+             "Columns" -> {{Left}}, "ColumnsIndexed" -> {},
+              "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {},
+              "Rows" -> {{1.}}, "RowsIndexed" -> {}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.84]},
+                Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[0.4]},
+                Offset[0.2]}, "RowsIndexed" -> {}},
+            Selectable->True]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Left}}, "ColumnsIndexed" -> {},
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {},
+           "Rows" -> {{1.}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.35]},
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]},
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        "Piecewise",
+        DeleteWithContents->True,
+        Editable->False,
+        SelectWithContents->True,
+        Selectable->False,
+        StripWrapperBoxes->True], "&"}], ",", " ", "l", ",", " ",
+      RowBox[{"{", "1", "}"}]}], "]"}]}], "\n", "]"}]}]}], "Code"],
+
+Cell[TextData[{
+ "{ ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "1"], TraditionalForm]],ExpressionUUID->
+  "6c3ec90a-8456-48dc-8bf4-35373e9e61eb"],
+ " \[Rule] ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["a", "1"], TraditionalForm]],ExpressionUUID->
+  "c0514e80-ce48-4d3e-a3d0-492f81ebe281"],
+ " , ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "2"], TraditionalForm]],ExpressionUUID->
+  "d1ebbc6a-9b95-46dd-be18-ebd5c600d1c8"],
+ " \[Rule] ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["a", "2"], TraditionalForm]],ExpressionUUID->
+  "c267b6d5-7a96-4857-bc0d-256356bb2d7b"],
+ " }  /. ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{",
+    SubscriptBox["v", "3"]}], TraditionalForm]],ExpressionUUID->
+  "98cd553d-65ea-443e-9769-6222f73bfc20"],
+ " \[Rule] ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["a", "3"], TraditionalForm]],ExpressionUUID->
+  "d1ea4963-615a-481e-9cbe-803bca8d07ba"],
+ "[ ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "1"], TraditionalForm]],ExpressionUUID->
+  "a4e8b78b-45b0-4998-a820-9dee340dc1ca"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "2"], TraditionalForm]],ExpressionUUID->
+  "34662f06-2297-4b02-8292-c9e07c9bcf98"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "4"], TraditionalForm]],ExpressionUUID->
+  "817765e2-7855-4ee8-af11-432e98105502"],
+ " ] , ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "4"], TraditionalForm]],ExpressionUUID->
+  "a33746e1-4a40-45a9-a1dd-1839107fd95d"],
+ " \[Rule] ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["a", "4"], TraditionalForm]],ExpressionUUID->
+  "b036c97b-754b-4da4-9c1e-184cefc91a4a"],
+ "[ ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "1"], TraditionalForm]],ExpressionUUID->
+  "1bdee301-6e09-4434-a129-0a7a548c561d"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "2"], TraditionalForm]],ExpressionUUID->
+  "19853b58-1f5e-4b4a-a912-dd25949682aa"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "3"], TraditionalForm]],ExpressionUUID->
+  "02ac2c2d-cea0-4e0d-94f7-3645c27a0826"],
+ " ]} --> ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{",
+    SubscriptBox["v", "1"]}], TraditionalForm]],ExpressionUUID->
+  "8c8a15cb-9805-4895-afba-a74cc537129b"],
+ " \[Rule] ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["a", "1"], TraditionalForm]],ExpressionUUID->
+  "d789d9df-eeed-41e7-9948-1c8d3b942e47"],
+ " , ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "2"], TraditionalForm]],ExpressionUUID->
+  "bada8257-22b1-4660-9a32-a856cd41023a"],
+ " \[Rule] ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["a", "2"], TraditionalForm]],ExpressionUUID->
+  "e8f7c199-b0b6-4bbb-841a-c43b7c35d892"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "3"], TraditionalForm]],ExpressionUUID->
+  "33de5c44-d8a1-4441-9812-6818754e53c0"],
+ " \[Rule] ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["a", "3"], TraditionalForm]],ExpressionUUID->
+  "7e00ad12-f413-4184-b8ff-828cd7a7707d"],
+ " , ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "4"], TraditionalForm]],ExpressionUUID->
+  "c80aa96c-9827-454b-b2b0-76c2f8cdddf0"],
+ " \[Rule] ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["a", "4"], TraditionalForm]],ExpressionUUID->
+  "55c93d07-46c7-4a79-a914-c06a39eef713"],
+ "}"
+}], "Text"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uPlypend\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"uPlypend", "[",
+   RowBox[{"l_", ",", " ", "r_List"}], "]"}], " ", ":=", " ",
+  RowBox[{"Block", "[",
+   RowBox[{
+    RowBox[{"{",
+     RowBox[{
+      RowBox[{"rhs", " ", "=", " ", "r"}], ",", " ", "lsh"}], "}"}], ",",
+    "\n", "\t",
+    RowBox[{
+     RowBox[{"rhs", " ", "=", " ",
+      RowBox[{"Map", "[",
+       RowBox[{
+        RowBox[{
+         TagBox[GridBox[{
+            {"\[Piecewise]", GridBox[{
+               {
+                RowBox[{
+                 RowBox[{
+                 "#", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}],
+                 " ", "\[Rule]", " ",
+                 RowBox[{"(",
+                  RowBox[{
+                   RowBox[{
+                   "#", "\[LeftDoubleBracket]", "2",
+                    "\[RightDoubleBracket]"}], " ", "//.", " ", "l"}], "  ",
+                  ")"}]}],
+                RowBox[{
+                 RowBox[{"Head", "@", "#"}], " ", "===", " ", "Rule"}]},
+               {
+                RowBox[{"#", " ", "//.", " ", "l"}], "True"}
+              },
+              AllowedDimensions->{2, Automatic},
+              Editable->True,
+
+              GridBoxAlignment->{
+               "Columns" -> {{Left}}, "ColumnsIndexed" -> {},
+                "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+
+              GridBoxItemSize->{
+               "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {},
+                "Rows" -> {{1.}}, "RowsIndexed" -> {}},
+              GridBoxSpacings->{"Columns" -> {
+                  Offset[0.27999999999999997`], {
+                   Offset[0.84]},
+                  Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {},
+                "Rows" -> {
+                  Offset[0.2], {
+                   Offset[0.4]},
+                  Offset[0.2]}, "RowsIndexed" -> {}},
+              Selectable->True]}
+           },
+
+           GridBoxAlignment->{
+            "Columns" -> {{Left}}, "ColumnsIndexed" -> {},
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {},
+             "Rows" -> {{1.}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.35]},
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]},
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          "Piecewise",
+          DeleteWithContents->True,
+          Editable->False,
+          SelectWithContents->True,
+          Selectable->False,
+          StripWrapperBoxes->True], "&"}], ",", " ", "rhs", ",", " ",
+        RowBox[{"{", "1", "}"}]}], "]"}]}], ";", "\n", "\t",
+     RowBox[{"rhs", " ", "=", " ",
+      RowBox[{"Map", "[",
+       RowBox[{
+        RowBox[{
+         TagBox[GridBox[{
+            {"\[Piecewise]", GridBox[{
+               {
+                RowBox[{
+                 RowBox[{
+                 "#", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}],
+                 " ", "\[Rule]", " ",
+                 RowBox[{"(",
+                  RowBox[{
+                   RowBox[{
+                   "#", "\[LeftDoubleBracket]", "2",
+                    "\[RightDoubleBracket]"}], " ", "//.", " ", "rhs"}],
+                  ")"}]}],
+                RowBox[{
+                 RowBox[{"Head", "@", "#"}], " ", "===", " ", "Rule"}]},
+               {
+                RowBox[{"#", " ", "//.", " ", "rhs"}], "True"}
+              },
+              AllowedDimensions->{2, Automatic},
+              Editable->True,
+
+              GridBoxAlignment->{
+               "Columns" -> {{Left}}, "ColumnsIndexed" -> {},
+                "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+
+              GridBoxItemSize->{
+               "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {},
+                "Rows" -> {{1.}}, "RowsIndexed" -> {}},
+              GridBoxSpacings->{"Columns" -> {
+                  Offset[0.27999999999999997`], {
+                   Offset[0.84]},
+                  Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {},
+                "Rows" -> {
+                  Offset[0.2], {
+                   Offset[0.4]},
+                  Offset[0.2]}, "RowsIndexed" -> {}},
+              Selectable->True]}
+           },
+
+           GridBoxAlignment->{
+            "Columns" -> {{Left}}, "ColumnsIndexed" -> {},
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {},
+             "Rows" -> {{1.}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.35]},
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]},
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          "Piecewise",
+          DeleteWithContents->True,
+          Editable->False,
+          SelectWithContents->True,
+          Selectable->False,
+          StripWrapperBoxes->True], "&"}], ",", " ", "rhs", ",", " ",
+        RowBox[{"{", "1", "}"}]}], "]"}]}], ";", "\n", "\t",
+     RowBox[{"lhs", " ", "=", " ",
+      RowBox[{"Map", "[",
+       RowBox[{
+        RowBox[{
+         TagBox[GridBox[{
+            {"\[Piecewise]", GridBox[{
+               {
+                RowBox[{
+                 RowBox[{
+                 "#", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}],
+                 " ", "\[Rule]", " ",
+                 RowBox[{"(",
+                  RowBox[{
+                   RowBox[{
+                   "#", "\[LeftDoubleBracket]", "2",
+                    "\[RightDoubleBracket]"}], " ", "//.", " ", "rhs"}],
+                  ")"}]}],
+                RowBox[{
+                 RowBox[{"Head", "@", "#"}], " ", "===", " ", "Rule"}]},
+               {
+                RowBox[{"#", " ", "//.", " ", "rhs"}], "True"}
+              },
+              AllowedDimensions->{2, Automatic},
+              Editable->True,
+
+              GridBoxAlignment->{
+               "Columns" -> {{Left}}, "ColumnsIndexed" -> {},
+                "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+
+              GridBoxItemSize->{
+               "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {},
+                "Rows" -> {{1.}}, "RowsIndexed" -> {}},
+              GridBoxSpacings->{"Columns" -> {
+                  Offset[0.27999999999999997`], {
+                   Offset[0.84]},
+                  Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {},
+                "Rows" -> {
+                  Offset[0.2], {
+                   Offset[0.4]},
+                  Offset[0.2]}, "RowsIndexed" -> {}},
+              Selectable->True]}
+           },
+
+           GridBoxAlignment->{
+            "Columns" -> {{Left}}, "ColumnsIndexed" -> {},
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {},
+             "Rows" -> {{1.}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.35]},
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]},
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          "Piecewise",
+          DeleteWithContents->True,
+          Editable->False,
+          SelectWithContents->True,
+          Selectable->False,
+          StripWrapperBoxes->True], "&"}], ",", " ", "l", "  ", ",", " ",
+        RowBox[{"{", "1", "}"}]}], "]"}]}], ";", "\n", "\t",
+     RowBox[{"seq2list", "[",
+      RowBox[{"lhs", ",", " ", "rhs"}], "]"}]}]}], "\n", "]"}]}]}], "Code"],
+
+Cell[TextData[{
+ "{ ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["a", "1"], TraditionalForm]],ExpressionUUID->
+  "f63d7d7e-a4fa-465f-8f7f-a69e561262b5"],
+ " \[Rule] ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["b", "1"], TraditionalForm]],ExpressionUUID->
+  "c078b11d-cf63-40bf-92cd-e23ce811cce9"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["a", "2"], TraditionalForm]],ExpressionUUID->
+  "b059990b-a95e-4398-902b-1e7258d2d14c"],
+ " \[Rule] ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["b", "2"], TraditionalForm]],ExpressionUUID->
+  "3405d322-8ef4-4174-91ee-82453f585fe7"],
+ "[",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["a", "1"], TraditionalForm]],ExpressionUUID->
+  "e5a484cd-b1e0-46ad-a20c-2f249f9de8ac"],
+ "], .... } --> { ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["a", "1"], TraditionalForm]],ExpressionUUID->
+  "81d9ad39-cb0c-439d-9d03-88148f5355d8"],
+ " \[Rule] ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["c", "1"], TraditionalForm]],ExpressionUUID->
+  "0c3cedfb-e598-4239-9fa6-d87dee6171d8"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["a", "2"], TraditionalForm]],ExpressionUUID->
+  "5d336b01-ddbc-47d9-98cf-1a92e72e2f3c"],
+ " \[Rule] ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["c", "2"], TraditionalForm]],ExpressionUUID->
+  "612ed1fe-9475-43b3-a7f0-5c554d4959b2"],
+ ", .... }"
+}], "Text"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uSeqply\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"uSeqply", "[", "l_List", "]"}], " ", ":=", " ",
+  RowBox[{"Module", "[",
+   RowBox[{
+    RowBox[{"{",
+     RowBox[{"cl", " ", "=", " ",
+      RowBox[{"{", "}"}]}], "}"}], ",", " ", "\n", "\t",
+    RowBox[{"MapIndexed", "[",
+     RowBox[{
+      RowBox[{
+       TagBox[GridBox[{
+          {"\[Piecewise]", GridBox[{
+             {
+              RowBox[{
+               RowBox[{"AppendTo", "[",
+                RowBox[{"cl", ",", " ",
+                 RowBox[{
+                  RowBox[{
+                  "#", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}],
+                   " ", "\[Rule]", " ",
+                  RowBox[{"(",
+                   RowBox[{
+                    RowBox[{
+                    "#", "\[LeftDoubleBracket]", "2",
+                    "\[RightDoubleBracket]"}], " ", "//.", " ", "cl"}],
+                   ")"}]}]}], "]"}], "\[LeftDoubleBracket]",
+               RowBox[{"-", "1"}], "\[RightDoubleBracket]"}],
+              RowBox[{
+               RowBox[{"Head", "@", "#"}], " ", "===", " ", "Rule"}]},
+             {
+              RowBox[{
+               RowBox[{"AppendTo", "[",
+                RowBox[{"cl", ",", " ",
+                 RowBox[{"#", " ", "//.", " ", "cl"}]}], "]"}],
+               "\[LeftDoubleBracket]",
+               RowBox[{"-", "1"}], "\[RightDoubleBracket]"}], "True"}
+            },
+            AllowedDimensions->{2, Automatic},
+            Editable->True,
+
+            GridBoxAlignment->{
+             "Columns" -> {{Left}}, "ColumnsIndexed" -> {},
+              "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {},
+              "Rows" -> {{1.}}, "RowsIndexed" -> {}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.84]},
+                Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[0.4]},
+                Offset[0.2]}, "RowsIndexed" -> {}},
+            Selectable->True]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Left}}, "ColumnsIndexed" -> {},
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {},
+           "Rows" -> {{1.}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.35]},
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]},
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        "Piecewise",
+        DeleteWithContents->True,
+        Editable->False,
+        SelectWithContents->True,
+        Selectable->False,
+        StripWrapperBoxes->True], "&"}], ",", " ", "l", ",", " ",
+      RowBox[{"{", "1", "}"}]}], "]"}]}], "\n", "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uRuleCast\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"SetAttributes", "[",
+   RowBox[{"uRuleCast", ",", " ", "HoldAll"}], "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"uRuleCast", "[",
+   RowBox[{"l_", ",", " ",
+    RowBox[{"rule_:", "Rule"}]}], "]"}], " ", ":=", " ",
+  RowBox[{"Module", "[",
+   RowBox[{
+    RowBox[{"{",
+     RowBox[{"rehold", "\n", "\t", ",", " ",
+      RowBox[{"val", "   ", "=", " ", "l"}], "\n", "\t", ",", " ",
+      RowBox[{"holds", " ", "=", " ",
+       RowBox[{"{",
+        RowBox[{"HoldForm", ",", " ", "Hold"}], "}"}]}]}], "\n", "}"}], ",",
+    "\n", "\t",
+    RowBox[{
+     RowBox[{"rehold", " ", ":=", " ",
+      RowBox[{"val", " ", "=", " ",
+       RowBox[{
+        RowBox[{"val", " ", "\n", "\t\t", "//.", " ",
+         RowBox[{"(", " ",
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"#1", "[",
+                RowBox[{"#2", "[", "v_", "]"}], "]"}], " ", "\[RuleDelayed]",
+               " ",
+               RowBox[{"#1", "[", "v", "]"}]}], "&"}], " ", "@@", " ", "#"}],
+            "&"}], " ", "/@", " ",
+           RowBox[{"Permutations", "[",
+            RowBox[{
+             RowBox[{"Join", "[",
+              RowBox[{"holds", ",", " ", "holds"}], "]"}], ",", " ",
+             RowBox[{"{", "2", "}"}]}], "]"}]}], " ", ")"}]}], "\n", "\t\t", "//.",
+         " ",
+        RowBox[{"(", " ",
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"#", "[", "v_", "]"}], " ", "\[RuleDelayed]", " ",
+            RowBox[{
+             RowBox[{
+             "holds", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}],
+             "[", "v", "]"}]}], "&"}], " ", "/@", " ",
+          RowBox[{"holds", "\[LeftDoubleBracket]",
+           RowBox[{"2", ";;"}], "\[RightDoubleBracket]"}]}], " ", ")"}]}]}]}],
+      ";", "\n", "\t", "rehold", ";", " ",
+     RowBox[{"val", " ", "=", " ",
+      RowBox[{"subhold", "[",
+       RowBox[{
+        RowBox[{"Evaluate", "@", "val"}], ",", " ", "2"}], "]"}]}], ";", "\n",
+      "\t", "rehold", ";", " ",
+     RowBox[{"val", " ", "=", " ",
+      RowBox[{"val", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}],
+      ";", "\n", "\t", "\n", "\t",
+     RowBox[{"Switch", "[",
+      RowBox[{
+       RowBox[{"val", "\[LeftDoubleBracket]",
+        RowBox[{"1", ",", "0"}], "\[RightDoubleBracket]"}], "\n", "\t", ",",
+       " ", "Piecewise", ",", " ",
+       RowBox[{
+        RowBox[{"Replace", "[",
+         RowBox[{"val", ",", " ",
+          RowBox[{
+           RowBox[{"a_", "[",
+            RowBox[{"b_", ",", " ", "c_"}], "]"}], " ", "\[Rule]", " ",
+           RowBox[{"rule", "[",
+            RowBox[{"b", ",", " ",
+             RowBox[{
+              RowBox[{
+              "holds", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}],
+               "[", "c", "]"}]}], "]"}]}], ",", " ",
+          RowBox[{"{", "4", "}"}], ",", " ",
+          RowBox[{"Heads", "\[Rule]", "True"}]}], "]"}],
+        "\[LeftDoubleBracket]",
+        RowBox[{"1", ",", "1", "  ", ",", "1"}], "\[RightDoubleBracket]"}],
+       "\n", "\t", ",", " ", "List", "     ", ",", " ",
+       RowBox[{
+        RowBox[{"Replace", "[",
+         RowBox[{"val", ",", " ",
+          RowBox[{
+           RowBox[{"a_", "[",
+            RowBox[{"b_", ",", " ", "c_"}], "]"}], " ", "\[Rule]", " ",
+           RowBox[{"rule", "[",
+            RowBox[{"b", ",", " ",
+             RowBox[{
+              RowBox[{
+              "holds", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}],
+               "[", "c", "]"}]}], "]"}]}], ",", " ",
+          RowBox[{"{", "3", "}"}], ",", " ",
+          RowBox[{"Heads", "\[Rule]", "True"}]}], "]"}],
+        "\[LeftDoubleBracket]",
+        RowBox[{"1", ",", "All", ",", "1"}], "\[RightDoubleBracket]"}], "\n",
+       "\t", ",", " ", "__", ",", " ",
+       RowBox[{"If", " ", "[",
+        RowBox[{
+         RowBox[{"MatchQ", "[",
+          RowBox[{"val", ",", " ",
+           RowBox[{
+            RowBox[{
+            "holds", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}],
+            "[",
+            RowBox[{"a_", "[",
+             RowBox[{"b_", ",", " ", "c_"}], "]"}], "]"}]}], "]"}], "\n",
+         "\t\t", ",", " ",
+         RowBox[{
+          RowBox[{"Replace", "[",
+           RowBox[{"val", ",", " ",
+            RowBox[{
+             RowBox[{"a_", "[",
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                "holds", "\[LeftDoubleBracket]", "1",
+                 "\[RightDoubleBracket]"}], "[", "b_", "]"}], ",", " ",
+               "c_"}], "]"}], " ", "\[Rule]", " ",
+             RowBox[{"rule", "[",
+              RowBox[{"b", ",", " ", "c"}], "]"}]}], ",", " ",
+            RowBox[{"{", "1", "}"}], ",", " ",
+            RowBox[{"Heads", "\[Rule]", "True"}]}], "]"}],
+          "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], "\n",
+         "\t\t", ",", " ",
+         RowBox[{
+          RowBox[{"Message", "[",
+           RowBox[{
+            RowBox[{"uRuleCast", "::", "badcast"}], ",", " ",
+            RowBox[{"Head", "@", "l"}]}], "]"}], ";", " ",
+          RowBox[{"Abort", "[", "]"}], ";"}]}], "\n", "\t", "]"}]}],
+      "]"}]}]}], "\n", "]"}]}], "\n",
+ RowBox[{
+  RowBox[{
+   RowBox[{"uRuleCast", "::", "badcast"}], " ", "=", " ",
+   "\"\<cannot cast `1` to rule\>\""}], ";"}]}], "Code"]
+}]
+(* End of Notebook Content *)

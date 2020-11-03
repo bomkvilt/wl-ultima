@@ -1,0 +1,40 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uGridLines\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"uGridLines", "[", "step_", "]"}], " ", ":=", " ",
+  RowBox[{"Function", "[",
+   RowBox[{
+    RowBox[{"{",
+     RowBox[{"min", ",", " ", "max"}], "}"}], ",", " ", "\n", "\t",
+    RowBox[{"Range", "[", "\n", "\t\t  ",
+     RowBox[{
+      RowBox[{"Ceiling", "[",
+       RowBox[{"min", ",", " ", "step"}], "]"}], "\n", "\t\t", ",", " ",
+      RowBox[{"Floor", "  ", "[",
+       RowBox[{"max", ",", " ", "step"}], "]"}], "\n", "\t\t", ",", " ",
+      "step"}], "\n", "\t", "]"}]}], "\n", "]"}]}], "\n",
+ RowBox[{
+  RowBox[{"uGridLines", "[",
+   RowBox[{"x_", ",", " ", "y_"}], "]"}], " ", ":=", " ",
+  RowBox[{"{",
+   RowBox[{
+    RowBox[{"uGridLines", "[", "x", "]"}], ",", " ",
+    RowBox[{"uGridLines", "[", "y", "]"}]}], "}"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uRasterize\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"uRasterize", "[", "args___", "]"}], " ", ":=", " ",
+  RowBox[{"Function", "[",
+   RowBox[{
+    RowBox[{"{", "p", "}"}], ",", " ",
+    RowBox[{"Rasterize", "[",
+     RowBox[{"p", ",", " ", "args"}], "]"}]}], "]"}]}]}], "Code"]
+}]
+(* End of Notebook Content *)

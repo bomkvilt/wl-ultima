@@ -1,0 +1,73 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uVec\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"uVec", "[", "v_List", "]"}], " ", ":=", " ",
+  RowBox[{"Module", "[",
+   RowBox[{
+    RowBox[{"{",
+     RowBox[{"dim", " ", "=", " ",
+      RowBox[{"Dimensions", "[", "v", "]"}]}], "}"}], ",", "\n", "\t",
+    RowBox[{"If", "[",
+     RowBox[{
+      RowBox[{
+       RowBox[{"Length", "@", "dim"}], " ", ">", " ", "1"}], "\n", "\t", ",",
+      " ",
+      RowBox[{
+       RowBox[{"Return", " ", "@", " ",
+        RowBox[{"v", "\[LeftDoubleBracket]",
+         RowBox[{"All", ",", " ", "1"}], "\[RightDoubleBracket]"}]}], ";"}],
+      "\n", "\t", ",", " ",
+      RowBox[{
+       RowBox[{"Return", " ", "@", " ", "v"}], ";"}]}], "\n", "\t", "]"}]}],
+   "\n", "]"}]}], "\n",
+ RowBox[{
+  RowBox[{"uVec", "[",
+   RowBox[{"v_", ",", " ", "w__"}], "]"}], " ", ":=", " ",
+  RowBox[{"uVec", "[",
+   RowBox[{"seq2list", "[",
+    RowBox[{"v", ",", " ", "w"}], "]"}], "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uNorm\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"uNorm", "[", "v_List", "]"}], " ", ":=", " ",
+  RowBox[{"Sqrt", " ", "@", " ",
+   RowBox[{"Total", "[",
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["#", "2"], "&"}], " ", "/@", " ", "v"}],
+    "]"}]}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uNormalize\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"uNormalize", "[", "v_", "]"}], " ", ":=", " ",
+  RowBox[{"Return", "[",
+   RowBox[{"v", " ", "/", " ",
+    RowBox[{"uNorm", "[", "v", "]"}]}], "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uVecJoin\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{
+   RowBox[{"uVecJoin", "[",
+    RowBox[{"l_List", ",", " ", "r_List", ",", " ",
+     RowBox[{"command_:", "Equal"}]}], "]"}], " ", ":=", " ",
+   RowBox[{"Replace", "[", "\n", "\t",
+    RowBox[{
+     RowBox[{
+      RowBox[{"{",
+       RowBox[{"l", ",", " ", "r"}], "}"}], "\[Transpose]"}], ",", " ",
+     RowBox[{"List", " ", "->", " ", "command"}], ",", " ",
+     RowBox[{"{", "2", "}"}], ",", " ",
+     RowBox[{"Heads", "->", "True"}]}], "\n", "]"}]}], ";"}]}], "Code"]
+}]
+(* End of Notebook Content *)

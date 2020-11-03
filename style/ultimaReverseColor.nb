@@ -1,37 +1,20 @@
 (* Content-type: application/vnd.wolfram.mathematica *)
 
-(*** Wolfram Notebook File ***)
-(* http://www.wolfram.com/nb *)
-
-(* CreatedBy='Mathematica 12.0' *)
-
-(*CacheID: 234*)
-(* Internal cache information:
-NotebookFileLineBreakTest
-NotebookFileLineBreakTest
-NotebookDataPosition[       158,          7]
-NotebookDataLength[     18554,        453]
-NotebookOptionsPosition[     11415,        356]
-NotebookOutlinePosition[     12013,        379]
-CellTagsIndexPosition[     11970,        376]
-MenuPosition->0
-WindowFrame->Normal*)
-
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
 Cell["Style Definition for DarkPackages", "Title",
- FontSize->24,ExpressionUUID->"4b4ab790-e7cf-47ff-aa7b-ae27c78e02e7"],
+ FontSize->24],
 
 Cell[StyleData[StyleDefinitions -> "Default.nb"],
  FontColor->RGBColor[
-  0.8666666666666667, 0.8666666666666667, 
-   0.8666666666666667],ExpressionUUID->"05c0d526-1d02-45ca-8c45-5084010ed7b3"],
+  0.8666666666666667, 0.8666666666666667,
+   0.8666666666666667]],
 
 Cell[CellGroupData[{
 
-Cell["notebook options settings", "Subsection",ExpressionUUID->"fdac48aa-4bd4-44b0-9072-90fad4aeb78e"],
+Cell["notebook options settings", "Subsection"],
 
 Cell[StyleData[All, "Working"],
  CellInsertionPointCell->None,
@@ -39,14 +22,14 @@ Cell[StyleData[All, "Working"],
  DockedCells->{},
  DefaultNewCellStyle->"Code",
  ShowPredictiveInterface->
-  False,ExpressionUUID->"b58bf9f5-5531-4539-b8a5-c8bf8f395c5a"],
+  False],
 
 Cell[StyleData["Notebook"],
  CellBracketOptions->{"Color"->RGBColor[0.3, 0.3, 0.3],
  "HoverColor"->RGBColor[0.15, 0.55, 0.82]},
  AutoStyleOptions->{
  "CommentStyle"->{
-  FontColor -> RGBColor[0.89, 0.56, 1.], ShowAutoStyles -> False, 
+  FontColor -> RGBColor[0.89, 0.56, 1.], ShowAutoStyles -> False,
    ShowSyntaxStyles -> False, AutoNumberFormatting -> False},
  "ExcessArgumentStyle"->{FontColor -> RGBColor[0.87, 0.2, 0.18]},
  "FunctionLocalVariableStyle"->{FontColor -> RGBColor[0.53, 0.84, 1.]},
@@ -59,7 +42,7 @@ Cell[StyleData["Notebook"],
  "PatternVariableStyle"->{
   FontColor -> RGBColor[0.11, 1., 0.08], FontSlant -> "Italic"},
  "StringStyle"->{
-  FontColor -> RGBColor[0.98, 0.71, 0.], ShowAutoStyles -> False, 
+  FontColor -> RGBColor[0.98, 0.71, 0.], ShowAutoStyles -> False,
    ShowSyntaxStyles -> False, AutoNumberFormatting -> False},
  "UndefinedSymbolStyle"->{FontColor -> RGBColor[0.42, 0.94, 1.]},
  "UnknownOptionStyle"->{FontColor -> RGBColor[0.86, 0.2, 0.18]},
@@ -72,52 +55,52 @@ Cell[StyleData["Notebook"],
  TranslationOptions->{"Language"->None},
  FontColor->RGBColor[1, 1, 1],
  Background->GrayLevel[
-  0.15],ExpressionUUID->"547ceb42-b848-435c-ad85-22ff15510ed8"]
-}, Open  ]],
+  0.15]]
+}]],
 
 Cell[CellGroupData[{
 
-Cell["Styles for Title and Section Cells", "Section",ExpressionUUID->"3fa0cb76-6965-43fa-8069-d569ec3b4758"],
+Cell["Styles for Title and Section Cells", "Section"],
 
 Cell[StyleData["Title"],
  FontColor->GrayLevel[
-  1],ExpressionUUID->"32298ad4-1b67-4d0d-95d1-4c70a8d6abee"],
+  1]],
 
 Cell[StyleData["Chapter"],
  FontColor->RGBColor[
-  0.8, 0.8, 0.8],ExpressionUUID->"237326a6-b1a8-4b05-9ca0-ec2f86716a12"],
+  0.8, 0.8, 0.8]],
 
 Cell[StyleData["Subchapter"],
  FontColor->RGBColor[
-  0.65, 0.65, 0.65],ExpressionUUID->"4654af1d-dab2-4bc6-a315-eca8a06c66c0"],
+  0.65, 0.65, 0.65]],
 
 Cell[StyleData["Subtitle"],
  FontColor->RGBColor[
-  0.8, 0.3, 0.09],ExpressionUUID->"2db92368-4fc0-460a-9688-797960b491fb"],
+  0.8, 0.3, 0.09]],
 
 Cell[StyleData["Subsubtitle"],
  FontColor->RGBColor[
-  0.85, 0.7, 0.09],ExpressionUUID->"56508694-e725-4ec4-ae95-f4fd414e3d89"],
+  0.85, 0.7, 0.09]],
 
 Cell[StyleData["Section"],
  FontColor->RGBColor[
-  0.14, 0.52, 0.65],ExpressionUUID->"68874722-7846-4ba0-8dca-854c7d985ea4"],
+  0.14, 0.52, 0.65]],
 
 Cell[StyleData["Subsection"],
  FontColor->GrayLevel[
-  0.75],ExpressionUUID->"6235af1f-8c14-482f-b11d-9f0f4d83cb8a"],
+  0.75]],
 
 Cell[StyleData["Subsubsection"],
  FontColor->RGBColor[
-  0.82, 0.49, 0.2],ExpressionUUID->"80ad1458-660d-4987-a2b2-5fce33f2b862"],
+  0.82, 0.49, 0.2]],
 
 Cell[StyleData["Subsubsubsection"],
  FontColor->RGBColor[
-  0.95, 0.69, 0.12],ExpressionUUID->"b3a9980d-ae38-49a5-86f2-3fb9bfd77610"],
+  0.95, 0.69, 0.12]],
 
 Cell[StyleData["Subsubsubsubsection"],
  FontColor->RGBColor[
-  0.91, 0.36, 0.08],ExpressionUUID->"4a09e5da-15c0-49cb-a773-beba4ca8a36a"],
+  0.91, 0.36, 0.08]],
 
 Cell[StyleData["Text"],
  FontFamily->"Gill Sans Light",
@@ -125,23 +108,23 @@ Cell[StyleData["Text"],
  FontWeight->"Plain",
  FontSlant->"Plain",
  FontColor->GrayLevel[
-  0.6],ExpressionUUID->"2fb96e89-4737-465f-b54c-5230d938aeaf"],
+  0.6]],
 
 Cell[StyleData["ItemParagraph"],
  FontColor->GrayLevel[
-  0.6],ExpressionUUID->"b75e42ef-7aa8-476b-bbea-c4b832f3dc48"],
+  0.6]],
 
 Cell[StyleData["SubitemParagraph"],
  FontColor->GrayLevel[
-  0.6],ExpressionUUID->"589bcb46-9409-4f91-b006-53490651fdf7"],
+  0.6]],
 
 Cell[StyleData["SubsubitemParagraph"],
  FontColor->GrayLevel[
-  0.6],ExpressionUUID->"ada59bf4-2c3d-4303-9e2b-3d1a6f65d178"],
+  0.6]],
 
 Cell[CellGroupData[{
 
-Cell["Chapter", "Subsection",ExpressionUUID->"d8c387bb-aa48-4002-8757-6caf6205c4cb"],
+Cell["Chapter", "Subsection"],
 
 Cell[StyleData["Chapter"],
  CounterIncrements->"Chapter",
@@ -150,7 +133,7 @@ Cell[StyleData["Chapter"],
    "Subsubitem", 0}, {"ItemNumbered", 0}, {"SubitemNumbered", 0}, {
    "SubsubitemNumbered", 0}},
  MenuSortingValue->1150,
- MenuCommandKey->"2",ExpressionUUID->"99a5ccfe-8144-4161-9268-aa55b6582f6f"],
+ MenuCommandKey->"2"],
 
 Cell[StyleData["Subchapter"],
  CounterIncrements->"Subchapter",
@@ -158,13 +141,13 @@ Cell[StyleData["Subchapter"],
    "Item", 0}, {"Subitem", 0}, {"Subsubitem", 0}, {"ItemNumbered", 0}, {
    "SubitemNumbered", 0}, {"SubsubitemNumbered  ", 0}},
  MenuSortingValue->1200,
- MenuCommandKey->"3",ExpressionUUID->"7c07902d-1c90-4baa-83ce-6aa20a3ad9b3"]
-}, Open  ]]
-}, Open  ]],
+ MenuCommandKey->"3"]
+}]]
+}]],
 
 Cell[CellGroupData[{
 
-Cell["Input and Output cells", "Section",ExpressionUUID->"2c27b030-d0eb-4655-a56a-c52fd1a9da3e"],
+Cell["Input and Output cells", "Section"],
 
 Cell[StyleData["Code"],
  CellMargins->{{66, Inherited}, {Inherited, Inherited}},
@@ -174,7 +157,7 @@ Cell[StyleData["Code"],
  FontWeight->Plain,
  FontColor->GrayLevel[1],
  Background->GrayLevel[
-  0.25],ExpressionUUID->"d7d59191-b5a9-4d55-8fc1-1b6e8f0df1da"],
+  0.25]],
 
 Cell[StyleData["InitializationCell"],
  CellMargins->{{55, Inherited}, {Inherited, Inherited}},
@@ -182,117 +165,114 @@ Cell[StyleData["InitializationCell"],
  CellFrameLabelMargins->-5,
  FontColor->GrayLevel[1],
  Background->GrayLevel[
-  0.25],ExpressionUUID->"d23ac868-5265-42a1-8555-8b7161a2fa2d"],
+  0.25]],
 
 Cell[StyleData["Input"],
  CellMargins->{{66, Inherited}, {Inherited, Inherited}},
  CellFrameLabelMargins->{{17, Inherited}, {Inherited, Inherited}},
  FontSize->13,
  FontColor->GrayLevel[
-  0.7],ExpressionUUID->"6f17dd8f-fb8f-40c2-8b8e-eae602e20b44"],
+  0.7]],
 
 Cell[StyleData["Output"],
  CellFrame->True,
  CellMargins->{{55, Inherited}, {Inherited, Inherited}},
- CellLabelStyle->{"CellLabel", FontColor -> GrayLevel[0.9]},
  CellFrameMargins->{{10, 0}, {0, 0}},
  CellFrameStyle->{
    Directive[
-    GrayLevel[1, 0]], 
+    GrayLevel[1, 0]],
    Directive[
-    GrayLevel[1, 0]], 
+    GrayLevel[1, 0]],
    Directive[
-    GrayLevel[1, 0]], 
+    GrayLevel[1, 0]],
    Directive[
-    GrayLevel[0.85], 
-    Thickness[5], 
+    GrayLevel[0.85],
+    Thickness[5],
     Dashing[{2, 7}]]},
  CellFrameLabelMargins->-5,
- FontSize->13,ExpressionUUID->"d7dbe4b7-227e-4906-9285-d33096db78a7"],
+ FontSize->13],
 
 Cell[StyleData["Message"],
  CellFrame->True,
  CellMargins->{{55, Inherited}, {Inherited, Inherited}},
- CellLabelStyle->{"CellLabel", FontColor -> GrayLevel[0.9]},
  CellFrameMargins->{{10, 0}, {0, 0}},
  CellFrameStyle->{
    Directive[
-    GrayLevel[1, 0]], 
+    GrayLevel[1, 0]],
    Directive[
-    GrayLevel[1, 0]], 
+    GrayLevel[1, 0]],
    Directive[
-    GrayLevel[1, 0]], 
+    GrayLevel[1, 0]],
    Directive[
-    GrayLevel[0.85], 
-    Thickness[5], 
+    GrayLevel[0.85],
+    Thickness[5],
     Dashing[{2, 7}]]},
  CellFrameLabelMargins->-5,
  FontColor->RGBColor[
-  0.7, 0.24, 0.22],ExpressionUUID->"c98abd43-4e22-40dc-b424-5f2fd9f1caae"],
+  0.7, 0.24, 0.22]],
 
 Cell[StyleData["Print"],
  CellFrame->True,
  CellMargins->{{55, Inherited}, {Inherited, Inherited}},
- CellLabelStyle->{"CellLabel", FontColor -> GrayLevel[0.9]},
  CellFrameMargins->{{10, 0}, {0, 0}},
  CellFrameStyle->{
    Directive[
-    GrayLevel[1, 0]], 
+    GrayLevel[1, 0]],
    Directive[
-    GrayLevel[1, 0]], 
+    GrayLevel[1, 0]],
    Directive[
-    GrayLevel[1, 0]], 
+    GrayLevel[1, 0]],
    Directive[
-    GrayLevel[0.85], 
-    Thickness[5], 
+    GrayLevel[0.85],
+    Thickness[5],
     Dashing[{2, 7}]]},
  CellFrameLabelMargins->-5,
  FontColor->GrayLevel[
-  0.9],ExpressionUUID->"5947314a-27e7-4b2c-aa5d-774e445d8033"]
-}, Open  ]],
+  0.9]]
+}]],
 
 Cell[CellGroupData[{
 
-Cell["misc", "Section",ExpressionUUID->"4cc79008-1a70-4432-85e3-cec9c635a574"],
+Cell["misc", "Section"],
 
 Cell[StyleData["InformationCell"],
  CellBracketOptions->{"Color"->RGBColor[0.76, 0.6, 0.68]},
  FontColor->GrayLevel[
-  0.3],ExpressionUUID->"3307e9f2-dc65-4500-979a-39d1b8d0fb0e"],
+  0.3]],
 
 Cell[StyleData["InformationLink"],
  FontColor->RGBColor[
-  0.45, 0.48, 0.7],ExpressionUUID->"df2c0847-b2c0-4928-a673-7ad85d00518d"],
+  0.45, 0.48, 0.7]],
 
 Cell[StyleData["InformationLinkLF"],
  FontColor->RGBColor[
-  0.4525, 0.48138, 
-   0.7],ExpressionUUID->"9fa0b2fc-14f6-4a39-ab0d-badffa42db8c"],
+  0.4525, 0.48138,
+   0.7]],
 
 Cell[StyleData["CellLabel"],
  CellLabelMargins->{{12, Inherited}, {Inherited, Inherited}},
  LanguageCategory->None,
  StyleMenuListing->None,
  FontFamily->"Helvetica",
- FontSize->9,ExpressionUUID->"974f6b6c-3871-4527-b7c8-3f2c68128743"]
-}, Open  ]],
+ FontSize->9]
+}]],
 
 Cell[CellGroupData[{
 
-Cell["Styles for Formulas and Programming", "Section",ExpressionUUID->"6f1defed-926b-4a4b-b8c4-76be644d854c"],
+Cell["Styles for Formulas and Programming", "Section"],
 
 Cell[StyleData["DisplayFormula"],
  FontColor->GrayLevel[
-  0.95],ExpressionUUID->"b6be16c8-bdf2-4be9-a606-cdf984e3bc7b"],
+  0.95]],
 
 Cell[StyleData["DisplayFormulaNumbered"],
  FontColor->GrayLevel[
-  0.95],ExpressionUUID->"b0311125-23ae-4603-ac0d-a41de3fc1bfc"],
+  0.95]],
 
 Cell[StyleData["Program"],
  CellFrameColor->GrayLevel[
-  0.4],ExpressionUUID->"4deb54fe-26e3-4692-b6b7-fa92ae6e82cb"]
-}, Open  ]],
+  0.4]]
+}]],
 
 Cell[CellGroupData[{
 
@@ -301,28 +281,52 @@ Cell[TextData[{
  StyleBox["Mathematica",
   FontSlant->"Italic"],
  " System\[Hyphen]specific Elements"
-}], "Section",ExpressionUUID->"ccf37ec1-798b-405d-9d25-2ef1d4f800a7"],
+}], "Section"],
 
 Cell[CellGroupData[{
 
-Cell["FormatType Styles", "Subsection",ExpressionUUID->"21e3186d-1398-4d9a-8351-3e49fdbd6356"],
+Cell["FormatType Styles", "Subsection"],
 
 Cell[StyleData["StandardForm"],ExpressionUUID->"d2dd28c4-4f98-49e3-aee3-9b7b991b75a0"],
 
 Cell[StyleData["CellExpression"],
  FontColor->GrayLevel[0],
  Background->GrayLevel[
-  0.75],ExpressionUUID->"09c893aa-adce-4b78-af1b-c35e33fd31a7"],
+  0.75]],
 
 Cell[StyleData["CellLabel"],
  FontSize->9,
  FontColor->RGBColor[
-  0.6, 0.62, 0.61],ExpressionUUID->"5e1b0f75-502d-4ef6-9cff-c5911f642546"]
-}, Open  ]],
+  0.6, 0.62, 0.61]],
+
+Cell[StyleData["FunctionLocalVariableStyle"],
+ MenuSortingValue->10000,
+ FontColor->RGBColor[
+  0.6274509803921569, 0.9882352941176471,
+   0.9803921568627451]],
+
+Cell[StyleData["PatternVariableStyle"],
+ MenuSortingValue->10000,
+ FontFamily->"Consolas",
+ FontSize->12,
+ FontWeight->"Plain",
+ FontSlant->"Italic",
+ FontVariations->{"StrikeThrough"->False,
+ "Underline"->False},
+ FontColor->RGBColor[
+  0.047058823529411764`, 1.,
+   0.45098039215686275`]],
+
+Cell[StyleData["LocalVariableStyle"],
+ MenuSortingValue->10000,
+ FontColor->RGBColor[
+  0.16862745098039217`, 0.47058823529411764`,
+   0.0196078431372549]]
+}]],
 
 Cell[CellGroupData[{
 
-Cell["Graphics Styles", "Subsection",ExpressionUUID->"ecfb951c-58a1-4e09-a9d7-f92e6915d092"],
+Cell["Graphics Styles", "Subsection"],
 
 Cell[StyleData["GraphicsAxes"],
  LineColor->RGBColor[0.58, 0.63, 0.63],
@@ -331,7 +335,7 @@ Cell[StyleData["GraphicsAxes"],
  FontWeight->"Plain",
  FontSlant->"Plain",
  FontColor->RGBColor[
-  0.58, 0.63, 0.63],ExpressionUUID->"551bd557-ca13-4d69-91c6-ba1c11b1e913"],
+  0.58, 0.63, 0.63]],
 
 Cell[StyleData["GraphicsFrame"],
  LineColor->RGBColor[0.58, 0.63, 0.63],
@@ -340,7 +344,7 @@ Cell[StyleData["GraphicsFrame"],
  FontWeight->"Plain",
  FontSlant->"Plain",
  FontColor->RGBColor[
-  0.58, 0.63, 0.63],ExpressionUUID->"042cd8e4-fbbe-4a7b-8070-95bb13964f1c"],
+  0.58, 0.63, 0.63]],
 
 Cell[StyleData["Graphics3DAxes"],
  LineColor->RGBColor[0.58, 0.63, 0.63],
@@ -349,113 +353,9 @@ Cell[StyleData["Graphics3DAxes"],
  FontWeight->"Plain",
  FontSlant->"Plain",
  FontColor->RGBColor[
-  0.58, 0.63, 0.63],ExpressionUUID->"ad312aaa-10a3-4d87-a268-d0b12725cb84"]
-}, Open  ]]
-}, Open  ]]
-}, Open  ]]
-},
-WindowSize->{919, 1028},
-WindowMargins->{{Automatic, -7}, {Automatic, 0}},
-WindowFrame->"Normal",
-DockedCells->FEPrivate`FrontEndResource[
- "FEExpressions", "BuiltInStylesheetToolbar"],
-TrackCellChangeTimes->False,
-MenuSortingValue->None,
-FontFamily->"Consolas",
-FontProperties->{"FontMonospaced"->True},
-Background->GrayLevel[1],
-FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
-StyleDefinitions->"Default.nb"
-]
+  0.58, 0.63, 0.63]]
+}]]
+}]]
+}]]
+}]
 (* End of Notebook Content *)
-
-(* Internal cache information *)
-(*CellTagsOutline
-CellTagsIndex->{}
-*)
-(*CellTagsIndex
-CellTagsIndex->{}
-*)
-(*NotebookFileOutline
-Notebook[{
-Cell[CellGroupData[{
-Cell[596, 23, 120, 1, 71, "Title",ExpressionUUID->"4b4ab790-e7cf-47ff-aa7b-ae27c78e02e7"],
-Cell[719, 26, 193, 3, 40, 49, 0, "StyleData", "StyleDefinitions", "",ExpressionUUID->"05c0d526-1d02-45ca-8c45-5084010ed7b3"],
-Cell[CellGroupData[{
-Cell[937, 33, 102, 0, 53, "Subsection",ExpressionUUID->"fdac48aa-4bd4-44b0-9072-90fad4aeb78e"],
-Cell[1042, 35, 239, 6, 39, 31, 0, "StyleData", "All", "Working",ExpressionUUID->"b58bf9f5-5531-4539-b8a5-c8bf8f395c5a"],
-Cell[1284, 43, 1702, 31, 55, 27, 0, "StyleData", "Notebook", "All",ExpressionUUID->"547ceb42-b848-435c-ad85-22ff15510ed8"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[3023, 79, 108, 0, 67, "Section",ExpressionUUID->"3fa0cb76-6965-43fa-8069-d569ec3b4758"],
-Cell[3134, 81, 108, 2, 113, 24, 0, "StyleData", "Title", "All",ExpressionUUID->"32298ad4-1b67-4d0d-95d1-4c70a8d6abee"],
-Cell[3245, 85, 121, 2, 84, 26, 0, "StyleData", "Chapter", "All",ExpressionUUID->"237326a6-b1a8-4b05-9ca0-ec2f86716a12"],
-Cell[3369, 89, 127, 2, 65, 29, 0, "StyleData", "Subchapter", "All",ExpressionUUID->"4654af1d-dab2-4bc6-a315-eca8a06c66c0"],
-Cell[3499, 93, 123, 2, 70, 27, 0, "StyleData", "Subtitle", "All",ExpressionUUID->"2db92368-4fc0-460a-9688-797960b491fb"],
-Cell[3625, 97, 127, 2, 47, 30, 0, "StyleData", "Subsubtitle", "All",ExpressionUUID->"56508694-e725-4ec4-ae95-f4fd414e3d89"],
-Cell[3755, 101, 124, 2, 84, 26, 0, "StyleData", "Section", "All",ExpressionUUID->"68874722-7846-4ba0-8dca-854c7d985ea4"],
-Cell[3882, 105, 116, 2, 54, 29, 0, "StyleData", "Subsection", "All",ExpressionUUID->"6235af1f-8c14-482f-b11d-9f0f4d83cb8a"],
-Cell[4001, 109, 129, 2, 53, 32, 0, "StyleData", "Subsubsection", "All",ExpressionUUID->"80ad1458-660d-4987-a2b2-5fce33f2b862"],
-Cell[4133, 113, 133, 2, 42, 35, 0, "StyleData", "Subsubsubsection", "All",ExpressionUUID->"b3a9980d-ae38-49a5-86f2-3fb9bfd77610"],
-Cell[4269, 117, 136, 2, 41, 38, 0, "StyleData", "Subsubsubsubsection", "All",ExpressionUUID->"4a09e5da-15c0-49cb-a773-beba4ca8a36a"],
-Cell[4408, 121, 199, 6, 44, 23, 0, "StyleData", "Text", "All",ExpressionUUID->"2fb96e89-4737-465f-b54c-5230d938aeaf"],
-Cell[4610, 129, 118, 2, 41, 32, 0, "StyleData", "ItemParagraph", "All",ExpressionUUID->"b75e42ef-7aa8-476b-bbea-c4b832f3dc48"],
-Cell[4731, 133, 121, 2, 40, 35, 0, "StyleData", "SubitemParagraph", "All",ExpressionUUID->"589bcb46-9409-4f91-b006-53490651fdf7"],
-Cell[4855, 137, 124, 2, 39, 38, 0, "StyleData", "SubsubitemParagraph", "All",ExpressionUUID->"ada59bf4-2c3d-4303-9e2b-3d1a6f65d178"],
-Cell[CellGroupData[{
-Cell[5004, 143, 84, 0, 53, "Subsection",ExpressionUUID->"d8c387bb-aa48-4002-8757-6caf6205c4cb"],
-Cell[5091, 145, 401, 7, 84, 26, 0, "StyleData", "Chapter", "All",ExpressionUUID->"99a5ccfe-8144-4161-9268-aa55b6582f6f",
- CounterIncrements->"Chapter",
- CounterAssignments->{{"Subchapter", 0}, {"Section", 0}, {"Equation", 0}, {"Figure", 0}, {"Subsubtitle", 0}, {"Item", 0}, {"Subitem", 0}, {"Subsubitem", 0}, {"ItemNumbered", 0}, {"SubitemNumbered", 0}, {"SubsubitemNumbered", 0}},
- MenuSortingValue->1150,
- MenuCommandKey->"2"],
-Cell[5495, 154, 366, 6, 65, 29, 0, "StyleData", "Subchapter", "All",ExpressionUUID->"7c07902d-1c90-4baa-83ce-6aa20a3ad9b3",
- CounterIncrements->"Subchapter",
- CounterAssignments->{{"Section", 0}, {"Equation", 0}, {"Figure", 0}, {"Item", 0}, {"Subitem", 0}, {"Subsubitem", 0}, {"ItemNumbered", 0}, {"SubitemNumbered", 0}, {"SubsubitemNumbered  ", 0}},
- MenuSortingValue->1200,
- MenuCommandKey->"3"]
-}, Open  ]]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[5910, 166, 96, 0, 67, "Section",ExpressionUUID->"2c27b030-d0eb-4655-a56a-c52fd1a9da3e"],
-Cell[6009, 168, 324, 8, 56, 23, 0, "StyleData", "Code", "All",ExpressionUUID->"d7d59191-b5a9-4d55-8fc1-1b6e8f0df1da"],
-Cell[6336, 178, 275, 6, 49, 37, 0, "StyleData", "InitializationCell", "All",ExpressionUUID->"d23ac868-5265-42a1-8555-8b7161a2fa2d"],
-Cell[6614, 186, 249, 5, 40, 24, 0, "StyleData", "Input", "All",ExpressionUUID->"6f17dd8f-fb8f-40c2-8b8e-eae602e20b44"],
-Cell[6866, 193, 505, 17, 42, 25, 0, "StyleData", "Output", "All",ExpressionUUID->"d7dbe4b7-227e-4906-9285-d33096db78a7"],
-Cell[7374, 212, 533, 18, 40, 26, 0, "StyleData", "Message", "All",ExpressionUUID->"c98abd43-4e22-40dc-b424-5f2fd9f1caae"],
-Cell[7910, 232, 520, 18, 41, 24, 0, "StyleData", "Print", "All",ExpressionUUID->"5947314a-27e7-4b2c-aa5d-774e445d8033"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[8467, 255, 78, 0, 67, "Section",ExpressionUUID->"4cc79008-1a70-4432-85e3-cec9c635a574"],
-Cell[8548, 257, 179, 3, 67, 34, 0, "StyleData", "InformationCell", "All",ExpressionUUID->"3307e9f2-dc65-4500-979a-39d1b8d0fb0e"],
-Cell[8730, 262, 131, 2, 40, 34, 0, "StyleData", "InformationLink", "All",ExpressionUUID->"df2c0847-b2c0-4928-a673-7ad85d00518d"],
-Cell[8864, 266, 142, 3, 40, 36, 0, "StyleData", "InformationLinkLF", "All",ExpressionUUID->"9fa0b2fc-14f6-4a39-ab0d-badffa42db8c"],
-Cell[9009, 271, 235, 5, 37, 28, 0, "StyleData", "CellLabel", "All",ExpressionUUID->"974f6b6c-3871-4527-b7c8-3f2c68128743",
- StyleMenuListing->None]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[9281, 281, 109, 0, 67, "Section",ExpressionUUID->"6f1defed-926b-4a4b-b8c4-76be644d854c"],
-Cell[9393, 283, 120, 2, 43, 33, 0, "StyleData", "DisplayFormula", "All",ExpressionUUID->"b6be16c8-bdf2-4be9-a606-cdf984e3bc7b"],
-Cell[9516, 287, 128, 2, 43, 41, 0, "StyleData", "DisplayFormulaNumbered", "All",ExpressionUUID->"b0311125-23ae-4603-ac0d-a41de3fc1bfc"],
-Cell[9647, 291, 117, 2, 65, 26, 0, "StyleData", "Program", "All",ExpressionUUID->"4deb54fe-26e3-4692-b6b7-fa92ae6e82cb"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[9801, 298, 187, 5, 67, "Section",ExpressionUUID->"ccf37ec1-798b-405d-9d25-2ef1d4f800a7"],
-Cell[CellGroupData[{
-Cell[10013, 307, 94, 0, 53, "Subsection",ExpressionUUID->"21e3186d-1398-4d9a-8351-3e49fdbd6356"],
-Cell[10110, 309, 86, 0, 39, 31, 0, "StyleData", "StandardForm", "All",ExpressionUUID->"d2dd28c4-4f98-49e3-aee3-9b7b991b75a0"],
-Cell[10199, 311, 147, 3, 55, 33, 0, "StyleData", "CellExpression", "All",ExpressionUUID->"09c893aa-adce-4b78-af1b-c35e33fd31a7"],
-Cell[10349, 316, 139, 3, 37, 28, 0, "StyleData", "CellLabel", "All",ExpressionUUID->"5e1b0f75-502d-4ef6-9cff-c5911f642546"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[10525, 324, 92, 0, 53, "Subsection",ExpressionUUID->"ecfb951c-58a1-4e09-a9d7-f92e6915d092"],
-Cell[10620, 326, 249, 7, 37, 31, 0, "StyleData", "GraphicsAxes", "All",ExpressionUUID->"551bd557-ca13-4d69-91c6-ba1c11b1e913"],
-Cell[10872, 335, 250, 7, 37, 32, 0, "StyleData", "GraphicsFrame", "All",ExpressionUUID->"042cd8e4-fbbe-4a7b-8070-95bb13964f1c"],
-Cell[11125, 344, 250, 7, 37, 33, 0, "StyleData", "Graphics3DAxes", "All",ExpressionUUID->"ad312aaa-10a3-4d87-a268-d0b12725cb84"]
-}, Open  ]]
-}, Open  ]]
-}, Open  ]]
-}
-]
-*)
-

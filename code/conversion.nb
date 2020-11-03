@@ -1,0 +1,51 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<seq2list\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"SetAttributes", "[",
+   RowBox[{"seq2list", ",", " ", "HoldAll"}], "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"seq2list", "[", "v___", "]"}], " ", ":=", " ",
+  RowBox[{"Flatten", "[",
+   RowBox[{
+    RowBox[{"{", "v", "}"}], ",", " ", "1"}], "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<args2seq\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"SetAttributes", "[",
+   RowBox[{"args2seq", ",", " ", "HoldAll"}], "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"args2seq", "[", "v_", "]"}], " ", ":=", " ",
+  RowBox[{"Replace", "[", " ",
+   RowBox[{"v", ",", " ",
+    RowBox[{
+     RowBox[{"v", "\[LeftDoubleBracket]", "0", "\[RightDoubleBracket]"}], " ",
+      "\[Rule]", " ", "Sequence"}], ",", " ",
+    RowBox[{"{", "1", "}"}], ",", " ",
+    RowBox[{"Heads", "\[Rule]", "True"}]}], "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<subhold\>\"", "]"}], ";"}], "\n",
+ RowBox[{"SetAttributes", "[",
+  RowBox[{"subhold", ",", " ", "HoldAll"}], "]"}], "\n",
+ RowBox[{
+  RowBox[{"subhold", "[",
+   RowBox[{"v_", ",", " ",
+    RowBox[{"n_Integer:", "1"}]}], "]"}], " ", ":=", " ",
+  RowBox[{
+   RowBox[{"ReleaseHold", "@",
+    RowBox[{"Map", "[",
+     RowBox[{"HoldForm", ",", " ",
+      RowBox[{"HoldForm", "@", "v"}], ",", " ",
+      RowBox[{"{",
+       RowBox[{"n", " ", "+", " ", "1"}], "}"}]}], "]"}]}], " ", "//", " ",
+   "FullForm"}]}]}], "Code"]
+}]
+(* End of Notebook Content *)

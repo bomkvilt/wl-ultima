@@ -1,0 +1,98 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uUseQuantity\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<Q\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"SetAttributes", "[",
+   RowBox[{"Q", ",", " ", "HoldAll"}], "]"}], "\n"}], "\n",
+ RowBox[{
+  RowBox[{
+   RowBox[{"uUseQuantity", "[", "]"}], " ", ":=", " ",
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"(",
+        RowBox[{
+         RowBox[{"Q", "[",
+          RowBox[{"Evaluate", "[", "#1", "]"}], "]"}], " ", "=", " ",
+         RowBox[{"Quantity", "[",
+          RowBox[{"1", ",", " ", "#2"}], "]"}]}], ")"}], "&"}], " ", "@@",
+      " ", "#"}], "&"}], " ", "/@", " ",
+    RowBox[{"{", "\n", "\t",
+     RowBox[{
+      RowBox[{"\"\<\[Mu]m\>\"", " ", "\[Rule]", " ", "\"\<Micrometers\>\""}],
+      ",", "\n", "\t",
+      RowBox[{"\"\<mm\>\"", " ", "\[Rule]", " ", "\"\<Millimeters\>\""}], ",",
+       "\n", "\t",
+      RowBox[{"\"\<cm\>\"", " ", "\[Rule]", " ", "\"\<Centimeters\>\""}], ",",
+       "\n", "\t ",
+      RowBox[{"\"\<m\>\"", " ", "\[Rule]", " ", "\"\<Meters\>\""}], ",", "\n",
+       "\t ",
+      RowBox[{"\"\<g\>\"", " ", "\[Rule]", " ", "\"\<Grams\>\""}], ",", "\n",
+      "\t",
+      RowBox[{"\"\<kg\>\"", " ", "\[Rule]", " ", "\"\<Kilograms\>\""}], ",",
+      "\n", "\t ",
+      RowBox[{"\"\<N\>\"", " ", "\[Rule]", " ", "\"\<Newtons\>\""}], ",",
+      "\n", "\t ",
+      RowBox[{"\"\<s\>\"", " ", "\[Rule]", " ", "\"\<Seconds\>\""}], ",",
+      "\n", "\t ",
+      RowBox[{"\"\<%\>\"", " ", "\[Rule]", " ", "\"\<Percent\>\""}]}], "\n",
+     "}"}]}]}], "\n"}], "\n",
+ RowBox[{
+  RowBox[{"Q", "[", "v_", "]"}], " ", ":=", " ",
+  RowBox[{"Q", "[",
+   RowBox[{"Evaluate", "[",
+    RowBox[{
+     RowBox[{"Unevaluated", "[", "v", "]"}], " ", "//", " ", "ToString"}],
+    "]"}], "]"}]}], "\n",
+ RowBox[{
+  RowBox[{"Q", "[",
+   SuperscriptBox["v_", "p_"], "]"}], " ", ":=", " ",
+  SuperscriptBox[
+   RowBox[{"Q", "[", "v", "]"}], "p"]}], "\n",
+ RowBox[{
+  RowBox[{"Q", "[",
+   RowBox[{"Times", "[", "v__", "]"}], "]"}], " ", ":=", " ",
+  RowBox[{"Times", "[",
+   RowBox[{
+    RowBox[{"Q", " ", "/@", " ",
+     RowBox[{"seq2list", "[", "v", "]"}]}], " ", "//", " ", "args2seq"}],
+   "]"}]}]}], "Code"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<fixQuantity\>\"", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"fixQuantity", "[", "]"}], " ", ":=", " ",
+  RowBox[{"vModify", "[",
+   RowBox[{
+    RowBox[{"#", " ", "//.", " ",
+     RowBox[{"{", "\n", "\t",
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"Times", "[",
+           RowBox[{
+            RowBox[{"a_", "?", "ListQ"}], ",", " ",
+            RowBox[{"b_", "?", "QuantityQ"}]}], "]"}], " ", "\[RuleDelayed]",
+          " ",
+          RowBox[{"#", " ", "b"}]}], "&"}], " ", "/@", " ", "a"}], ",", "\n",
+       "\t",
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"Times", "[",
+           RowBox[{
+            RowBox[{"b_", "?", "QuantityQ"}], ",", " ",
+            RowBox[{"a_", "?", "ListQ"}]}], "]"}], " ", "\[RuleDelayed]", " ",
+          RowBox[{"#", " ", "b"}]}], "&"}], " ", "/@", " ", "a"}]}], "\n",
+      "}"}]}], "&"}], "]"}]}]}], "Code"]
+}]
+(* End of Notebook Content *)

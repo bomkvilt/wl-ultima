@@ -1,504 +1,446 @@
 (* Content-type: application/vnd.wolfram.mathematica *)
 
-(*** Wolfram Notebook File ***)
-(* http://www.wolfram.com/nb *)
-
-(* CreatedBy='Mathematica 12.0' *)
-
-(*CacheID: 234*)
-(* Internal cache information:
-NotebookFileLineBreakTest
-NotebookFileLineBreakTest
-NotebookDataPosition[       158,          7]
-NotebookDataLength[     21845,        496]
-NotebookOptionsPosition[     21384,        481]
-NotebookOutlinePosition[     21800,        497]
-CellTagsIndexPosition[     21757,        494]
-WindowFrame->Normal*)
-
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[
- RowBox[{"PackageExport", "[", "\"\<uCompareTime\>\"", "]"}]], "Code",
- CellChangeTimes->{{3.8130813181421723`*^9, 
-  3.813081344893303*^9}},ExpressionUUID->"eb91277a-03cc-4f07-9410-\
-6ec3a8a2bbb7"],
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uCompareTime\>\"", "]"}], ";"}]], "Code"],
 
 Cell[BoxData[{
- RowBox[{"SetAttributes", "[", 
-  RowBox[{"uCompareTime", ",", " ", "HoldAll"}], "]"}], "\n", 
+ RowBox[{"SetAttributes", "[",
+  RowBox[{"uCompareTime", ",", " ", "HoldAll"}], "]"}], "\n",
  RowBox[{
-  RowBox[{"uCompareTime", "[", 
-   RowBox[{"exprs_List", ",", " ", 
-    RowBox[{"OptionsPattern", "[", 
-     RowBox[{"{", 
-      RowBox[{"bOrdering", " ", "\[Rule]", " ", "True"}], "}"}], "]"}]}], 
-   "]"}], " ", ":=", "\n", 
-  RowBox[{"Module", "[", 
+  RowBox[{"uCompareTime", "[",
+   RowBox[{"exprs_List", ",", " ",
+    RowBox[{"OptionsPattern", "[",
+     RowBox[{"{",
+      RowBox[{
+       RowBox[{"bOrdering", " ", "\[Rule]", " ", "True"}], ",", " ",
+       RowBox[{"attempts", " ", "\[Rule]", " ", "10"}]}], "}"}], "]"}]}],
+   "]"}], " ", ":=", "\n",
+  RowBox[{"Module", "[",
    RowBox[{
-    RowBox[{"{", 
+    RowBox[{"{",
      RowBox[{
      "tt", ",", " ", "vv", ",", " ", "exprCodes", ",", " ", "order", ",", " ",
-       "scale", "\n", "\t", ",", " ", 
-      RowBox[{"count", "   ", "=", " ", 
-       RowBox[{"Length", "@", "exprs"}]}], "\n", "\t", ",", " ", 
-      RowBox[{"color", "   ", "=", " ", 
+       "scale", ",", " ", "data", "\n", "\t", ",", " ",
+      RowBox[{"count", "   ", "=", " ",
+       RowBox[{"Length", "@", "exprs"}]}], "\n", "\t", ",", " ",
+      RowBox[{"color", "   ", "=", " ",
        RowBox[{
-        RowBox[{"Blend", "[", 
+        RowBox[{"Blend", "[",
          RowBox[{
-          RowBox[{"{", 
+          RowBox[{"{",
            RowBox[{
             InterpretationBox[
              ButtonBox[
               TooltipBox[
                GraphicsBox[{
-                 {GrayLevel[0], RectangleBox[{0, 0}]}, 
-                 {GrayLevel[0], RectangleBox[{1, -1}]}, 
+                 {GrayLevel[0], RectangleBox[{0, 0}]},
+                 {GrayLevel[0], RectangleBox[{1, -1}]},
                  {RGBColor[
-                   Rational[19, 255], 
-                   Rational[167, 255], 
-                   Rational[107, 255]], Opacity[0.52], 
+                   Rational[19, 255],
+                   Rational[167, 255],
+                   Rational[107, 255]], Opacity[0.52],
                   RectangleBox[{0, -1}, {2, 1}]}},
                 AspectRatio->1,
                 DefaultBaseStyle->"ColorSwatchGraphics",
                 Frame->True,
-                
+
                 FrameStyle->RGBColor[
-                 0.04967320261437908, 0.4366013071895425, 0.2797385620915033, 
+                 0.04967320261437908, 0.4366013071895425, 0.2797385620915033,
                   0.52],
                 FrameTicks->None,
-                
+
                 ImageSize->
                  Dynamic[{
-                  Automatic, 
+                  Automatic,
                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
                     Magnification])}],
                 PlotRangePadding->None],
                StyleBox[
-                RowBox[{"RGBColor", "[", 
+                RowBox[{"RGBColor", "[",
                   RowBox[{
-                    FractionBox["19", "255"], ",", 
-                    FractionBox["167", "255"], ",", 
-                    FractionBox["107", "255"], ",", "0.52`"}], "]"}], 
+                    FractionBox["19", "255"], ",",
+                    FractionBox["167", "255"], ",",
+                    FractionBox["107", "255"], ",", "0.52`"}], "]"}],
                 NumberMarks -> False]],
               Appearance->None,
               BaseStyle->{},
               BaselinePosition->Baseline,
-              ButtonFunction:>With[{Typeset`box$ = EvaluationBox[]}, 
+              ButtonFunction:>With[{Typeset`box$ = EvaluationBox[]},
                 If[
                  Not[
-                  AbsoluteCurrentValue["Deployed"]], 
-                 SelectionMove[Typeset`box$, All, Expression]; 
-                 FrontEnd`Private`$ColorSelectorInitialAlpha = 0.52; 
+                  AbsoluteCurrentValue["Deployed"]],
+                 SelectionMove[Typeset`box$, All, Expression];
+                 FrontEnd`Private`$ColorSelectorInitialAlpha = 0.52;
                  FrontEnd`Private`$ColorSelectorInitialColor = RGBColor[
-                    Rational[19, 255], 
-                    Rational[167, 255], 
-                    Rational[107, 255]]; 
-                 FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    Rational[19, 255],
+                    Rational[167, 255],
+                    Rational[107, 255]];
+                 FrontEnd`Private`$ColorSelectorUseMakeBoxes = True;
                  MathLink`CallFrontEnd[
-                   FrontEnd`AttachCell[Typeset`box$, 
+                   FrontEnd`AttachCell[Typeset`box$,
                     FrontEndResource["RGBColorValueSelector"], {
-                    0, {Left, Bottom}}, {Left, Top}, 
+                    0, {Left, Bottom}}, {Left, Top},
                     "ClosingActions" -> {
-                    "SelectionDeparture", "ParentChanged", 
+                    "SelectionDeparture", "ParentChanged",
                     "EvaluatorQuit"}]]]],
               DefaultBaseStyle->{},
               Evaluator->Automatic,
               Method->"Preemptive"],
              RGBColor[
-              Rational[19, 255], 
-              Rational[167, 255], 
+              Rational[19, 255],
+              Rational[167, 255],
               Rational[107, 255], 0.52],
              Editable->False,
-             Selectable->False], ",", " ", 
+             Selectable->False], ",", " ",
             InterpretationBox[
              ButtonBox[
               TooltipBox[
                GraphicsBox[{
-                 {GrayLevel[0], RectangleBox[{0, 0}]}, 
-                 {GrayLevel[0], RectangleBox[{1, -1}]}, 
-                 {RGBColor[1, 0, 0], Opacity[0.51], 
+                 {GrayLevel[0], RectangleBox[{0, 0}]},
+                 {GrayLevel[0], RectangleBox[{1, -1}]},
+                 {RGBColor[1, 0, 0], Opacity[0.51],
                   RectangleBox[{0, -1}, {2, 1}]}},
                 AspectRatio->1,
                 DefaultBaseStyle->"ColorSwatchGraphics",
                 Frame->True,
                 FrameStyle->RGBColor[0.6666666666666666, 0., 0., 0.51],
                 FrameTicks->None,
-                
+
                 ImageSize->
                  Dynamic[{
-                  Automatic, 
+                  Automatic,
                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
                     Magnification])}],
                 PlotRangePadding->None],
                StyleBox[
-                RowBox[{"RGBColor", "[", 
-                  RowBox[{"1", ",", "0", ",", "0", ",", "0.51`"}], "]"}], 
+                RowBox[{"RGBColor", "[",
+                  RowBox[{"1", ",", "0", ",", "0", ",", "0.51`"}], "]"}],
                 NumberMarks -> False]],
               Appearance->None,
               BaseStyle->{},
               BaselinePosition->Baseline,
-              ButtonFunction:>With[{Typeset`box$ = EvaluationBox[]}, 
+              ButtonFunction:>With[{Typeset`box$ = EvaluationBox[]},
                 If[
                  Not[
-                  AbsoluteCurrentValue["Deployed"]], 
-                 SelectionMove[Typeset`box$, All, Expression]; 
-                 FrontEnd`Private`$ColorSelectorInitialAlpha = 0.51; 
-                 FrontEnd`Private`$ColorSelectorInitialColor = 
-                  RGBColor[1, 0, 0]; 
-                 FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                  AbsoluteCurrentValue["Deployed"]],
+                 SelectionMove[Typeset`box$, All, Expression];
+                 FrontEnd`Private`$ColorSelectorInitialAlpha = 0.51;
+                 FrontEnd`Private`$ColorSelectorInitialColor =
+                  RGBColor[1, 0, 0];
+                 FrontEnd`Private`$ColorSelectorUseMakeBoxes = True;
                  MathLink`CallFrontEnd[
-                   FrontEnd`AttachCell[Typeset`box$, 
+                   FrontEnd`AttachCell[Typeset`box$,
                     FrontEndResource["RGBColorValueSelector"], {
-                    0, {Left, Bottom}}, {Left, Top}, 
+                    0, {Left, Bottom}}, {Left, Top},
                     "ClosingActions" -> {
-                    "SelectionDeparture", "ParentChanged", 
+                    "SelectionDeparture", "ParentChanged",
                     "EvaluatorQuit"}]]]],
               DefaultBaseStyle->{},
               Evaluator->Automatic,
               Method->"Preemptive"],
              RGBColor[1, 0, 0, 0.51],
              Editable->False,
-             Selectable->False]}], "}"}], ",", " ", "#"}], "]"}], "&"}]}], 
-      "\n", "\t", ",", " ", 
-      RowBox[{"bench", "   ", "=", " ", 
-       RowBox[{"Function", "[", 
+             Selectable->False]}], "}"}], ",", " ", "#"}], "]"}], "&"}]}],
+      "\n", "\t", ",", " ",
+      RowBox[{"bench", "   ", "=", " ",
+       RowBox[{"Function", "[",
         RowBox[{
-         RowBox[{"{", "c", "}"}], ",", " ", 
+         RowBox[{"{", "c", "}"}], ",", " ",
          RowBox[{
-          RowBox[{"ClearSystemCache", "[", "]"}], ";", " ", 
-          RowBox[{"AbsoluteTiming", "[", "c", "]"}]}], ",", " ", "HoldAll"}], 
-        "]"}]}]}], "\n", "}"}], ",", "\n", "\t", 
+          RowBox[{"ClearSystemCache", "[", "]"}], ";", " ",
+          RowBox[{"AbsoluteTiming", "[", "c", "]"}]}], ",", " ", "HoldAll"}],
+        "]"}]}]}], "\n", "}"}], ",", "\n", "\t",
     RowBox[{
-     RowBox[{"exprCodes", " ", "=", " ", 
-      RowBox[{"ReleaseHold", "@", 
-       RowBox[{"Map", "[", 
-        RowBox[{"HoldForm", ",", 
-         RowBox[{"HoldForm", "@", "exprs"}], ",", " ", 
-         RowBox[{"{", "2", "}"}]}], "]"}]}]}], ";", "\n", "\t", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{"tt", ",", " ", "vv"}], "}"}], "  ", "=", " ", 
-      RowBox[{
-       RowBox[{"(", 
+     RowBox[{"exprCodes", " ", "=", " ",
+      RowBox[{"ReleaseHold", "@",
+       RowBox[{"Map", "[",
+        RowBox[{"HoldForm", ",",
+         RowBox[{"HoldForm", "@", "exprs"}], ",", " ",
+         RowBox[{"{", "2", "}"}]}], "]"}]}]}], ";", "\n", "\t",
+     RowBox[{"data", "      ", "=", " ",
+      RowBox[{"Transpose", "[",
+       RowBox[{
         RowBox[{
          RowBox[{
-          RowBox[{"bench", "[", 
-           RowBox[{"ReleaseHold", "@", "#"}], "]"}], "&"}], " ", "/@", " ", 
-         "exprCodes"}], ")"}], "\[Transpose]"}]}], ";", "\n", "\t", 
-     RowBox[{"order", "     ", "=", " ", 
+          RowBox[{"(",
+           RowBox[{
+            RowBox[{
+             RowBox[{"bench", "[",
+              RowBox[{"ReleaseHold", "@", "#"}], "]"}], "&"}], " ", "/@", " ",
+             "exprCodes"}], ")"}], "&"}], " ", "/@", " ",
+         RowBox[{"Range", "[",
+          RowBox[{"OptionValue", "[", "attempts", "]"}], "]"}]}], ",", " ",
+        RowBox[{"1", "\[TwoWayRule]", "3"}]}], "]"}]}], ";", "\n", "\t",
+     RowBox[{
+      RowBox[{"{",
+       RowBox[{"tt", ",", " ", "vv"}], "}"}], "  ", "=", " ",
+      RowBox[{"Map", "[",
+       RowBox[{"Mean", ",", " ", "data", ",", " ",
+        RowBox[{"{", "2", "}"}]}], "]"}]}], ";", "\n", "\t",
+     RowBox[{"order", "     ", "=", " ",
       TagBox[GridBox[{
          {"\[Piecewise]", GridBox[{
             {
-             RowBox[{"Reverse", "[", 
-              RowBox[{"Ordering", "@", "tt"}], "]"}], 
+             RowBox[{"Reverse", "[",
+              RowBox[{"Ordering", "@", "tt"}], "]"}],
              RowBox[{"OptionValue", "[", "bOrdering", "]"}]},
             {
-             RowBox[{"Range", "  ", "[", 
+             RowBox[{"Range", "  ", "[",
               RowBox[{"Length", "  ", "@", "tt"}], "]"}], "True"}
            },
            AllowedDimensions->{2, Automatic},
            Editable->True,
-           
+
            GridBoxAlignment->{
-            "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Columns" -> {{Left}}, "ColumnsIndexed" -> {},
              "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
-           
+
            GridBoxItemSize->{
-            "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, 
+            "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {},
              "Rows" -> {{1.}}, "RowsIndexed" -> {}},
            GridBoxSpacings->{"Columns" -> {
                Offset[0.27999999999999997`], {
-                Offset[0.84]}, 
+                Offset[0.84]},
                Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
                Offset[0.2], {
-                Offset[0.4]}, 
+                Offset[0.4]},
                Offset[0.2]}, "RowsIndexed" -> {}},
            Selectable->True]}
         },
         GridBoxAlignment->{
-         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {},
           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
         GridBoxItemSize->{
          "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}},
            "RowsIndexed" -> {}},
         GridBoxSpacings->{"Columns" -> {
             Offset[0.27999999999999997`], {
-             Offset[0.35]}, 
+             Offset[0.35]},
             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
             Offset[0.2], {
-             Offset[0.4]}, 
+             Offset[0.4]},
             Offset[0.2]}, "RowsIndexed" -> {}}],
        "Piecewise",
        DeleteWithContents->True,
        Editable->False,
        SelectWithContents->True,
        Selectable->False,
-       StripWrapperBoxes->True]}], ";", "\n", "\t", 
-     RowBox[{"scale", "     ", "=", " ", 
+       StripWrapperBoxes->True]}], ";", "\n", "\t",
+     RowBox[{"scale", "     ", "=", " ",
       RowBox[{
-       RowBox[{"Evaluate", "[", 
-        RowBox[{"Rescale", "[", 
-         RowBox[{"#", ",", " ", 
-          RowBox[{"MinMax", "[", "tt", "]"}], ",", " ", 
-          RowBox[{"{", 
-           RowBox[{"0", ",", " ", "1"}], "}"}]}], "]"}], "]"}], "&"}]}], ";", 
-     "\n", "\t", "\n", "\t", 
-     RowBox[{"tt", "        ", "=", " ", 
+       RowBox[{"Evaluate", "[",
+        RowBox[{"Rescale", "[",
+         RowBox[{"#", ",", " ",
+          RowBox[{"MinMax", "[", "tt", "]"}], ",", " ",
+          RowBox[{"{",
+           RowBox[{"0", ",", " ", "1"}], "}"}]}], "]"}], "]"}], "&"}]}], ";",
+     "\n", "\t", "\n", "\t",
+     RowBox[{"tt", "        ", "=", " ",
       RowBox[{
       "tt", "\[LeftDoubleBracket]", "order", "\[RightDoubleBracket]"}]}], ";",
-      "\n", "\t", 
-     RowBox[{"vv", "        ", "=", " ", 
+      "\n", "\t",
+     RowBox[{"vv", "        ", "=", " ",
       RowBox[{
       "vv", "\[LeftDoubleBracket]", "order", "\[RightDoubleBracket]"}]}], ";",
-      "\n", "\t", 
-     RowBox[{"exprCodes", " ", "=", " ", 
+      "\n", "\t",
+     RowBox[{"exprCodes", " ", "=", " ",
       RowBox[{
-      "exprCodes", "\[LeftDoubleBracket]", "order", 
-       "\[RightDoubleBracket]"}]}], ";", "\n", "\t", "\n", "\t", 
-     RowBox[{"If", " ", "[", 
+      "exprCodes", "\[LeftDoubleBracket]", "order",
+       "\[RightDoubleBracket]"}]}], ";", "\n", "\t", "\n", "\t",
+     RowBox[{"If", " ", "[",
       RowBox[{
        RowBox[{
-        RowBox[{"Length", "@", 
+        RowBox[{"Length", "@",
          RowBox[{"DeleteDuplicates", "[", "vv", "]"}]}], " ", ">", " ", "1"}],
-        ",", "\n", "\t\t", 
+        ",", "\n", "\t\t",
        RowBox[{
         RowBox[{
-        "Echo", "[", "\"\<Passed code have non the same output\>\"", "]"}], 
-        ";"}]}], "\n", "\t", "]"}], ";", "\n", "\t", 
-     RowBox[{"Style", "[", 
+        "Echo", "[", "\"\<Passed code have non the same output\>\"", "]"}],
+        ";"}]}], "\n", "\t", "]"}], ";", "\n", "\t",
+     RowBox[{"Style", "[",
       RowBox[{
-       RowBox[{"Framed", "[", 
+       RowBox[{"Framed", "[",
         RowBox[{
-         RowBox[{"Column", "[", 
+         RowBox[{"Column", "[",
           RowBox[{
-           RowBox[{"{", "\n", "\t\t", 
+           RowBox[{"{", "\n", "\t\t",
             RowBox[{
-             RowBox[{"Grid", "[", 
+             RowBox[{"Grid", "[",
               RowBox[{
-               RowBox[{"Join", "[", "\n", "\t\t\t", 
+               RowBox[{"Join", "[", "\n", "\t\t\t",
                 RowBox[{
-                 RowBox[{"{", 
-                  RowBox[{"{", 
-                   RowBox[{"\"\<Code\>\"", ",", " ", "\"\<Time, s\>\""}], 
-                   "}"}], "}"}], ",", " ", "\n", "\t\t\t", 
+                 RowBox[{"{",
+                  RowBox[{"{",
+                   RowBox[{"\"\<Code\>\"", ",", " ", "\"\<Time, s\>\""}],
+                   "}"}], "}"}], ",", " ", "\n", "\t\t\t",
                  RowBox[{
                   RowBox[{
                    RowBox[{
                     RowBox[{
-                    RowBox[{"{", 
+                    RowBox[{"{",
                     RowBox[{
-                    RowBox[{"Style", "[", 
+                    RowBox[{"Style", "[",
                     RowBox[{
-                    "#2", ",", " ", "\"\<Input\>\"", "\n", "\t\t\t\t", ",", 
-                    " ", 
+                    "#2", ",", " ", "\"\<Input\>\"", "\n", "\t\t\t\t", ",",
+                    " ",
                     RowBox[{
-                    "Background", " ", "\[Rule]", " ", "Transparent"}], "\n", 
-                    "\t\t\t\t", ",", " ", 
-                    RowBox[{"FontColor", "  ", "\[Rule]", " ", "Black"}]}], 
-                    "\n", "\t\t\t", "]"}], ",", " ", "#1"}], "}"}], "&"}], 
-                    " ", "@@", "#"}], "&"}], " ", "/@", " ", 
-                  RowBox[{"(", 
+                    "Background", " ", "\[Rule]", " ", "Transparent"}], "\n",
+                    "\t\t\t\t", ",", " ",
+                    RowBox[{"FontColor", "  ", "\[Rule]", " ", "Black"}]}],
+                    "\n", "\t\t\t", "]"}], ",", " ", "#1"}], "}"}], "&"}],
+                    " ", "@@", "#"}], "&"}], " ", "/@", " ",
+                  RowBox[{"(",
                    RowBox[{
-                    RowBox[{"{", 
-                    RowBox[{"tt", ",", " ", "exprCodes"}], "}"}], 
-                    "\[Transpose]"}], ")"}]}]}], "\n", "\t\t", "]"}], "\n", 
-               "\t\t\t", ",", " ", 
-               RowBox[{"Alignment", "  ", "\[Rule]", " ", 
-                RowBox[{"{", 
+                    RowBox[{"{",
+                    RowBox[{"tt", ",", " ", "exprCodes"}], "}"}],
+                    "\[Transpose]"}], ")"}]}]}], "\n", "\t\t", "]"}], "\n",
+               "\t\t\t", ",", " ",
+               RowBox[{"Alignment", "  ", "\[Rule]", " ",
+                RowBox[{"{",
                  RowBox[{
-                  RowBox[{"{", 
-                   RowBox[{"Left", ",", " ", "Center"}], "}"}], ",", " ", 
-                  RowBox[{"{", 
-                   RowBox[{"Center", ",", " ", "Center"}], "}"}]}], "}"}]}], 
-               "\n", "\t\t\t", ",", " ", 
-               RowBox[{"Background", " ", "\[Rule]", " ", 
-                RowBox[{"{", 
-                 RowBox[{"None", ",", 
+                  RowBox[{"{",
+                   RowBox[{"Left", ",", " ", "Center"}], "}"}], ",", " ",
+                  RowBox[{"{",
+                   RowBox[{"Center", ",", " ", "Center"}], "}"}]}], "}"}]}],
+               "\n", "\t\t\t", ",", " ",
+               RowBox[{"Background", " ", "\[Rule]", " ",
+                RowBox[{"{",
+                 RowBox[{"None", ",",
                   RowBox[{
-                   RowBox[{"{", "LightGray", "}"}], "~", "Join", "~", 
-                   RowBox[{"(", 
+                   RowBox[{"{", "LightGray", "}"}], "~", "Join", "~",
+                   RowBox[{"(",
                     RowBox[{
-                    RowBox[{"color", "@*", "scale"}], " ", "/@", " ", "tt"}], 
-                    ")"}]}]}], "}"}]}], "\n", "\t\t\t", ",", " ", 
-               RowBox[{"ItemSize", "   ", "\[Rule]", " ", 
-                RowBox[{"{", 
+                    RowBox[{"color", "@*", "scale"}], " ", "/@", " ", "tt"}],
+                    ")"}]}]}], "}"}]}], "\n", "\t\t\t", ",", " ",
+               RowBox[{"ItemSize", "   ", "\[Rule]", " ",
+                RowBox[{"{",
                  RowBox[{
-                  RowBox[{"{", 
-                   RowBox[{"35", ",", "8"}], "}"}], ",", " ", "Automatic"}], 
-                 "}"}]}], "\n", "\t\t\t", ",", " ", 
-               RowBox[{"Dividers", "   ", "\[Rule]", " ", "White"}]}], "\n", 
-              "\t\t", "]"}], ",", "\n", "\t\t", 
-             RowBox[{"If", " ", "[", 
+                  RowBox[{"{",
+                   RowBox[{"35", ",", "8"}], "}"}], ",", " ", "Automatic"}],
+                 "}"}]}], "\n", "\t\t\t", ",", " ",
+               RowBox[{"Dividers", "   ", "\[Rule]", " ", "White"}]}], "\n",
+              "\t\t", "]"}], ",", "\n", "\t\t",
+             RowBox[{"If", " ", "[",
               RowBox[{
                RowBox[{
-                RowBox[{"Length", "@", "exprCodes"}], " ", "\[GreaterEqual]", 
-                " ", "2"}], ",", "\n", "\t\t\t", 
-               RowBox[{"Row", "[", 
-                RowBox[{"{", 
-                 RowBox[{"\"\<Min Max acceleration is \>\"", ",", " ", 
-                  RowBox[{"Style", "[", 
+                RowBox[{"Length", "@", "exprCodes"}], " ", "\[GreaterEqual]",
+                " ", "2"}], ",", "\n", "\t\t\t",
+               RowBox[{"Row", "[",
+                RowBox[{"{",
+                 RowBox[{"\"\<Min Max acceleration is \>\"", ",", " ",
+                  RowBox[{"Style", "[",
                    RowBox[{
-                    RowBox[{"N", "@", 
-                    RowBox[{"Round", "[", 
+                    RowBox[{"N", "@",
+                    RowBox[{"Round", "[",
                     RowBox[{
                     RowBox[{
-                    RowBox[{"Max", "[", "tt", "]"}], " ", "/", " ", 
-                    RowBox[{"Min", "[", "tt", "]"}]}], ",", " ", 
-                    RowBox[{"1", "/", "100"}]}], "]"}]}], ",", "Bold"}], 
+                    RowBox[{"Max", "[", "tt", "]"}], " ", "/", " ",
+                    RowBox[{"Min", "[", "tt", "]"}]}], ",", " ",
+                    RowBox[{"1", "/", "100"}]}], "]"}]}], ",", "Bold"}],
                    "]"}], ",", "\"\< times\>\""}], "}"}], "]"}], "\n", "\t\t",
-                ",", "\n", "\t\t\t", "\"\<\>\""}], "\n", "\t\t", "]"}], ",", 
-             "\n", "\t\t", 
-             RowBox[{"Graphics", "[", "\[IndentingNewLine]", "\t\t\t", 
+                ",", "\n", "\t\t\t", "\"\<\>\""}], "\n", "\t\t", "]"}], ",",
+             "\n", "\t\t",
+             RowBox[{"Graphics", "[", "\[IndentingNewLine]", "\t\t\t",
               RowBox[{
-               RowBox[{"Table", "[", 
+               RowBox[{"Table", "[",
                 RowBox[{
-                 RowBox[{"{", "\n", "\t\t\t\t", 
+                 RowBox[{"{", "\n", "\t\t\t\t",
                   RowBox[{
-                   RowBox[{"Opacity", "[", "0.6", "]"}], ",", "\n", 
-                   "\t\t\t\t", 
+                   RowBox[{"Opacity", "[", "0.6", "]"}], ",", "\n",
+                   "\t\t\t\t",
                    RowBox[{
-                    RowBox[{"color", "@*", "scale"}], "@", 
+                    RowBox[{"color", "@*", "scale"}], "@",
                     RowBox[{
-                    "tt", "\[LeftDoubleBracket]", "ind", 
-                    "\[RightDoubleBracket]"}]}], ",", "\n", "\t\t\t\t", 
-                   RowBox[{"Rectangle", "[", "\n", "\t\t\t\t\t", 
+                    "tt", "\[LeftDoubleBracket]", "ind",
+                    "\[RightDoubleBracket]"}]}], ",", "\n", "\t\t\t\t",
+                   RowBox[{"Rectangle", "[", "\n", "\t\t\t\t\t",
                     RowBox[{
-                    RowBox[{"{", 
-                    RowBox[{"0", "      ", ",", " ", 
-                    RowBox[{"1", " ", "-", " ", "ind", " ", "-", " ", 
-                    RowBox[{"0.2", " ", 
-                    RowBox[{"(", 
-                    RowBox[{"ind", " ", "-", " ", "1"}], ")"}]}]}]}], "}"}], 
-                    ",", "\n", "\t\t\t\t\t", 
-                    RowBox[{"{", 
+                    RowBox[{"{",
+                    RowBox[{"0", "      ", ",", " ",
+                    RowBox[{"1", " ", "-", " ", "ind", " ", "-", " ",
+                    RowBox[{"0.2", " ",
+                    RowBox[{"(",
+                    RowBox[{"ind", " ", "-", " ", "1"}], ")"}]}]}]}], "}"}],
+                    ",", "\n", "\t\t\t\t\t",
+                    RowBox[{"{",
                     RowBox[{
                     RowBox[{
-                    "tt", "\[LeftDoubleBracket]", "ind", 
-                    "\[RightDoubleBracket]"}], ",", " ", 
-                    RowBox[{"2", " ", "-", " ", "ind", " ", "-", " ", 
-                    RowBox[{"0.2", " ", 
-                    RowBox[{"(", 
+                    "tt", "\[LeftDoubleBracket]", "ind",
+                    "\[RightDoubleBracket]"}], ",", " ",
+                    RowBox[{"2", " ", "-", " ", "ind", " ", "-", " ",
+                    RowBox[{"0.2", " ",
+                    RowBox[{"(",
                     RowBox[{"ind", " ", "-", " ", "1"}], ")"}]}]}]}], "}"}]}],
-                     "\n", "\t\t\t\t", "]"}]}], "\n", "\t\t\t", "}"}], "\n", 
-                 "\t\t\t\t", ",", " ", 
-                 RowBox[{"{", 
-                  RowBox[{"ind", ",", " ", "1", ",", " ", "count"}], "}"}]}], 
-                "\n", "\t\t\t", "]"}], "\n", "\t\t\t", ",", " ", 
-               RowBox[{"ImageSize", "   ", "\[Rule]", " ", 
-                RowBox[{"{", 
-                 RowBox[{"500", ",", " ", "Automatic"}], "}"}]}], "\n", 
-               "\t\t\t", ",", " ", 
-               RowBox[{"PlotRange", "   ", "\[Rule]", " ", 
-                RowBox[{"{", 
+                     "\n", "\t\t\t\t", "]"}]}], "\n", "\t\t\t", "}"}], ",",
+                 " ",
+                 RowBox[{"{",
+                  RowBox[{"ind", ",", " ", "1", ",", " ", "count"}], "}"}]}],
+                "]"}], "\n", "\t\t\t", ",", " ",
+               RowBox[{"ImageSize", "   ", "\[Rule]", " ",
+                RowBox[{"{",
+                 RowBox[{"500", ",", " ", "Automatic"}], "}"}]}], "\n",
+               "\t\t\t", ",", " ",
+               RowBox[{"PlotRange", "   ", "\[Rule]", " ",
+                RowBox[{"{",
                  RowBox[{
-                  RowBox[{"{", 
-                   RowBox[{"0", ",", " ", 
-                    RowBox[{"Max", "[", "tt", "]"}]}], "}"}], ",", " ", 
-                  RowBox[{"{", 
+                  RowBox[{"{",
+                   RowBox[{"0", ",", " ",
+                    RowBox[{"Max", "[", "tt", "]"}]}], "}"}], ",", " ",
+                  RowBox[{"{",
                    RowBox[{
-                    RowBox[{"1.2", " ", 
-                    RowBox[{"(", 
-                    RowBox[{"1", " ", "-", " ", "count"}], ")"}]}], ",", " ", 
-                    "1"}], "}"}]}], "}"}]}], "\n", "\t\t\t", ",", " ", 
-               RowBox[{"AspectRatio", " ", "\[Rule]", " ", 
-                RowBox[{"1", " ", "/", " ", 
-                 RowBox[{"(", 
-                  RowBox[{"9", " ", "-", " ", 
-                   RowBox[{"count", " ", "/", " ", "2"}]}], ")"}]}]}], "\n", 
-               "\t\t\t", ",", " ", 
-               RowBox[{"Axes", "        ", "\[Rule]", " ", "False"}], "\n", 
-               "\t\t\t", ",", " ", 
-               RowBox[{"Ticks", "       ", "\[Rule]", " ", 
-                RowBox[{"{", 
-                 RowBox[{"Automatic", ",", " ", "None"}], "}"}]}], "\n", 
-               "\t\t\t", ",", " ", 
-               RowBox[{"FrameTicks", "  ", "\[Rule]", " ", 
-                RowBox[{"{", 
-                 RowBox[{"All", ",", " ", "None"}], "}"}]}], "\n", "\t\t\t", 
-               ",", " ", 
-               RowBox[{"GridLines", "   ", "\[Rule]", " ", 
-                RowBox[{"{", 
-                 RowBox[{"Automatic", ",", " ", "None"}], "}"}]}], "\n", 
-               "\t\t\t", ",", " ", 
-               RowBox[{"Background", "  ", "\[Rule]", " ", "White"}], "\n", 
-               "\t\t\t", ",", " ", 
-               RowBox[{"PlotRangePadding", " ", "\[Rule]", " ", "0"}], "\n", 
-               "\t\t\t", ",", " ", 
-               RowBox[{"Frame", "      ", "\[Rule]", " ", "True"}], "\n", 
-               "\t\t\t", ",", " ", 
-               RowBox[{"FrameLabel", " ", "\[Rule]", " ", 
-                RowBox[{"{", 
+                    RowBox[{"1.2", " ",
+                    RowBox[{"(",
+                    RowBox[{"1", " ", "-", " ", "count"}], ")"}]}], ",", " ",
+                    "1"}], "}"}]}], "}"}]}], "\n", "\t\t\t", ",", " ",
+               RowBox[{"AspectRatio", " ", "\[Rule]", " ",
+                RowBox[{"1", " ", "/", " ",
+                 RowBox[{"(",
+                  RowBox[{"9", " ", "-", " ",
+                   RowBox[{"count", " ", "/", " ", "2"}]}], ")"}]}]}], "\n",
+               "\t\t\t", ",", " ",
+               RowBox[{"Axes", "        ", "\[Rule]", " ", "False"}], "\n",
+               "\t\t\t", ",", " ",
+               RowBox[{"Ticks", "       ", "\[Rule]", " ",
+                RowBox[{"{",
+                 RowBox[{"Automatic", ",", " ", "None"}], "}"}]}], "\n",
+               "\t\t\t", ",", " ",
+               RowBox[{"FrameTicks", "  ", "\[Rule]", " ",
+                RowBox[{"{",
+                 RowBox[{"All", ",", " ", "None"}], "}"}]}], "\n", "\t\t\t",
+               ",", " ",
+               RowBox[{"GridLines", "   ", "\[Rule]", " ",
+                RowBox[{"{",
+                 RowBox[{"Automatic", ",", " ", "None"}], "}"}]}], "\n",
+               "\t\t\t", ",", " ",
+               RowBox[{"Background", "  ", "\[Rule]", " ", "White"}], "\n",
+               "\t\t\t", ",", " ",
+               RowBox[{"PlotRangePadding", " ", "\[Rule]", " ", "0"}], "\n",
+               "\t\t\t", ",", " ",
+               RowBox[{"Frame", "      ", "\[Rule]", " ", "True"}], "\n",
+               "\t\t\t", ",", " ",
+               RowBox[{"FrameLabel", " ", "\[Rule]", " ",
+                RowBox[{"{",
                  RowBox[{
-                  RowBox[{"{", 
-                   RowBox[{"None", ",", " ", "None"}], "}"}], ",", 
-                  RowBox[{"{", 
-                   RowBox[{"\"\<Time, s\>\"", ",", " ", "None"}], "}"}]}], 
-                 "}"}]}]}], "\[IndentingNewLine]", "\t\t", "]"}]}], "\n", 
-            "\t", "}"}], "\n", "\t\t", ",", " ", 
-           RowBox[{"ItemStyle", "  ", "\[Rule]", " ", 
-            RowBox[{"Directive", "[", 
+                  RowBox[{"{",
+                   RowBox[{"None", ",", " ", "None"}], "}"}], ",",
+                  RowBox[{"{",
+                   RowBox[{"\"\<Time, s\>\"", ",", " ", "None"}], "}"}]}],
+                 "}"}]}]}], "\[IndentingNewLine]", "\t\t", "]"}]}], "\n",
+            "\t", "}"}], "\n", "\t\t", ",", " ",
+           RowBox[{"ItemStyle", "  ", "\[Rule]", " ",
+            RowBox[{"Directive", "[",
              RowBox[{
-              RowBox[{"FontSize", " ", "\[Rule]", " ", "14"}], ",", " ", 
-              RowBox[{"FontFamily", "\[Rule]", "\"\<Open Sans Light\>\""}]}], 
-             "]"}]}]}], "]"}], "\n", "\t\t", ",", " ", 
-         RowBox[{"Background", " ", "\[Rule]", " ", "White"}], "\n", "\t\t", 
-         ",", " ", 
-         RowBox[{"FrameStyle", " ", "\[Rule]", " ", "None"}]}], "\n", "\t", 
-        "]"}], "\n", "\t\t", ",", " ", 
-       RowBox[{"FontColor", " ", "\[Rule]", " ", "Black"}]}], "\n", "\t", 
-      "]"}]}]}], "\n", "]"}]}]}], "Code",
- CellChangeTimes->{{3.813081349400236*^9, 3.81308136685559*^9}, {
-   3.8130815406429396`*^9, 3.813081553583252*^9}, {3.8131515045147715`*^9, 
-   3.813151554972581*^9}, {3.813151667511204*^9, 3.813151739334115*^9}, 
-   3.8131517809866548`*^9, {3.8131519140284233`*^9, 3.813151994117404*^9}, {
-   3.8131520282602997`*^9, 3.8131522625186872`*^9}, {3.8131522939371376`*^9, 
-   3.8131523076534333`*^9}, {3.813152346479663*^9, 3.8131524081049213`*^9}, {
-   3.8131525009257765`*^9, 3.8131525019749737`*^9}, {3.813152534645919*^9, 
-   3.8131525383510323`*^9}, {3.8131525751131535`*^9, 3.813152669582416*^9}, {
-   3.8131527161977415`*^9, 3.81315277622374*^9}, {3.813152814907513*^9, 
-   3.8131528165910206`*^9}, {3.8131529086183367`*^9, 3.813152948366282*^9}, {
-   3.813153004083849*^9, 3.8131531100696898`*^9}, {3.8131534436720815`*^9, 
-   3.813153466735098*^9}, {3.8131535509043727`*^9, 3.8131536076836557`*^9}, {
-   3.813153653426775*^9, 3.8131536909063997`*^9}, {3.8131537322737513`*^9, 
-   3.8131537425525703`*^9}, {3.8131538093398647`*^9, 
-   3.8131540640532866`*^9}, {3.813154290876594*^9, 3.813154333255844*^9}, {
-   3.8131544397959995`*^9, 3.813154526711269*^9}, {3.813154577116531*^9, 
-   3.813154603376096*^9}, {3.8131546404833555`*^9, 3.8131546574891157`*^9}, {
-   3.8131546971203613`*^9, 3.8131547363397818`*^9}, {3.8131551029652147`*^9, 
-   3.81315512595099*^9}, {3.8131553930186625`*^9, 3.8131554154422565`*^9}, {
-   3.813155780645048*^9, 3.8131559721208878`*^9}, {3.8131560057923803`*^9, 
-   3.813156271944835*^9}, {3.813156372808131*^9, 3.8131563985323467`*^9}, {
-   3.813156445751114*^9, 3.8131564593208365`*^9}, {3.8131565032304497`*^9, 
-   3.8131565523511667`*^9}, {3.8131565891647167`*^9, 3.813156593135102*^9}, {
-   3.813156683055735*^9, 3.813156691294707*^9}, {3.8131567573042507`*^9, 
-   3.8131567850440583`*^9}, {3.813156816156883*^9, 3.8131568165947123`*^9}, {
-   3.8131570069767823`*^9, 3.8131570076080637`*^9}, {3.8131570632293673`*^9, 
-   3.8131571038138695`*^9}, {3.8131574956944184`*^9, 3.81315751135954*^9}, {
-   3.813157601714945*^9, 3.8131576922110043`*^9}, {3.813157804498835*^9, 
-   3.8131578051381083`*^9}},
- CellLabel->"In[53]:=",ExpressionUUID->"a8ab37b4-ed1b-4d73-9f21-eae79c3dae78"]
-},
-WindowSize->{828, 872},
-WindowMargins->{{Automatic, 13}, {Automatic, 53}},
-FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
-StyleDefinitions->FrontEnd`FileName[{"ultima"}, "ultimaPackageDark.nb", 
-  CharacterEncoding -> "UTF-8"]
-]
+              RowBox[{"FontSize", " ", "\[Rule]", " ", "14"}], ",", " ",
+              RowBox[{"FontFamily", "\[Rule]", "\"\<Open Sans Light\>\""}]}],
+             "]"}]}]}], "]"}], "\n", "\t\t", ",", " ",
+         RowBox[{"Background", " ", "\[Rule]", " ", "White"}], "\n", "\t\t",
+         ",", " ",
+         RowBox[{"FrameStyle", " ", "\[Rule]", " ", "None"}]}], "\n", "\t",
+        "]"}], "\n", "\t\t", ",", " ",
+       RowBox[{"FontColor", " ", "\[Rule]", " ", "Black"}]}], "\n", "\t",
+      "]"}]}]}], "\n", "]"}]}]}], "Code"]
+}]
 (* End of Notebook Content *)
-
-(* Internal cache information *)
-(*CellTagsOutline
-CellTagsIndex->{}
-*)
-(*CellTagsIndex
-CellTagsIndex->{}
-*)
-(*NotebookFileOutline
-Notebook[{
-Cell[558, 20, 212, 4, 32, "Code",ExpressionUUID->"eb91277a-03cc-4f07-9410-6ec3a8a2bbb7"],
-Cell[773, 26, 20607, 453, 1280, "Code",ExpressionUUID->"a8ab37b4-ed1b-4d73-9f21-eae79c3dae78"]
-}
-]
-*)
-

@@ -1,0 +1,25 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uStopIntegration\>\"", "]"}],
+  ";"}], "\n",
+ RowBox[{
+  RowBox[{"HoldAll", "[", "uStopIntegration", "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{"uStopIntegration", "[",
+   RowBox[{"event_", ",", " ", "action_"}], "]"}], " ", ":=", " ",
+  RowBox[{"Method", " ", "\[Rule]", " ",
+   RowBox[{"{", "\n", "\t  ",
+    RowBox[{"\"\<EventLocator\>\"", "\n", "\t", ",", " ",
+     RowBox[{"\"\<Event\>\"", "        ", ":>", " ", "event"}], "\n", "\t",
+     ",", " ",
+     RowBox[{"\"\<EventAction\>\"", "  ", ":>", " ",
+      RowBox[{"Throw", "[",
+       RowBox[{
+        RowBox[{"action", "[", "]"}], ",", " ", "\"\<StopIntegration\>\""}],
+       "]"}]}]}], "\n", "}"}]}]}]}], "Code"]
+}]
+(* End of Notebook Content *)

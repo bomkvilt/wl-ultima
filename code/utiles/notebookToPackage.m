@@ -16,8 +16,8 @@ notebookToPackage[nbPath_String] := With[{
 
 
 notebookToString[nbObj_] := With[{
-	cells = Cases[nbObj, Cell[body_, style : "Code" | "Text", ___] :> {body, style}, \[Infinity]]
-}, Riffle[Replace[cells, $cellRules, {1}], ""]]
+	cells = Cases[nbObj, Cell[body_, style : "Code", ___] :> {body, style}, \[Infinity]]
+}, Riffle[Replace[cells, $cellRules, {1}], "\n"]]
 
 
 $cellRules = {
@@ -27,17 +27,24 @@ $cellRules = {
 
 $scratchContext = "Scratch`Private`";
 boxesToStrings[boxes_] := With[{$Context = $scratchContext},
-	stringulate @@ ToExpression[StripBoxes[boxes], StandardForm, HoldComplete]
+	Module[{data = ToExpression[StripBoxes[boxes], StandardForm, Hold]}, 
+		data = Replace[Map[Hold, data, {1}], Hold -> List, {1}, Heads->True];
+		data = DeleteCases[data, Hold[Null]];
+		data = StringRiffle[stringulate[#]& /@ data, "\n"];
+		data = StringReplace[data, {
+			"PackageExport["~~Shortest[a__]~~"]"~~Shortest[" "...]~~";" :> 
+			"PackageExport["<>         a   <>"]"
+		}]
+	]
 ]
 
-Attributes[stringulate] = {HoldAllComplete};
-stringulate[expr_] := ToString[Unevaluated[expr], InputForm
+(*Attributes[stringulate] = {HoldAllComplete};*)
+stringulate[expr_] := StringReplace[ToString[Unevaluated[expr], InputForm
 	, CharacterEncoding -> "ASCII"
-	, PageWidth         -> \[Infinity]
-]
+	, PageWidth         -> 180
+], "Hold["~~a___~~"]"~~EndOfString -> a]
 
 commentate[s_String] := ToString["(*\n"<>s<>"\n*)", OutputForm
 	, CharacterEncoding -> "ASCII"
-	, PageWidth         -> \[Infinity]
+	, PageWidth         -> 180
 ]
-
