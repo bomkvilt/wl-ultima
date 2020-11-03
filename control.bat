@@ -5,6 +5,5 @@ exit 0
 
 REM -------------------------------------------------------
 :cmd_build
-    wolframscript.exe .\build\scripts\build.wls
-    wolframscript.exe .\build\scripts\install.wls
+    wolframscript.exe -script .\build\scripts\main.m
     exit /B 0

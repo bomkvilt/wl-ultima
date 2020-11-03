@@ -4,10 +4,12 @@ packmap = {
     "out_path"   -> "build/out",
     "map" -> {
         { 
-            (* package manifest  *)
+            (* package manifest *)
             "type" -> "pack",
-            "path" -> "main/PacletInfo.m"
-        },
+            "path" -> "main/PacletInfo.m",
+            "dest" -> ""
+        }
+        ,
         {
             (* package entry point *)
             "type" -> "code",
@@ -16,7 +18,7 @@ packmap = {
         },
         {
             (* package style sheets *)
-            "type" -> "code",
+            "type" -> "style",
             "path" -> "style/*",
             "dest" -> "frontend/StyleSheets/ultima"
         },

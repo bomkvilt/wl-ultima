@@ -1,0 +1,251 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9374,        243]
+NotebookOptionsPosition[      8695,        224]
+NotebookOutlinePosition[      9111,        240]
+CellTagsIndexPosition[      9068,        237]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<ultima`\>\"", "]"}]], "Code",
+ CellChangeTimes->{{3.8131581395650625`*^9, 3.8131581510104966`*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"a1aca324-620e-4a66-87a8-93fcfd0461e4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"With", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"n", " ", "=", " ", "10000"}], ",", " ", 
+     RowBox[{"m", " ", "=", " ", "10"}]}], "}"}], ",", "\n", "\t", 
+   RowBox[{"uCompareTime", "[", 
+    RowBox[{"{", "\n", "\t\t", 
+     RowBox[{
+      RowBox[{"NestWhile", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Drop", "[", 
+          RowBox[{"#", ",", " ", "1"}], "]"}], "&"}], ",", " ", 
+        RowBox[{"Range", "[", "n", "]"}], ",", " ", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"Length", "[", "#", "]"}], ">", "m"}], ")"}], "&"}]}], 
+       "]"}], ",", " ", "\n", "\t\t", 
+      RowBox[{"NestWhile", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Drop", "[", 
+          RowBox[{"#", ",", " ", "1"}], "]"}], "&"}], ",", " ", 
+        RowBox[{"Range", "[", 
+         RowBox[{
+          RowBox[{"n", " ", "0.9"}], ",", " ", "n"}], "]"}], ",", " ", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"Length", "[", "#", "]"}], ">", "m"}], ")"}], "&"}]}], 
+       "]"}], ",", "\n", "\t\t", 
+      RowBox[{"Drop", "[", 
+       RowBox[{
+        RowBox[{"Range", "[", "n", "]"}], ",", " ", 
+        RowBox[{"n", " ", "-", " ", "m"}]}], "]"}]}], "\n", "\t", "}"}], 
+    "]"}]}], "\n", "]"}]], "Code",
+ CellChangeTimes->{{3.81315817522872*^9, 3.813158243015502*^9}, {
+  3.8131582744311047`*^9, 3.81315829365071*^9}, {3.8133177317816687`*^9, 
+  3.8133177726032963`*^9}, {3.8133920995334177`*^9, 3.813392308473319*^9}},
+ CellLabel->"In[21]:=",ExpressionUUID->"2e8faf5f-f3d4-48f2-bec9-c57f3ef04b03"],
+
+Cell[BoxData["\<\"Passed code have non the same output\"\>"], "Echo",
+ CellChangeTimes->{
+  3.81339237240947*^9},ExpressionUUID->"ce4442df-27a8-4b4b-ae00-5c03b29154e5"],
+
+Cell[BoxData[
+ StyleBox[
+  FrameBox[
+   TagBox[GridBox[{
+      {
+       TagBox[GridBox[{
+          {"\<\"Code\"\>", "\<\"Time, s\"\>"},
+          {
+           StyleBox[
+            TagBox[
+             RowBox[{"NestWhile", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"Drop", "[", 
+                 RowBox[{"#1", ",", "1"}], "]"}], "&"}], ",", 
+               RowBox[{"Range", "[", "10000", "]"}], ",", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"Length", "[", "#1", "]"}], ">", "10"}], "&"}]}], 
+              "]"}],
+             HoldForm], "Input",
+            StripOnInput->False,
+            FontColor->GrayLevel[0],
+            Background->GrayLevel[0, 0]], "0.0248999`"},
+          {
+           StyleBox[
+            TagBox[
+             RowBox[{"NestWhile", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"Drop", "[", 
+                 RowBox[{"#1", ",", "1"}], "]"}], "&"}], ",", 
+               RowBox[{"Range", "[", 
+                RowBox[{
+                 RowBox[{"10000", " ", "0.9`"}], ",", "10000"}], "]"}], ",", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"Length", "[", "#1", "]"}], ">", "10"}], "&"}]}], 
+              "]"}],
+             HoldForm], "Input",
+            StripOnInput->False,
+            FontColor->GrayLevel[0],
+            Background->GrayLevel[0, 0]], "0.0011913`"},
+          {
+           StyleBox[
+            TagBox[
+             RowBox[{"Drop", "[", 
+              RowBox[{
+               RowBox[{"Range", "[", "10000", "]"}], ",", 
+               RowBox[{"10000", "-", "10"}]}], "]"}],
+             HoldForm], "Input",
+            StripOnInput->False,
+            FontColor->GrayLevel[0],
+            Background->GrayLevel[0, 0]], "0.0000212`"}
+         },
+         AutoDelete->False,
+         GridBoxAlignment->{
+          "Columns" -> {Left, Center}, "Rows" -> {Center, Center}},
+         GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {
+             GrayLevel[0.85], 
+             RGBColor[
+             0.9999999999999998, 1.1102230246251565`*^-16, 
+              1.1102230246251565`*^-16, 0.51], 
+             RGBColor[
+             0.11803764413956122`, 0.6241004806300563, 0.3998727630384193, 
+              0.5195296779976446], 
+             RGBColor[
+             0.07450980392156863, 0.6549019607843137, 0.4196078431372549, 
+              0.52]}},
+         GridBoxDividers->{"Columns" -> {{
+              GrayLevel[1]}}, "Rows" -> {{
+              GrayLevel[1]}}},
+         GridBoxItemSize->{"Columns" -> {35, 8}, "Rows" -> {{Automatic}}}],
+        "Grid"]},
+      {
+       TemplateBox[{
+        "\"Min Max acceleration is \"",StyleBox[
+         "1174.52`", Bold, StripOnInput -> False],"\" times\""},
+        "RowDefault"]},
+      {
+       GraphicsBox[{
+         {RGBColor[
+          0.9999999999999998, 1.1102230246251565`*^-16, 
+           1.1102230246251565`*^-16], Opacity[0.51], 
+          RectangleBox[{0, 0.}, {0.0248999, 1.}]}, 
+         {RGBColor[
+          0.11803764413956122`, 0.6241004806300563, 0.3998727630384193], 
+          Opacity[0.5195296779976446], 
+          RectangleBox[{0, -1.2}, {0.0011913, -0.2}]}, 
+         {RGBColor[
+          0.07450980392156863, 0.6549019607843137, 0.4196078431372549], 
+          Opacity[0.52], RectangleBox[{0, -2.4}, {0.0000212, -1.4}]}},
+        AspectRatio->NCache[
+          Rational[2, 15], 0.13333333333333333`],
+        Axes->False,
+        Background->GrayLevel[1],
+        Frame->True,
+        FrameLabel->{{None, None}, {
+           FormBox["\"Time, s\"", TraditionalForm], None}},
+        FrameTicks->{All, None},
+        GridLines->{Automatic, None},
+        ImageSize->{500, Automatic},
+        PlotRange->{{0, 0.0248999}, {-2.4, 1}},
+        PlotRangePadding->0,
+        Ticks->{Automatic, None},
+        ImageCache->GraphicsData["CompressedBitmap", "\<\
+eJztmjtvGkEQgBcOYpQgA7ISpXTBj3DnLpFMkjJpLEXICrKLKBFxawnXaWkp
+qGhDg0R5tRWd6N1QJHSIImlzmZ1d7o659/EQTgbh9c7Mzjdzc3vL2uzr5vXl
+h4/N66uL5vHLdvPz5dXFl+MXn9qgMnJC5H4JIdrPBfRt6OGPfP2GH9WN7hVk
+z7DtxZ05mUN3jpaFbKu2PR0PpVa+puZgstCtI9r2fDIcT6U87vfz3X5fFFCv
+HQ3JKcIYsODbvAfFz0wxVFtW+S5N4ofLqiRn3Zt9Ychsja45VeMFVqKorgRz
+Hd4tVnI9CuR3USMvEUneXJ1h4tGyDlprL+ZJ2APTHKiqQZxl+dwMcbxme/Km
+NTYcNt7xPFrmjgW9RF5VA0PJjP8knD+b7Ilntj0b3bbkq2dhJaze7WgmO0Qf
+KjYkaQOcV5JTTsLBOX4Ash7iMYkNUg4TXpPVaxnQF0U0eijvVI2Ljh+MBA+B
+kStEGy2KMzXnMpDcK7R60qcRTvJpceaWvASveQ0SSSqCVKJXJwssf+cDfd7q
+ms9GPXWr1ABdKaKNFnXNA0mPo11xjOHkFkXyaX2VWjE30pIMhyRSZEUrpXvu
+U7vqs6y6d6zLItpoUWeVheR9PiE/PdMDST4tqToxr0EiSaUnOQRi3tFMjyE5
+610LkxMR89M/pyzLszxRn+ykFDkFaw/UqhQ2y7e8npdjSJjcm3B/XybY8X+K
+aZ+ItdeXCSGlzcS7/Huf19W1u+D9EMU9ov+TOHo34idUkhJwyogQSiHV/iGJ
+fynAH1MIySBoT6KcWk5ltaR2H1IXvv+Te/sj3IeCi/qLQdSIXF3TXo+RH3q8
+CjQ5rOYT2UqLup+iFiNXt2zfdbx9ywceFjuX+O40iHxC5DqR38fYqT/lB2UH
+4gq90+mERAuW3fHnGejJZaYznelMZzrTmQ7i1+/f4C2eQnPGETgCR+AIHIEj
+cIQ0ETLS/gf6zQ28YTQ0hnl6mlE+h4bpTGc605n+UOjyv7xRcjTdHV0j3g0i
+nxC5HhOd2qk/5R+myo7K1S3bdx1v3/IJuTvd4G+9Nv0tWpx91/H2LR/3W0a5
+TeTzftrE5/34vB+f9+Pzfnzej8/7JcmJz/vxeT//lPnHz/uJ3F8lfJud\
+\>"]]}
+     },
+     DefaultBaseStyle->"Column",
+     GridBoxAlignment->{"Columns" -> {{Left}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+     GridBoxItemStyle->{"Columns" -> {{
+          Directive[FontSize -> 14, FontFamily -> "Open Sans Light"]}}, 
+       "Rows" -> {{
+          Directive[FontSize -> 14, FontFamily -> "Open Sans Light"]}}}],
+    "Column"],
+   Background->GrayLevel[1],
+   FrameStyle->None,
+   StripOnInput->False],
+  StripOnInput->False,
+  FontColor->GrayLevel[0]]], "Output",
+ CellChangeTimes->{{3.813208388895726*^9, 3.8132084088804655`*^9}, 
+   3.813208465440441*^9, 3.8132086277560053`*^9, 3.813208713781918*^9, 
+   3.8132103953070326`*^9, 3.813317204148969*^9, {3.8133177386094327`*^9, 
+   3.813317773033147*^9}, 3.8133179694461193`*^9, 3.813318783499528*^9, 
+   3.8133192242212305`*^9, 3.8133919282004766`*^9, {3.8133921247686367`*^9, 
+   3.81339232114314*^9}, 3.813392372461568*^9},
+ CellLabel->"Out[21]=",ExpressionUUID->"8029a9e8-07a0-4a6e-863f-97f9c40418e9"]
+}, Open  ]]
+},
+WindowSize->{919, 1028},
+WindowMargins->{{Automatic, -7}, {Automatic, 0}},
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
+StyleDefinitions->FrontEnd`FileName[{"ultima"}, "ultimaPackageDark.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 219, 3, 32, "Code",ExpressionUUID->"a1aca324-620e-4a66-87a8-93fcfd0461e4"],
+Cell[CellGroupData[{
+Cell[802, 27, 1619, 42, 141, "Code",ExpressionUUID->"2e8faf5f-f3d4-48f2-bec9-c57f3ef04b03"],
+Cell[2424, 71, 168, 2, 23, "Echo",ExpressionUUID->"ce4442df-27a8-4b4b-ae00-5c03b29154e5"],
+Cell[2595, 75, 6084, 146, 266, "Output",ExpressionUUID->"8029a9e8-07a0-4a6e-863f-97f9c40418e9"]
+}, Open  ]]
+}
+]
+*)
+
