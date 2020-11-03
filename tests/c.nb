@@ -1,0 +1,128 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4044,        120]
+NotebookOptionsPosition[      3244,         98]
+NotebookOutlinePosition[      3661,        114]
+CellTagsIndexPosition[      3618,        111]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Print", "[", "\"\<a\>\"", "]"}]], "Code",
+ CellChangeTimes->{{3.8132051045582075`*^9, 3.813205106094087*^9}, {
+  3.8132051449821253`*^9, 3.813205146359443*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"1ce18c8e-3a2b-4967-9bde-9c750e0a0ad0"],
+
+Cell[BoxData["\<\"a\"\>"], "Print",
+ CellChangeTimes->{3.813205169882557*^9},
+ CellLabel->
+  "During evaluation of \
+In[11]:=",ExpressionUUID->"21769ddf-07c9-4858-926e-51abbf04fcb4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"1", ",", " ", "2", ",", " ", "3"}], "}"}], "\[LeftDoubleBracket]",
+   "1", "\[RightDoubleBracket]"}]], "Code",
+ CellChangeTimes->{{3.8132035292059584`*^9, 3.8132035337189255`*^9}, {
+  3.8132051494132786`*^9, 3.8132051563966093`*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"340aca9e-8eb6-49d5-9774-ad3560246b71"],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.813205162614994*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"0212e3c8-3131-4361-868b-b0ac33f810a5"]
+}, Open  ]],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\[Piecewise]", GridBox[{
+       {"ss", "\[Placeholder]"},
+       {"\"\<\:0425\:0443\:0439\>\"", "\[Placeholder]"}
+      },
+      AllowedDimensions->{2, Automatic},
+      Editable->True,
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{
+       "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.84]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}},
+      Selectable->True]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxItemSize->{
+    "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[0.35]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  "Piecewise",
+  DeleteWithContents->True,
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False,
+  StripWrapperBoxes->True]], "Code",
+ CellChangeTimes->{{3.81320478772563*^9, 3.8132047926833797`*^9}, {
+  3.8132103830487876`*^9, 
+  3.8132103850049963`*^9}},ExpressionUUID->"b019b916-d277-493a-8e04-\
+e73bedce8cff"]
+},
+WindowSize->{775, 872},
+WindowMargins->{{109, Automatic}, {49, Automatic}},
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
+StyleDefinitions->FrontEnd`FileName[{"ultima"}, "ultimaPackageDark.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 263, 4, 32, "Code",ExpressionUUID->"1ce18c8e-3a2b-4967-9bde-9c750e0a0ad0"],
+Cell[846, 28, 182, 4, 24, "Print",ExpressionUUID->"21769ddf-07c9-4858-926e-51abbf04fcb4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1065, 37, 364, 7, 32, "Code",ExpressionUUID->"340aca9e-8eb6-49d5-9774-ad3560246b71"],
+Cell[1432, 46, 149, 2, 25, "Output",ExpressionUUID->"0212e3c8-3131-4361-868b-b0ac33f810a5"]
+}, Open  ]],
+Cell[1596, 51, 1644, 45, 46, "Code",ExpressionUUID->"b019b916-d277-493a-8e04-e73bedce8cff"]
+}
+]
+*)
+

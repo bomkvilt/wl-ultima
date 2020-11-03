@@ -1,0 +1,408 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15854,        400]
+NotebookOptionsPosition[     14921,        375]
+NotebookOutlinePosition[     15337,        391]
+CellTagsIndexPosition[     15294,        388]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<ultima`\>\"", "]"}]], "Code",
+ CellChangeTimes->{{3.8131581395650625`*^9, 3.8131581510104966`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"a1aca324-620e-4a66-87a8-93fcfd0461e4"],
+
+Cell[BoxData["\<\"ultima`notebookToPackage`PackagePrivate`\"\>"], "Print",
+ CellChangeTimes->{3.8133260267424517`*^9, 3.8133264339330277`*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"15bc75ce-1284-4d59-80db-a525cd317751"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"With", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"n", " ", "=", " ", "10000"}], ",", " ", 
+     RowBox[{"m", " ", "=", " ", "10"}]}], "}"}], ",", "\n", "\t", 
+   RowBox[{"uCompareTime", "[", 
+    RowBox[{"{", "\n", "\t\t", 
+     RowBox[{
+      RowBox[{"NestWhile", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Drop", "[", 
+          RowBox[{"#", ",", " ", "1"}], "]"}], "&"}], ",", " ", 
+        RowBox[{"Range", "[", "n", "]"}], ",", " ", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"Length", "[", "#", "]"}], ">", "m"}], ")"}], "&"}]}], 
+       "]"}], ",", " ", "\n", "\t\t", 
+      RowBox[{"Drop", "[", 
+       RowBox[{
+        RowBox[{"Range", "[", "n", "]"}], ",", " ", 
+        RowBox[{"n", " ", "-", " ", "m"}]}], "]"}]}], "\n", "\t", "}"}], 
+    "]"}]}], "\n", "]"}]], "Code",
+ CellChangeTimes->{{3.81315817522872*^9, 3.813158243015502*^9}, {
+  3.8131582744311047`*^9, 3.81315829365071*^9}, {3.8133177317816687`*^9, 
+  3.8133177726032963`*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"2e8faf5f-f3d4-48f2-bec9-c57f3ef04b03"],
+
+Cell[BoxData[
+ RowBox[{"uCompareTime", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "9991", ",", "9992", ",", "9993", ",", "9994", ",", "9995", ",", "9996", 
+      ",", "9997", ",", "9998", ",", "9999", ",", "10000"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "9991", ",", "9992", ",", "9993", ",", "9994", ",", "9995", ",", "9996", 
+      ",", "9997", ",", "9998", ",", "9999", ",", "10000"}], "}"}]}], "}"}], 
+  "]"}]], "Output",
+ CellChangeTimes->{{3.813208388895726*^9, 3.8132084088804655`*^9}, 
+   3.813208465440441*^9, 3.8132086277560053`*^9, 3.813208713781918*^9, 
+   3.8132103953070326`*^9, 3.813317204148969*^9, {3.8133177386094327`*^9, 
+   3.813317773033147*^9}, 3.8133179694461193`*^9, 3.813318783499528*^9, 
+   3.8133192242212305`*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"af2ed879-1ab7-4a25-95fd-5684738bf700"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"??", "notebookToPackage"}]], "Code",
+ CellChangeTimes->{{3.8133184646428623`*^9, 3.813318464776474*^9}, {
+   3.813318801224966*^9, 3.8133188021048107`*^9}, {3.813320611682724*^9, 
+   3.813320661511252*^9}, {3.8133209591491876`*^9, 3.813320977994525*^9}, {
+   3.8133215338385468`*^9, 3.813321577445406*^9}, 3.813321692674787*^9, {
+   3.8133259069119625`*^9, 3.813325929113949*^9}, {3.8133261039965887`*^9, 
+   3.813326106632574*^9}, {3.8133264481256685`*^9, 3.8133264520541487`*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"6510edd8-2c44-49bf-94b6-4c382f7c7806"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   FrameBox[
+    DynamicModuleBox[{System`InformationDump`open$$ = True, 
+     System`InformationDump`mouseOver$$ = False}, 
+     PaneSelectorBox[{True->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False,
+             BaseStyle -> None],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"ultima`notebookToPackage\"\>", 
+             "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          PaneBox[GridBox[{
+             {
+              
+              DynamicModuleBox[{System`InformationDump`open$$ = {
+               False, False, False, False, False, False, False, False, False, 
+                False, False, False}}, 
+               StyleBox[GridBox[{
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Definitions\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Definitions\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Definitions", "Tooltip"]& ], GridBox[{
+                    {
+                    RowBox[{
+                    RowBox[{
+                    "notebookToPackage", "[", 
+                    "ultima`notebookToPackage`PackagePrivate`nbPath_String", 
+                    "]"}], ":=", 
+                    RowBox[{"With", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    "ultima`notebookToPackage`PackagePrivate`nbObj", "=", 
+                    RowBox[{
+                    "Get", "[", 
+                    "ultima`notebookToPackage`PackagePrivate`nbPath", "]"}]}],
+                     "}"}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    "ultima`notebookToPackage`PackagePrivate`nbObj", "=!=", 
+                    "$Failed"}], ",", 
+                    RowBox[{"ExportString", "[", 
+                    RowBox[{
+                    RowBox[{
+                    "ultima`notebookToPackage`PackagePrivate`\
+notebookToString", "[", "ultima`notebookToPackage`PackagePrivate`nbObj", 
+                    "]"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Text\"\>", ",", "\<\"Lines\"\>"}], "}"}]}], 
+                    "]"}], ",", "$Failed"}], "]"}]}], "]"}]}]}
+                    },
+                    DefaultBaseStyle->"Column",
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]},
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"FullName\"",
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "FullName", 
+                    "Tooltip"]& ], "\<\"ultima`notebookToPackage\"\>"}
+                 },
+                 AutoDelete->False,
+                 GridBoxAlignment->{"Columns" -> {Right, Left}},
+                 GridBoxDividers->None,
+                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.5599999999999999]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.8]}, 
+                    Offset[0.2]}}], "DialogStyle",
+                StripOnInput->False],
+               DynamicModuleValues:>{}]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.5599999999999999]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[3.6]}, 
+                Offset[0.2]}}],
+           FrameMargins->6], ""},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpener"],
+               ImageSizeCache->{10., {2., 8.}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpenerHot"],
+               ImageSizeCache->{10., {2., 8.}}]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, False],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], False->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"ultima`notebookToPackage\"\>", 
+             "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"]], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpenerHot"]]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, True],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]}, Dynamic[System`InformationDump`open$$],
+      BaselinePosition->Baseline,
+      FrameMargins->0,
+      ImageSize->Automatic],
+     DynamicModuleValues:>{}],
+    BaseStyle->"InformationGridFrame",
+    StripOnInput->False], "InformationGridPlain",
+   StripOnInput->False],
+  InformationData[
+   Association[
+   "ObjectType" -> "Symbol", "Usage" -> "ultima`notebookToPackage", 
+    "Documentation" -> None, "OwnValues" -> None, "UpValues" -> None, 
+    "DownValues" -> 
+    Information`InformationValueForm[
+     DownValues, ultima`notebookToPackage, {ultima`notebookToPackage[
+         Pattern[ultima`notebookToPackage`PackagePrivate`nbPath, 
+          Blank[String]]] :> 
+       With[{ultima`notebookToPackage`PackagePrivate`nbObj = 
+          Get[ultima`notebookToPackage`PackagePrivate`nbPath]}, 
+         If[ultima`notebookToPackage`PackagePrivate`nbObj =!= $Failed, 
+          ExportString[
+           ultima`notebookToPackage`PackagePrivate`notebookToString[
+           ultima`notebookToPackage`PackagePrivate`nbObj], {
+           "Text", "Lines"}], $Failed]]}], "SubValues" -> None, 
+    "DefaultValues" -> None, "NValues" -> None, "FormatValues" -> None, 
+    "Options" -> None, "Attributes" -> {}, "FullName" -> 
+    "ultima`notebookToPackage"], True]]], "Output",
+ CellChangeTimes->{
+  3.813318465532484*^9, {3.8133187929223676`*^9, 3.813318802800982*^9}, 
+   3.813319448603866*^9, 3.813320617812337*^9, 3.81332066223133*^9, 
+   3.813320927816357*^9, {3.8133209609630575`*^9, 3.8133209786457853`*^9}, {
+   3.813321534908671*^9, 3.81332157824028*^9}, 3.813321661647333*^9, 
+   3.8133258654161844`*^9, {3.813325907394663*^9, 3.8133259295856557`*^9}, {
+   3.813326097715407*^9, 3.8133261075062065`*^9}, {3.8133264396208563`*^9, 
+   3.8133264526156383`*^9}},
+ CellLabel->"Out[3]=",ExpressionUUID->"a1b6fc04-f9d6-4c4e-b6d0-1133ad2fffdc"]
+}, Open  ]]
+},
+WindowSize->{919, 1028},
+WindowMargins->{{Automatic, -7}, {Automatic, 0}},
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
+StyleDefinitions->FrontEnd`FileName[{"ultima"}, "ultimaPackageDark.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 219, 3, 32, "Code",ExpressionUUID->"a1aca324-620e-4a66-87a8-93fcfd0461e4"],
+Cell[802, 27, 246, 4, 24, "Print",ExpressionUUID->"15bc75ce-1284-4d59-80db-a525cd317751"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1085, 36, 1119, 29, 123, "Code",ExpressionUUID->"2e8faf5f-f3d4-48f2-bec9-c57f3ef04b03"],
+Cell[2207, 67, 860, 18, 45, "Output",ExpressionUUID->"af2ed879-1ab7-4a25-95fd-5684738bf700"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3104, 90, 584, 8, 32, "Code",ExpressionUUID->"6510edd8-2c44-49bf-94b6-4c382f7c7806"],
+Cell[3691, 100, 11214, 272, 218, "Output",ExpressionUUID->"a1b6fc04-f9d6-4c4e-b6d0-1133ad2fffdc"]
+}, Open  ]]
+}
+]
+*)
+
