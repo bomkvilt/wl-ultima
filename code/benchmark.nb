@@ -38,32 +38,22 @@ Cell[BoxData[{
                GraphicsBox[{
                  {GrayLevel[0], RectangleBox[{0, 0}]},
                  {GrayLevel[0], RectangleBox[{1, -1}]},
-                 {RGBColor[
-                   Rational[19, 255],
-                   Rational[167, 255],
-                   Rational[107, 255]], Opacity[0.52],
+                 {RGBColor[0, 1, 0], Opacity[0.52],
                   RectangleBox[{0, -1}, {2, 1}]}},
                 AspectRatio->1,
                 DefaultBaseStyle->"ColorSwatchGraphics",
                 Frame->True,
-
-                FrameStyle->RGBColor[
-                 0.04967320261437908, 0.4366013071895425, 0.2797385620915033,
-                  0.52],
+                FrameStyle->RGBColor[0., 0.6666666666666666, 0., 0.52],
                 FrameTicks->None,
 
                 ImageSize->
                  Dynamic[{
-                  Automatic,
-                   1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
-                    Magnification])}],
+                  Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                   AbsoluteCurrentValue[Magnification]}],
                 PlotRangePadding->None],
                StyleBox[
                 RowBox[{"RGBColor", "[",
-                  RowBox[{
-                    FractionBox["19", "255"], ",",
-                    FractionBox["167", "255"], ",",
-                    FractionBox["107", "255"], ",", "0.52`"}], "]"}],
+                  RowBox[{"0", ",", "1", ",", "0", ",", "0.52`"}], "]"}],
                 NumberMarks -> False]],
               Appearance->None,
               BaseStyle->{},
@@ -74,10 +64,8 @@ Cell[BoxData[{
                   AbsoluteCurrentValue["Deployed"]],
                  SelectionMove[Typeset`box$, All, Expression];
                  FrontEnd`Private`$ColorSelectorInitialAlpha = 0.52;
-                 FrontEnd`Private`$ColorSelectorInitialColor = RGBColor[
-                    Rational[19, 255],
-                    Rational[167, 255],
-                    Rational[107, 255]];
+                 FrontEnd`Private`$ColorSelectorInitialColor =
+                  RGBColor[0, 1, 0];
                  FrontEnd`Private`$ColorSelectorUseMakeBoxes = True;
                  MathLink`CallFrontEnd[
                    FrontEnd`AttachCell[Typeset`box$,
@@ -89,10 +77,7 @@ Cell[BoxData[{
               DefaultBaseStyle->{},
               Evaluator->Automatic,
               Method->"Preemptive"],
-             RGBColor[
-              Rational[19, 255],
-              Rational[167, 255],
-              Rational[107, 255], 0.52],
+             RGBColor[0, 1, 0, 0.52],
              Editable->False,
              Selectable->False], ",", " ",
             InterpretationBox[
@@ -232,12 +217,61 @@ Cell[BoxData[{
      RowBox[{"scale", "     ", "=", " ",
       RowBox[{
        RowBox[{"Evaluate", "[",
-        RowBox[{"Rescale", "[",
-         RowBox[{"#", ",", " ",
-          RowBox[{"MinMax", "[", "tt", "]"}], ",", " ",
-          RowBox[{"{",
-           RowBox[{"0", ",", " ", "1"}], "}"}]}], "]"}], "]"}], "&"}]}], ";",
-     "\n", "\t", "\n", "\t",
+        TagBox[GridBox[{
+           {"\[Piecewise]", GridBox[{
+              {
+               RowBox[{"Rescale", "[",
+                RowBox[{"#", ",", " ",
+                 RowBox[{"MinMax", "[", "tt", "]"}], ",", " ",
+                 RowBox[{"{",
+                  RowBox[{"0", ",", " ", "1"}], "}"}]}], "]"}],
+               RowBox[{
+                RowBox[{"Min", "[", "tt", "]"}], " ", "\[NotEqual]", " ",
+                RowBox[{"Max", "[", "tt", "]"}]}]},
+              {"1", "True"}
+             },
+             AllowedDimensions->{2, Automatic},
+             Editable->True,
+
+             GridBoxAlignment->{
+              "Columns" -> {{Left}}, "ColumnsIndexed" -> {},
+               "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {},
+               "Rows" -> {{1.}}, "RowsIndexed" -> {}},
+             GridBoxSpacings->{"Columns" -> {
+                 Offset[0.27999999999999997`], {
+                  Offset[0.84]},
+                 Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {},
+               "Rows" -> {
+                 Offset[0.2], {
+                  Offset[0.4]},
+                 Offset[0.2]}, "RowsIndexed" -> {}},
+             Selectable->True]}
+          },
+
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {},
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {},
+            "Rows" -> {{1.}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.35]},
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+              Offset[0.2], {
+               Offset[0.4]},
+              Offset[0.2]}, "RowsIndexed" -> {}}],
+         "Piecewise",
+         DeleteWithContents->True,
+         Editable->False,
+         SelectWithContents->True,
+         Selectable->False,
+         StripWrapperBoxes->True], "]"}], "&"}]}], ";", "\n", "\t", "\n",
+     "\t",
      RowBox[{"tt", "        ", "=", " ",
       RowBox[{
       "tt", "\[LeftDoubleBracket]", "order", "\[RightDoubleBracket]"}]}], ";",
@@ -319,7 +353,7 @@ Cell[BoxData[{
                 RowBox[{"{",
                  RowBox[{
                   RowBox[{"{",
-                   RowBox[{"35", ",", "8"}], "}"}], ",", " ", "Automatic"}],
+                   RowBox[{"40", ",", "12"}], "}"}], ",", " ", "Automatic"}],
                  "}"}]}], "\n", "\t\t\t", ",", " ",
                RowBox[{"Dividers", "   ", "\[Rule]", " ", "White"}]}], "\n",
               "\t\t", "]"}], ",", "\n", "\t\t",
@@ -327,7 +361,7 @@ Cell[BoxData[{
               RowBox[{
                RowBox[{
                 RowBox[{"Length", "@", "exprCodes"}], " ", "\[GreaterEqual]",
-                " ", "2"}], ",", "\n", "\t\t\t",
+                " ", "2"}], "\n", "\t\t\t", ",", " ",
                RowBox[{"Row", "[",
                 RowBox[{"{",
                  RowBox[{"\"\<Min Max acceleration is \>\"", ",", " ",
@@ -340,8 +374,8 @@ Cell[BoxData[{
                     RowBox[{"Max", "[", "tt", "]"}], " ", "/", " ",
                     RowBox[{"Min", "[", "tt", "]"}]}], ",", " ",
                     RowBox[{"1", "/", "100"}]}], "]"}]}], ",", "Bold"}],
-                   "]"}], ",", "\"\< times\>\""}], "}"}], "]"}], "\n", "\t\t",
-                ",", "\n", "\t\t\t", "\"\<\>\""}], "\n", "\t\t", "]"}], ",",
+                   "]"}], ",", "\"\< times\>\""}], "}"}], "]"}], "\n",
+               "\t\t\t", ",", " ", "\"\<\>\""}], "\n", "\t\t", "]"}], ",",
              "\n", "\t\t",
              RowBox[{"Graphics", "[", "\[IndentingNewLine]", "\t\t\t",
               RowBox[{
@@ -381,7 +415,7 @@ Cell[BoxData[{
                 "]"}], "\n", "\t\t\t", ",", " ",
                RowBox[{"ImageSize", "   ", "\[Rule]", " ",
                 RowBox[{"{",
-                 RowBox[{"500", ",", " ", "Automatic"}], "}"}]}], "\n",
+                 RowBox[{"600", ",", " ", "Automatic"}], "}"}]}], "\n",
                "\t\t\t", ",", " ",
                RowBox[{"PlotRange", "   ", "\[Rule]", " ",
                 RowBox[{"{",

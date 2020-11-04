@@ -39,13 +39,11 @@ Cell[BoxData[{
   RowBox[{"subhold", "[",
    RowBox[{"v_", ",", " ",
     RowBox[{"n_Integer:", "1"}]}], "]"}], " ", ":=", " ",
-  RowBox[{
-   RowBox[{"ReleaseHold", "@",
-    RowBox[{"Map", "[",
-     RowBox[{"HoldForm", ",", " ",
-      RowBox[{"HoldForm", "@", "v"}], ",", " ",
-      RowBox[{"{",
-       RowBox[{"n", " ", "+", " ", "1"}], "}"}]}], "]"}]}], " ", "//", " ",
-   "FullForm"}]}]}], "Code"]
+  RowBox[{"ReleaseHold", "@",
+   RowBox[{"Map", "[",
+    RowBox[{"HoldForm", ",", " ",
+     RowBox[{"HoldForm", "@", "v"}], ",", " ",
+     RowBox[{"{",
+      RowBox[{"n", " ", "+", " ", "1"}], "}"}]}], "]"}]}]}]}], "Code"]
 }]
 (* End of Notebook Content *)

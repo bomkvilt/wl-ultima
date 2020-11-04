@@ -829,10 +829,7 @@ Cell[BoxData[{
       RowBox[{"subhold", "[",
        RowBox[{
         RowBox[{"Evaluate", "@", "val"}], ",", " ", "2"}], "]"}]}], ";", "\n",
-      "\t", "rehold", ";", " ",
-     RowBox[{"val", " ", "=", " ",
-      RowBox[{"val", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}],
-      ";", "\n", "\t", "\n", "\t",
+      "\t", "rehold", ";", "\n", "\t\t", "\n", "\t",
      RowBox[{"Switch", "[",
       RowBox[{
        RowBox[{"val", "\[LeftDoubleBracket]",
@@ -910,6 +907,55 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{
    RowBox[{"uRuleCast", "::", "badcast"}], " ", "=", " ",
-   "\"\<cannot cast `1` to rule\>\""}], ";"}]}], "Code"]
+   "\"\<cannot cast `1` to rule\>\""}], ";"}]}], "Code"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"uRuleCast", " ", "@", " ",
+  RowBox[{"Hold", " ", "@", " ",
+   TagBox[GridBox[{
+      {"\[Piecewise]", GridBox[{
+         {"a", "b"},
+         {"c",
+          RowBox[{"0", "/", "0"}]}
+        },
+        AllowedDimensions->{2, Automatic},
+        Editable->True,
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {},
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}},
+           "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.84]},
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]},
+            Offset[0.2]}, "RowsIndexed" -> {}},
+        Selectable->True]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}},
+       "RowsIndexed" -> {}},
+     GridBoxItemSize->{
+      "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}},
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.35]},
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]},
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    "Piecewise",
+    DeleteWithContents->True,
+    Editable->False,
+    SelectWithContents->True,
+    Selectable->False,
+    StripWrapperBoxes->True]}]}]], "Code"]
+}]]
 }]
 (* End of Notebook Content *)

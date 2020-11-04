@@ -1,0 +1,46 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PackageExport", "[", "\"\<uAssert\>\"", "]"}], ";"}], "\n",
+ RowBox[{"SetAttributes", "[",
+  RowBox[{"uAssert", ",", " ", "HoldAll"}], "]"}], "\n",
+ RowBox[{
+  RowBox[{"uAssert", "[", "a_", "]"}], " ", ":=", " ",
+  RowBox[{"If", " ", "[",
+   RowBox[{
+    RowBox[{
+     RowBox[{"Evaluate", "[", "a", "]"}], " ", "=!=", " ", "True"}], ",",
+    "\n", "\t",
+    RowBox[{
+     RowBox[{"Message", "[",
+      RowBox[{
+       RowBox[{"uAssert", "::", "failed1"}], ",", " ", "a"}], "]"}], ";", " ",
+     RowBox[{"Abort", "[", "]"}], ";"}]}], "\n", "]"}]}], "\n",
+ RowBox[{
+  RowBox[{"uAssert", "[",
+   RowBox[{"a_", ",", " ", "b_"}], "]"}], " ", ":=", " ",
+  RowBox[{"If", " ", "[",
+   RowBox[{
+    RowBox[{
+     RowBox[{"Evaluate", "[",
+      RowBox[{"a", " ", "===", " ", "b"}], "]"}], " ", "=!=", " ", "True"}],
+    ",", "\n", "\t",
+    RowBox[{
+     RowBox[{"Message", "[",
+      RowBox[{
+       RowBox[{"uAssert", "::", "failed2"}], ",", " ", "a", ",", " ", "b"}],
+      "]"}], ";", " ",
+     RowBox[{"Abort", "[", "]"}], ";"}]}], "\n", "]"}]}], "\n",
+ RowBox[{
+  RowBox[{
+   RowBox[{"uAssert", "::", "failed1"}], " ", ":=", " ",
+   "\"\<failed test: ``\>\""}], ";"}], "\n",
+ RowBox[{
+  RowBox[{
+   RowBox[{"uAssert", "::", "failed1"}], " ", ":=", " ",
+   "\"\<failed test: `` === ``\>\""}], ";"}]}], "Code"]
+}]
+(* End of Notebook Content *)
